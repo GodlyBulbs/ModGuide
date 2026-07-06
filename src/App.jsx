@@ -564,6 +564,56 @@ function statusColor(item,mileage){
 }
 const STATUS_COLORS={green:"#1CE84A",yellow:"#F5C800",red:"#FF3B3B",unset:"#444"};
 
+const rotationNote=(drivetrain)=>{
+  if(drivetrain==="FWD") return "Front tires wear faster on FWD cars. Rotate front-to-back: fronts move straight back, rears cross forward to the opposite front position.";
+  if(drivetrain==="RWD") return "Rear tires wear faster on RWD cars. Rotate rear-to-front: rears move straight forward, fronts cross backward to the opposite rear position.";
+  if(drivetrain&&drivetrain.includes("AWD")) return "AWD cars wear tires evenly. Use the X-pattern: all four tires cross diagonally to the opposite corner.";
+  if(drivetrain&&drivetrain.includes("4WD")) return "4WD trucks typically use the X-pattern: all four tires cross diagonally to the opposite corner. Check your owner's manual — some 4WD trucks recommend front-to-back only.";
+  return "Rotation pattern depends on drivetrain — check your owner's manual for the recommended pattern.";
+};
+
+const MAINTENANCE_ITEMS=[
+  {
+    key:"oil",
+    name:"Engine Oil & Filter",
+    mileInterval:5000,
+    monthInterval:6,
+    notes:(car)=>{
+      const turbo=car.engine&&/turbo/i.test(car.engine);
+      return turbo?"Turbocharged engine — use full synthetic oil, don't stretch the interval.":"Full synthetic recommended. Check your owner's manual for exact spec.";
+    },
+  },
+  {
+    key:"tires",
+    name:"Tire Rotation",
+    mileInterval:6000,
+    monthInterval:6,
+    notes:(car)=>rotationNote(car.drivetrain),
+  },
+  {
+    key:"airfilter",
+    name:"Engine Air Filter",
+    mileInterval:15000,
+    monthInterval:12,
+    notes:()=>"Check sooner if you drive in dusty or dirty conditions.",
+  },
+  {
+    key:"cabinfilter",
+    name:"Cabin Air Filter",
+    mileInterval:15000,
+    monthInterval:12,
+    notes:()=>"Replace sooner if you notice weak airflow or odors from the vents. Usually behind the glovebox.",
+  },
+  {
+    key:"brakes",
+    name:"Brake Pads & System Check",
+    mileInterval:12000,
+    monthInterval:12,
+    notes:()=>"Interval varies with driving style — inspect pad thickness and rotor condition.",
+  },
+];
+
+
 function CarCard({car,onSelect,onDelete,hasAlerts}){
   const colorHex=car.colorHex||"#1C1C1C";
   const textColor=isLight(colorHex)?"#111":"#fff";
@@ -731,7 +781,6 @@ export default function ModGuide(){
   const [sections,setSections]=useState(null);
   const [genError,setGenError]=useState("");
   const [showBell,setShowBell]=useState(false);
-  const [maintenanceLoading,setMaintenanceLoading]=useState(false);
   const [editMileage,setEditMileage]=useState(false);
   const [tempMileage,setTempMileage]=useState("");
   const [doneItem,setDoneItem]=useState(null);
@@ -756,20 +805,42 @@ export default function ModGuide(){
   const updateGarageItem=async(car)=>await supabase.from("garages").update({car_data:car}).eq("id",car.id);
   const deleteGarageItem=async(id)=>{await supabase.from("garages").delete().eq("id",id);setGarage(prev=>prev.filter(c=>c.id!==id));};
   const addCar=async(carData)=>{const id=await saveGarageItem(carData);if(id){setGarage(prev=>[...prev,{...carData,id}]);setView("garage");}};
-  const openCar=(car)=>{setActiveCar(car);setActiveBrand(null);setSections(null);setSelectedMod("");setActiveTab("maintenance");setView("car-detail");};
+  const openCar=(car)=>{setActiveCar(car);setActiveBrand(null);setSections(null);setSelectedMod("");setActiveTab("maintenance");setWizardStep(-1);setView("car-detail");};
   const syncCar=async(updated)=>{setGarage(prev=>prev.map(c=>c.id===updated.id?updated:c));setActiveCar(updated);await updateGarageItem(updated);};
   const toggleBuildItem=(item)=>{const exists=activeCar.build&&activeCar.build.find(b=>b.brand===item.brand&&b.part===item.part);syncCar({...activeCar,build:exists?activeCar.build.filter(b=>!(b.brand===item.brand&&b.part===item.part)):[...(activeCar.build||[]),item]});};
 
-  const setupMaintenance=async()=>{
-    setMaintenanceLoading(true);
-    try{
-      const prompt=`You are an automotive expert. Generate a maintenance schedule for a ${activeCar.year} ${activeCar.make} ${activeCar.model}${activeCar.trim?` ${activeCar.trim}`:""}${activeCar.engine?` with ${activeCar.engine}`:""}${activeCar.drivetrain?` (${activeCar.drivetrain})`:""}. Return ONLY a JSON array, no markdown: [{"name":"Engine Oil & Filter","mileInterval":5000,"monthInterval":6,"notes":"Use 5W-40 full synthetic"}]. Include all relevant items specific to this exact vehicle and drivetrain. Return ONLY the JSON array.`;
-      const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
-      const data=await res.json();
-      const raw=data.content.map(b=>b.text||"").join("");
-      const items=JSON.parse(raw.replace(/```json|```/g,"").trim());
-      syncCar({...activeCar,maintenance:items.map(item=>({...item,lastMiles:null,lastDate:null}))});
-    }catch(e){console.error(e);}finally{setMaintenanceLoading(false);}
+  const [wizardStep,setWizardStep]=useState(-1);
+  const [wizardMileage,setWizardMileage]=useState("");
+  const [wizardAnswers,setWizardAnswers]=useState({});
+
+  const startWizard=()=>{setWizardStep(0);setWizardMileage("");setWizardAnswers({});};
+
+  const wizardNext=(skip)=>{
+    const item=MAINTENANCE_ITEMS[wizardStep];
+    const miles=skip?null:roundToTen(parseInt(wizardMileage)||0);
+    setWizardAnswers(prev=>({...prev,[item.key]:miles}));
+    setWizardMileage("");
+    if(wizardStep<MAINTENANCE_ITEMS.length-1){
+      setWizardStep(wizardStep+1);
+    }else{
+      finishWizard({...wizardAnswers,[item.key]:miles});
+    }
+  };
+
+  const finishWizard=(answers)=>{
+    const maintenance=MAINTENANCE_ITEMS.map(item=>({
+      name:item.name,
+      mileInterval:item.mileInterval,
+      monthInterval:item.monthInterval,
+      notes:item.notes(activeCar),
+      lastMiles:answers[item.key]||null,
+      lastDate:answers[item.key]?new Date().toISOString():null,
+    }));
+    const enteredMiles=Object.values(answers).filter(v=>v!==null&&v!==undefined);
+    const highestEntered=enteredMiles.length>0?Math.max(...enteredMiles):0;
+    const newMileage=Math.max(activeCar.mileage||0,highestEntered);
+    syncCar({...activeCar,maintenance,mileage:newMileage});
+    setWizardStep(-1);
   };
 
   const markDone=(item)=>{setDoneItem(item);setDoneMileageInput(String(activeCar.mileage||0));};
@@ -891,19 +962,32 @@ export default function ModGuide(){
             {activeTab==="maintenance"&&(
               <div>
                 {!activeCar.maintenance||activeCar.maintenance.length===0?(
-                  <div style={{textAlign:"center",padding:"48px 24px"}}>
-                    <div style={{fontSize:"48px",marginBottom:"16px"}}>❗</div>
-                    <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"22px",color:"#E8E4DC",letterSpacing:"3px",marginBottom:"8px"}}>SET UP MAINTENANCE TRACKER</div>
-                    <div style={{color:"#555",fontSize:"14px",marginBottom:"32px",maxWidth:"360px",margin:"0 auto 32px"}}>We'll generate a schedule specific to your {activeCar.year} {activeCar.make} {activeCar.model} — correct intervals, correct fluids.</div>
-                    {maintenanceLoading?(
-                      <div>
-                        <div style={{height:"2px",background:"#1C1C1C",borderRadius:"2px",overflow:"hidden",marginBottom:"12px"}}><div style={{height:"100%",background:"#FF6B2B",animation:"loadBar 2s ease infinite",width:"40%"}}/></div>
-                        <div style={{color:"#444",fontSize:"13px",fontFamily:"'Bebas Neue', sans-serif",letterSpacing:"2px"}}>GENERATING YOUR MAINTENANCE SCHEDULE...</div>
+                  wizardStep>=0?(
+                    <div style={{padding:"24px 0"}}>
+                      <div style={{display:"flex",gap:"6px",marginBottom:"28px"}}>
+                        {MAINTENANCE_ITEMS.map((_,i)=>(
+                          <div key={i} style={{flex:1,height:"4px",borderRadius:"2px",background:i<=wizardStep?"#FF6B2B":"#2A2A2A"}}/>
+                        ))}
                       </div>
-                    ):(
-                      <button onClick={setupMaintenance} style={{background:"#FF6B2B",color:"#0D0D0D",border:"none",padding:"14px 32px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"16px",letterSpacing:"3px",cursor:"pointer",borderRadius:"4px"}}>GENERATE SCHEDULE</button>
-                    )}
-                  </div>
+                      <div style={{color:"#555",fontSize:"12px",fontFamily:"'Bebas Neue', sans-serif",letterSpacing:"2px",marginBottom:"8px"}}>STEP {wizardStep+1} OF {MAINTENANCE_ITEMS.length}</div>
+                      <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"28px",color:"#E8E4DC",marginBottom:"8px"}}>{MAINTENANCE_ITEMS[wizardStep].name}</div>
+                      <div style={{color:"#888",fontSize:"14px",marginBottom:"6px"}}>Recommended every {MAINTENANCE_ITEMS[wizardStep].mileInterval.toLocaleString()} miles</div>
+                      <div style={{color:"#666",fontSize:"13px",lineHeight:"1.6",marginBottom:"28px"}}>{MAINTENANCE_ITEMS[wizardStep].notes(activeCar)}</div>
+                      <span style={LS}>WHEN WAS THIS LAST DONE?</span>
+                      <input style={{...IS,marginBottom:"12px"}} type="number" value={wizardMileage} onChange={e=>setWizardMileage(e.target.value)} placeholder="Enter mileage" autoFocus/>
+                      <div style={{display:"flex",gap:"10px"}}>
+                        <button onClick={()=>wizardNext(false)} disabled={!wizardMileage} style={{...BP(!!wizardMileage),flex:2}}>{wizardStep<MAINTENANCE_ITEMS.length-1?"SAVE & NEXT":"SAVE & FINISH"}</button>
+                        <button onClick={()=>wizardNext(true)} style={{flex:1,background:"transparent",border:"1px solid #2A2A2A",color:"#666",fontFamily:"'Bebas Neue', sans-serif",fontSize:"13px",letterSpacing:"2px",borderRadius:"4px",cursor:"pointer"}}>NOT SURE</button>
+                      </div>
+                    </div>
+                  ):(
+                    <div style={{textAlign:"center",padding:"48px 24px"}}>
+                      <div style={{fontSize:"48px",marginBottom:"16px"}}>❗</div>
+                      <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"22px",color:"#E8E4DC",letterSpacing:"3px",marginBottom:"8px"}}>SET UP MAINTENANCE TRACKER</div>
+                      <div style={{color:"#555",fontSize:"14px",marginBottom:"32px",maxWidth:"360px",margin:"0 auto 32px"}}>A few quick questions about your {activeCar.year} {activeCar.make} {activeCar.model} — oil, tires, air filter, brakes.</div>
+                      <button onClick={startWizard} style={{background:"#FF6B2B",color:"#0D0D0D",border:"none",padding:"14px 32px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"16px",letterSpacing:"3px",cursor:"pointer",borderRadius:"4px"}}>START SETUP</button>
+                    </div>
+                  )
                 ):(
                   <div>
                     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"24px"}}>
@@ -931,7 +1015,7 @@ export default function ModGuide(){
                         </div>
                       );
                     })}
-                    <button onClick={()=>syncCar({...activeCar,maintenance:[]})} style={{background:"transparent",border:"1px solid #2A2A2A",color:"#444",padding:"10px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",borderRadius:"4px",width:"100%",marginTop:"16px"}}>RESET & REGENERATE SCHEDULE</button>
+                    <button onClick={()=>{syncCar({...activeCar,maintenance:[]});setWizardStep(-1);}} style={{background:"transparent",border:"1px solid #2A2A2A",color:"#444",padding:"10px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",borderRadius:"4px",width:"100%",marginTop:"16px"}}>RESET & REDO SETUP</button>
                   </div>
                 )}
               </div>
