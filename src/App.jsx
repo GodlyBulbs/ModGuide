@@ -909,6 +909,12 @@ Match the complexity of your answer to the actual job. A spark plug swap on a st
 
 For tools: only list what's actually needed for this specific job on this specific car — correct socket size (state it, e.g. 5/8" spark plug socket), an extension if the plugs are recessed, a torque wrench if torque matters, dielectric grease if relevant. Do not list unrelated shop tools just to seem thorough.
 
+Be honest about uncertainty instead of inventing specifics. If you're not fully certain of an exact bolt size, torque spec, or a fine detail of this engine bay's layout, say so plainly — e.g. "likely a 10mm, verify with a flashlight before you start" — the same way an experienced owner talks when they're going from memory. Do not state a specific number with confidence unless you're actually sure of it. It is better to flag "verify this" than to give a wrong exact figure.
+
+Flag real dependencies between mods. If this mod typically needs a supporting mod to run or perform correctly (for example: bigger injectors need a matching tune, a bigger turbo needs supporting fueling, coilovers need an alignment after), say so clearly in the gotchas or verdict — don't let the guide imply this is a simple bolt-on if it isn't.
+
+Stay grounded to what's actually being asked. Don't describe removing components that aren't realistically in the way for this specific job on this specific car — if you're not sure something is in the way, say "you may need to move X depending on your exact routing" rather than stating it as a certainty.
+
 Return ONLY this JSON, no markdown: {"overview":"2-3 sentence honest summary of what this job actually involves and how hard it really is.","tools":"Exact tools needed for this specific job, one per line with a dash. No filler.","location":"Where on this specific car, and what (if anything) needs to move to reach it.","install":"Numbered steps with real details, each starting with 'Step N:'. Keep steps as simple as the job actually is.","gotchas":"What nobody tells you — most important section.","diagnostic":"What to check if something seems off after install.","verdict":"Honest take. Worth it?"}`;
     try{
       const res=await fetch("/api/generate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({prompt})});
