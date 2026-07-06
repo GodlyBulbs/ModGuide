@@ -519,6 +519,24 @@ const CATALOG = {
   },
 };
 
+// Hand-verified guides — used instead of AI generation when available, since these are
+// confirmed accurate by an actual owner. AI only fills in gaps we haven't verified yet.
+const STATIC_GUIDES = {
+  "Fiat": {
+    "500 Abarth": {
+      "Spark Plugs": {
+        overview:"Quick job on the Abarth with the stock airbox on — about 10-15 minutes, not a big teardown. No intake piping needs to come off for this, just the airbox itself.",
+        tools:"- 10mm socket (for coil bolts)\n- 5/8\" spark plug socket\n- Extension for the spark plug socket\n- Dielectric grease (optional, on the coil boots)\n- Torque wrench (optional, if you want to hit exact spec)",
+        location:"The 4 ignition coils sit right on top of the engine, each one directly over its spark plug. The stock airbox sits on top and needs to come off first to get access.",
+        install:"Step 1: Disconnect the stock airbox from both sides (the intake hose connections) and lift it up and out of the way. No tools needed, it just pulls off.\nStep 2: Remove the 10mm bolt holding each of the 4 ignition coils in place.\nStep 3: Pull the coils straight up and set them aside — you can do all 4 at once or one cylinder at a time.\nStep 4: Use the 5/8\" spark plug socket with an extension to reach down and remove each spark plug.\nStep 5: Install the new spark plugs (or reinstall the good ones if you were just diagnosing a specific cylinder). Tighten by hand until snug, then a bit more with the socket — don't overtighten.\nStep 6: Reinstall the coils — the closest coil goes to the closest plug hole. Secure each with its 10mm bolt.\nStep 7: Reinstall the stock airbox and reconnect both hose ends.\nStep 8: Done. With the stock airbox, this whole job is realistically 10-15 minutes.",
+        gotchas:"If you've got an aftermarket intake instead of the stock airbox (EC V4.1, Neuspeed P-Flo, etc.), your access path looks a bit different — pull that intake per its own removal steps, but you still don't need to touch any intercooler piping or intake tubing to reach the plugs, that's not in the way. Don't force the coil boot connectors, they get brittle over time. Don't overtighten the new plugs — you can crack the ceramic or strip the threads in the head.",
+        diagnostic:"If one cylinder was misfiring, that's the plug (and possibly coil) to swap first. Double check the gap spec on new plugs before installing if they're not pre-gapped for your setup.",
+        verdict:"Simple maintenance job. Don't let anyone convince you it needs a bigger teardown than this — with the stock airbox it's a 10-15 minute job.",
+      },
+    },
+  },
+};
+
 const BRAND_COLORS = {
   "EuroCompulsion":"#E8401C","Forge Motorsports":"#4A8FE8","Ragazzon":"#2E8B57",
   "Magnaflow":"#9B59B6","Neuspeed":"#E8B01C","Bosch":"#E81C4A",
@@ -866,6 +884,15 @@ export default function ModGuide(){
   const generate=async()=>{
     if(!activeCar||!selectedMod)return;
     setLoading(true);setSections(null);setGenError("");
+
+    const staticGuide=STATIC_GUIDES[activeCar.make]?.[activeCar.model]?.[selectedMod];
+    if(staticGuide){
+      setSections(staticGuide);
+      setView("guide");
+      setLoading(false);
+      return;
+    }
+
     const buildContext=activeCar.build&&activeCar.build.length>0?`Car already has these parts installed: ${activeCar.build.map(b=>`${b.brand} ${b.part}`).join(", ")}. In the install steps, explicitly call out when a step can be skipped or is easier because one of these parts is already in place.`:"";
     const prompt=`You are a real-world mechanic who has personally done this exact job on this exact car — not a generic repair manual. User has a ${activeCar.year} ${activeCar.make} ${activeCar.model}${activeCar.trim?` ${activeCar.trim}`:""}${activeCar.engine?` with ${activeCar.engine}`:""}${activeCar.drivetrain?` (${activeCar.drivetrain})`:""}. Guide for: ${selectedMod}. ${buildContext}
 
