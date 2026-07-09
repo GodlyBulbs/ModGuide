@@ -35,19 +35,94 @@ const VEHICLES = {
       ],
     },
     "M3": {
-      years:["2015","2016","2017","2018","2019","2021","2022","2023"],
-      trims:{
-        "Sedan":       { engine:"3.0L Twin-Turbo 6-cylinder (473hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (DCT)"] },
-        "Competition": { engine:"3.0L Twin-Turbo 6-cylinder (503hp)", drivetrain:"RWD", transmission:"Automatic (DCT)" },
-        "CS":          { engine:"3.0L Twin-Turbo 6-cylinder (543hp)", drivetrain:"RWD", transmission:"Automatic (DCT)" },
+      generations:{
+        "E30 (1988-1991)":{
+          years:["1988","1989","1990","1991"],
+          trims:{
+            "Coupe": { engine:"2.3L 4-cylinder (192hp)", drivetrain:"RWD", transmission:"Manual", note:"US-spec was detuned vs the European version. Coupe only in the US — no sedan or convertible M3 offered here this generation." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Diamond Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Brilliant Red (Red)",hex:"#C8102E"},
+            {name:"Macao Blue Metallic (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "E36 (1995-1999)":{
+          years:["1995","1996","1997","1998","1999"],
+          trims:{
+            "Coupe":      { engine:"3.0L/3.2L 6-cylinder (240hp)", drivetrain:"RWD", transmission:"Manual", note:"US models were detuned compared to Euro-spec, which made up to 321hp on the 3.2L. US always stayed at 240hp." },
+            "Sedan":      { engine:"3.0L/3.2L 6-cylinder (240hp)", drivetrain:"RWD", transmission:"Manual" },
+            "Convertible":{ engine:"3.0L/3.2L 6-cylinder (240hp)", drivetrain:"RWD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Cosmos Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Estoril Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Boston Green Metallic (Green)",hex:"#2E5A3A"},
+            {name:"Arctic Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "E46 (2001-2006)":{
+          years:["2001","2002","2003","2004","2005","2006"],
+          trims:{
+            "Coupe":       { engine:"3.2L 6-cylinder (333hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (SMG)"] },
+            "Convertible": { engine:"3.2L 6-cylinder (333hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (SMG)"] },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Laguna Seca Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Imola Red (Red)",hex:"#C8102E"},
+            {name:"Titanium Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "E90/E92/E93 (2008-2013)":{
+          years:["2008","2009","2010","2011","2012","2013"],
+          trims:{
+            "Sedan (E90)":       { engine:"4.0L V8 (414hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (DCT)"] },
+            "Coupe (E92)":       { engine:"4.0L V8 (414hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (DCT)"] },
+            "Convertible (E93)":{ engine:"4.0L V8 (414hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (DCT)"], note:"The only M3 generation ever built with a V8 — every other generation uses an inline-6." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Jet Black (Black)",hex:"#1A1A1A"},
+            {name:"Interlagos Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Melbourne Red Metallic (Red)",hex:"#C8102E"},
+            {name:"Space Gray Metallic (Gray)",hex:"#5A5F63"},
+          ],
+        },
+        "F80 (2014-2018)":{
+          years:["2014","2015","2016","2017","2018"],
+          trims:{
+            "Sedan":                 { engine:"3.0L Twin-Turbo 6-cylinder (425hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (DCT)"], note:"First turbocharged M3 in the nameplate's history." },
+            "Competition Package":   { engine:"3.0L Twin-Turbo 6-cylinder (444hp)", drivetrain:"RWD", transmissions:["Manual","Automatic (DCT)"] },
+            "CS":                    { engine:"3.0L Twin-Turbo 6-cylinder (453hp)", drivetrain:"RWD", transmission:"Automatic (DCT)", note:"2018 limited-production special edition." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Yas Marina Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Austin Yellow Metallic (Yellow)",hex:"#F5C800"},
+            {name:"Mineral Grey Metallic (Gray)",hex:"#8A8D8F"},
+          ],
+        },
+        "G80 (2021-2026)":{
+          years:["2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "Sedan":       { engine:"3.0L Twin-Turbo 6-cylinder (473hp)", drivetrain:"RWD", transmission:"Manual" },
+            "Competition": { engine:"3.0L Twin-Turbo 6-cylinder (503hp)", drivetrains:["RWD","AWD"], transmission:"Automatic (DCT)", note:"AWD (M xDrive) became available starting the 2022 model year — the first time an M3 has offered anything other than RWD." },
+            "CS":          { engine:"3.0L Twin-Turbo 6-cylinder (543hp)", drivetrain:"RWD", transmission:"Automatic (DCT)" },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Portimao Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Isle of Man Green Metallic (Green)",hex:"#2E5A3A"},
+            {name:"Sao Paulo Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
       },
-      colors:[
-        {name:"Alpine White (White)",hex:"#F5F5F5"},
-        {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
-        {name:"Portimao Blue Metallic (Blue)",hex:"#1E4B8E"},
-        {name:"Isle of Man Green Metallic (Green)",hex:"#2E5A3A"},
-        {name:"Sao Paulo Yellow (Yellow)",hex:"#F5C800"},
-      ],
     },
   },
   "Dodge": {
