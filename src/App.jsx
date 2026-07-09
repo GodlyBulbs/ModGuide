@@ -62,18 +62,23 @@ const VEHICLES = {
     "Mazda3": {
       years:["2004","2019","2020","2021","2022","2023"],
       trims:{
-        "i Sedan":            { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "i Hatchback":        { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "s Sedan":            { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "s Hatchback":        { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "Sport Sedan":        { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Sport Hatchback":    { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Select Sedan":       { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Select Hatchback":   { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Preferred Sedan":    { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Preferred Hatchback":{ engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "Premium Sedan":      { engine:"2.5L Turbo 4-cylinder (227hp)", drivetrain:"AWD", transmission:"Automatic" },
-        "Premium Hatchback":  { engine:"2.5L Turbo 4-cylinder (227hp)", drivetrain:"AWD", transmission:"Automatic" },
+        "i Sedan":                      { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "s Sedan":                      { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "2.0 Sedan":                    { engine:"2.0L 4-cylinder (155hp)", drivetrain:"FWD", transmission:"Automatic" },
+        "2.5 S Sedan":                  { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
+        "Select Sedan":                 { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+        "Preferred Sedan":              { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+        "Premium Sedan":                { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+        "2.5 Turbo Sedan":              { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+        "2.5 Turbo Premium Plus Sedan": { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+        "i Hatchback":                      { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "s Hatchback":                      { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "2.5 S Hatchback":                  { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
+        "Select Hatchback":                 { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+        "Preferred Hatchback":              { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+        "Premium Hatchback":                { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"] },
+        "2.5 Turbo Hatchback":              { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+        "2.5 Turbo Premium Plus Hatchback": { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
       },
       colors:[
         {name:"Black Mica (Black)",hex:"#1A1A1A"},
@@ -703,7 +708,9 @@ function AddCarForm({onSave,onCancel}){
   const engineOptions=fTrim&&vData?vData.trims[fTrim]?.engines||[]:[];
   const needsEnginePicker=engineOptions.length>0;
   const autoDrivetrain=fTrim&&vData?vData.trims[fTrim]?.drivetrain:"";
-  const drivetrainOptions=vData?.drivetrainOptions||[];
+  const trimDrivetrainOptions=fTrim&&vData?vData.trims[fTrim]?.drivetrains||[]:[];
+  const modelDrivetrainOptions=vData?.drivetrainOptions||[];
+  const drivetrainOptions=trimDrivetrainOptions.length>0?trimDrivetrainOptions:modelDrivetrainOptions;
   const needsDrivetrainPicker=drivetrainOptions.length>0;
   const autoTransmission=fTrim&&vData?vData.trims[fTrim]?.transmission:"";
   const transmissionOptions=fTrim&&vData?vData.trims[fTrim]?.transmissions||[]:[];
