@@ -2,6 +2,65 @@ import { useState, useEffect } from "react";
 import { supabase } from "./supabase";
 
 const VEHICLES = {
+  "Abarth": {
+    "500 Abarth": {
+      generations:{
+        "Pre-Facelift (2012-2015)":{
+          years:["2012","2013","2014","2015"],
+          trims:{
+            "Base":         { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Competizione": { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Turismo":      { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Argento (Silver)",hex:"#C0C0C0"},
+            {name:"Azzurro (Blue)",hex:"#1E4B8E"},
+            {name:"Bianco / Bianco Gelato (White)",hex:"#F5F5F5"},
+            {name:"Espresso (Dark Brown)",hex:"#3B2314"},
+            {name:"Giallo / Giallo Sole (Yellow)",hex:"#F5C800"},
+            {name:"Granito Lucente (Granite Crystal)",hex:"#6B6B6B"},
+            {name:"Nero / Nero Puro (Straight Black)",hex:"#111111"},
+            {name:"Rosso / Rosso Brillante (Red)",hex:"#C8102E"},
+            {name:"Grigio Campovolo (Grey) — Abarth Exclusive",hex:"#8A8D8F"},
+            {name:"Grigio Nuvolari (Metallic Grey) — Abarth Exclusive",hex:"#5A5F63"},
+          ],
+        },
+        "Facelift (2016-2019)":{
+          years:["2016","2017","2018","2019"],
+          trims:{
+            "Base":         { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Competizione": { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Turismo":      { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Argento (Silver)",hex:"#C0C0C0"},
+            {name:"Azzurro (Blue)",hex:"#1E4B8E"},
+            {name:"Bianco / Bianco Gelato (White)",hex:"#F5F5F5"},
+            {name:"Espresso (Dark Brown)",hex:"#3B2314"},
+            {name:"Giallo / Giallo Sole (Yellow)",hex:"#F5C800"},
+            {name:"Granito Lucente (Granite Crystal)",hex:"#6B6B6B"},
+            {name:"Nero / Nero Puro (Straight Black)",hex:"#111111"},
+            {name:"Rosso / Rosso Brillante (Red)",hex:"#C8102E"},
+            {name:"Grigio Campovolo (Grey) — Abarth Exclusive",hex:"#8A8D8F"},
+            {name:"Grigio Nuvolari (Metallic Grey) — Abarth Exclusive",hex:"#5A5F63"},
+          ],
+        },
+      },
+    },
+    "124 Spider Abarth": {
+      years:["2017","2018","2019","2020"],
+      trims:{
+        "Abarth": { engine:"1.4L Turbocharged 4-cylinder (164hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+      },
+      colors:[
+        {name:"Rosso / Hypnotique Red (Red)",hex:"#C8102E"},
+        {name:"Nero Cinema / Forte Black Metallic (Black)",hex:"#111111"},
+        {name:"Bianco Gelato / Brillante White (White)",hex:"#F5F5F5"},
+        {name:"Grigio Argento / Chiaro Silver Metallic (Silver)",hex:"#C0C0C0"},
+        {name:"Blu Scuro / Mare Blue Metallic (Dark Blue)",hex:"#1E3A6B"},
+      ],
+    },
+  },
   "Acura": {
     "TLX": {
       generations:{
@@ -231,7 +290,6 @@ const VEHICLES = {
       trims:{
         "Classica": { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
         "Lusso":    { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
-        "Abarth":   { engine:"1.4L Turbocharged 4-cylinder (164hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
       },
       colors:[
         {name:"Rosso / Hypnotique Red (Red)",hex:"#C8102E"},
@@ -245,49 +303,84 @@ const VEHICLES = {
         {name:"Ceramica Gray Metallic (Gray) — 2019+",hex:"#9A9A8A"},
       ],
     },
-    "500 Abarth": {
+    "500": {
       generations:{
-        "Pre-Facelift (2012-2015)":{
-          years:["2012","2013","2014","2015"],
+        "Pre-Facelift (2012-2016)":{
+          years:["2012","2013","2014","2015","2016"],
           trims:{
-            "Base":         { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-            "Competizione": { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-            "Turismo":      { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Pop":   { engine:"1.4L 4-cylinder (101hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Sport": { engine:"1.4L 4-cylinder (101hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Lounge":{ engine:"1.4L 4-cylinder (101hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Turbo": { engine:"1.4L Turbocharged 4-cylinder (135hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
           },
           colors:[
-            {name:"Argento (Silver)",hex:"#C0C0C0"},
+            {name:"Bianco (White)",hex:"#F5F5F5"},
+            {name:"Nero (Black)",hex:"#111111"},
+            {name:"Rosso (Red)",hex:"#C8102E"},
+            {name:"Verde Chiaro (Light Green)",hex:"#7EC850"},
             {name:"Azzurro (Blue)",hex:"#1E4B8E"},
-            {name:"Bianco / Bianco Gelato (White)",hex:"#F5F5F5"},
-            {name:"Espresso (Dark Brown)",hex:"#3B2314"},
-            {name:"Giallo / Giallo Sole (Yellow)",hex:"#F5C800"},
-            {name:"Granito Lucente (Granite Crystal)",hex:"#6B6B6B"},
-            {name:"Nero / Nero Puro (Straight Black)",hex:"#111111"},
-            {name:"Rosso / Rosso Brillante (Red)",hex:"#C8102E"},
-            {name:"Grigio Campovolo (Grey) — Abarth Exclusive",hex:"#8A8D8F"},
-            {name:"Grigio Nuvolari (Metallic Grey) — Abarth Exclusive",hex:"#5A5F63"},
           ],
         },
-        "Facelift (2016-2019)":{
-          years:["2016","2017","2018","2019"],
+        "Facelift (2017-2019)":{
+          years:["2017","2018","2019"],
           trims:{
-            "Base":         { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-            "Competizione": { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-            "Turismo":      { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Pop":    { engine:"1.4L 4-cylinder (101hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Lounge": { engine:"1.4L 4-cylinder (101hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"For 2018+ this got upgraded to the turbo 1.4L MultiAir as standard — the last two years dropped the naturally-aspirated engine entirely on this trim." },
           },
           colors:[
-            {name:"Argento (Silver)",hex:"#C0C0C0"},
-            {name:"Azzurro (Blue)",hex:"#1E4B8E"},
-            {name:"Bianco / Bianco Gelato (White)",hex:"#F5F5F5"},
-            {name:"Espresso (Dark Brown)",hex:"#3B2314"},
-            {name:"Giallo / Giallo Sole (Yellow)",hex:"#F5C800"},
-            {name:"Granito Lucente (Granite Crystal)",hex:"#6B6B6B"},
-            {name:"Nero / Nero Puro (Straight Black)",hex:"#111111"},
-            {name:"Rosso / Rosso Brillante (Red)",hex:"#C8102E"},
-            {name:"Grigio Campovolo (Grey) — Abarth Exclusive",hex:"#8A8D8F"},
-            {name:"Grigio Nuvolari (Metallic Grey) — Abarth Exclusive",hex:"#5A5F63"},
+            {name:"Bianco (White)",hex:"#F5F5F5"},
+            {name:"Nero (Black)",hex:"#111111"},
+            {name:"Rosso (Red)",hex:"#C8102E"},
+            {name:"Grigio (Grey)",hex:"#8A8D8F"},
           ],
         },
       },
+    },
+    "500e": {
+      generations:{
+        "First Generation (2013-2019)":{
+          years:["2013","2014","2015","2016","2017","2018","2019"],
+          trims:{
+            "Base": { engine:"Electric Motor (111hp)", drivetrain:"FWD", transmission:"Automatic (Single-Speed)", note:"Sold only in California (and later Oregon) — a compliance car, never available nationwide. About 87 miles of EPA-rated range." },
+          },
+          colors:[
+            {name:"Bianco (White)",hex:"#F5F5F5"},
+            {name:"Nero (Black)",hex:"#111111"},
+            {name:"Azzurro (Blue)",hex:"#1E4B8E"},
+            {name:"Verde Chiaro (Light Green)",hex:"#7EC850"},
+          ],
+        },
+        "Second Generation (2024-2026)":{
+          years:["2024","2025","2026"],
+          trims:{
+            "Base":     { engine:"Electric Motor (117hp)", drivetrain:"FWD", transmission:"Automatic (Single-Speed)", note:"Returned to the US in 2024 after a 5-year absence, this time available nationwide instead of California-only." },
+            "(RED)":    { engine:"Electric Motor (117hp)", drivetrain:"FWD", transmission:"Automatic (Single-Speed)" },
+            "La Prima": { engine:"Electric Motor (117hp)", drivetrain:"FWD", transmission:"Automatic (Single-Speed)" },
+          },
+          colors:[
+            {name:"Celestial Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Mineral Grey (Gray)",hex:"#6B6E6F"},
+            {name:"Ocean Green (Green)",hex:"#3B8A5A"},
+            {name:"Rosso (Red)",hex:"#C8102E"},
+          ],
+        },
+      },
+    },
+    "500L": {
+      years:["2014","2015","2016","2017","2018","2019","2020"],
+      trims:{
+        "Pop":      { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "Easy":     { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "Trekking": { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "Lounge":   { engine:"1.4L Turbocharged 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+      },
+      colors:[
+        {name:"Bianco (White)",hex:"#F5F5F5"},
+        {name:"Nero (Black)",hex:"#111111"},
+        {name:"Rosso (Red)",hex:"#C8102E"},
+        {name:"Verde Chiaro (Light Green)",hex:"#7EC850"},
+        {name:"Bronzo (Bronze)",hex:"#B87333"},
+      ],
     },
     "500X": {
       years:["2016","2017","2018","2019","2020","2021","2022"],
@@ -583,7 +676,10 @@ const VEHICLES = {
         "5th Gen EG — Si Hatchback (1992-1995)":{
           years:["1992","1993","1994","1995"],
           trims:{
-            "Si": { engine:"1.6L SOHC VTEC 4-cylinder (125hp)", drivetrain:"FWD", transmission:"Manual", note:"Hatchback only — this is the classic 90s EG hatch." },
+            "CX":  { engine:"1.5L 4-cylinder (70hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Base hatchback trim, no VTEC." },
+            "DX":  { engine:"1.5L 4-cylinder (102hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "EX":  { engine:"1.6L SOHC VTEC 4-cylinder (125hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Si":  { engine:"1.6L SOHC VTEC 4-cylinder (125hp)", drivetrain:"FWD", transmission:"Manual", note:"Hatchback only — this is the classic 90s EG hatch." },
           },
           colors:[
             {name:"Frost White (White)",hex:"#F5F5F5"},
@@ -592,10 +688,13 @@ const VEHICLES = {
             {name:"Cyber Green Pearl (Green)",hex:"#3B8A5A"},
           ],
         },
-        "6th Gen EK/EM1 — Si Coupe (1999-2000)":{
-          years:["1999","2000"],
+        "6th Gen EK/EM1 — Si Coupe (1996-2000)":{
+          years:["1996","1997","1998","1999","2000"],
           trims:{
-            "Si": { engine:"1.6L DOHC VTEC 4-cylinder (160hp)", drivetrain:"FWD", transmission:"Manual", note:"The US didn't get a Si for the 1996-98 model years — it returned for '99-'00 only, as a 2-door coupe (EM1), not a hatchback." },
+            "CX":  { engine:"1.6L 4-cylinder (106hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "DX":  { engine:"1.6L 4-cylinder (106hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "EX":  { engine:"1.6L SOHC VTEC 4-cylinder (127hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Si":  { engine:"1.6L DOHC VTEC 4-cylinder (160hp)", drivetrain:"FWD", transmission:"Manual", note:"The US didn't get a Si for the 1996-98 model years — it returned for '99-'00 only, as a 2-door coupe (EM1), not a hatchback." },
           },
           colors:[
             {name:"Electron Blue Pearl (Blue)",hex:"#1E4B8E"},
@@ -604,10 +703,13 @@ const VEHICLES = {
             {name:"Milano Red (Red)",hex:"#C8102E"},
           ],
         },
-        "7th Gen EP3 — Si Hatchback (2002-2005)":{
-          years:["2002","2003","2004","2005"],
+        "7th Gen EP3 — Si Hatchback (2001-2005)":{
+          years:["2001","2002","2003","2004","2005"],
           trims:{
-            "Si": { engine:"2.0L 4-cylinder (160hp)", drivetrain:"FWD", transmission:"Manual", note:"Hatchback returns. This shares its EP3 platform with the Euro/JDM Civic Type R of the same generation, though the US never got that Type R." },
+            "DX":  { engine:"1.7L 4-cylinder (115hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "LX":  { engine:"1.7L 4-cylinder (115hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "EX":  { engine:"1.7L VTEC 4-cylinder (127hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Si":  { engine:"2.0L 4-cylinder (160hp)", drivetrain:"FWD", transmission:"Manual", note:"Hatchback returns. This shares its EP3 platform with the Euro/JDM Civic Type R of the same generation, though the US never got that Type R." },
           },
           colors:[
             {name:"Nighthawk Black Pearl (Black)",hex:"#1A1A1A"},
@@ -619,6 +721,9 @@ const VEHICLES = {
         "8th Gen FG/FA — Si Coupe/Sedan (2006-2011)":{
           years:["2006","2007","2008","2009","2010","2011"],
           trims:{
+            "DX":       { engine:"1.8L 4-cylinder (140hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "LX":       { engine:"1.8L 4-cylinder (140hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "EX":       { engine:"1.8L 4-cylinder (140hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
             "Si Coupe": { engine:"2.0L 4-cylinder (197hp)", drivetrain:"FWD", transmission:"Manual" },
             "Si Sedan": { engine:"2.0L 4-cylinder (197hp)", drivetrain:"FWD", transmission:"Manual" },
           },
@@ -632,6 +737,9 @@ const VEHICLES = {
         "9th Gen FB/FG — Si Coupe/Sedan (2012-2015)":{
           years:["2012","2013","2014","2015"],
           trims:{
+            "LX":       { engine:"1.8L 4-cylinder (140hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "EX":       { engine:"1.8L 4-cylinder (140hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "EX-L":     { engine:"1.8L 4-cylinder (140hp)", drivetrain:"FWD", transmission:"Automatic" },
             "Si Coupe": { engine:"2.4L 4-cylinder (201hp)", drivetrain:"FWD", transmission:"Manual" },
             "Si Sedan": { engine:"2.4L 4-cylinder (201hp)", drivetrain:"FWD", transmission:"Manual" },
           },
@@ -645,6 +753,10 @@ const VEHICLES = {
         "10th Gen FC/FK — Si & Type R (2017-2021)":{
           years:["2017","2018","2019","2020","2021"],
           trims:{
+            "LX":             { engine:"2.0L 4-cylinder (158hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "EX":             { engine:"1.5L Turbocharged 4-cylinder (174hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "EX-L":           { engine:"1.5L Turbocharged 4-cylinder (174hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "Touring":        { engine:"1.5L Turbocharged 4-cylinder (174hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
             "Si Sedan":       { engine:"1.5L Turbocharged 4-cylinder (205hp)", drivetrain:"FWD", transmission:"Manual" },
             "Si Coupe":       { engine:"1.5L Turbocharged 4-cylinder (205hp)", drivetrain:"FWD", transmission:"Manual" },
             "Type R":         { engine:"2.0L Turbocharged 4-cylinder (306hp)", drivetrain:"FWD", transmission:"Manual", note:"The first Civic Type R ever officially sold in the US — every prior Type R generation was JDM or Euro-only." },
@@ -663,6 +775,10 @@ const VEHICLES = {
         "11th Gen FE/FL — Si & Type R (2022-2026)":{
           years:["2022","2023","2024","2025","2026"],
           trims:{
+            "LX":     { engine:"2.0L 4-cylinder (158hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "Sport":  { engine:"2.0L 4-cylinder (158hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (CVT)"] },
+            "EX-L":   { engine:"1.5L Turbocharged 4-cylinder (180hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "Touring":{ engine:"1.5L Turbocharged 4-cylinder (180hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
             "Si":     { engine:"1.5L Turbocharged 4-cylinder (200hp)", drivetrain:"FWD", transmission:"Manual", note:"Sedan only this generation — the Si coupe was discontinued." },
             "Type R": { engine:"2.0L Turbocharged 4-cylinder (315hp)", drivetrain:"FWD", transmission:"Manual" },
           },
