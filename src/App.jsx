@@ -260,28 +260,89 @@ const VEHICLES = {
       ],
     },
     "Ram 2500": {
-      years:["2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013"],
-      trims:{
-        "ST":      { engines:["5.7L HEMI V8 (345hp)","5.9L Cummins Diesel (325hp)","8.0L V10 (305hp)"], transmissions:["Manual","Automatic"] },
-        "SLT":     { engines:["5.7L HEMI V8 (345hp)","5.9L Cummins Diesel (325hp)","8.0L V10 (305hp)"], transmissions:["Manual","Automatic"] },
-        "Laramie": { engines:["5.7L HEMI V8 (345hp)","5.9L Cummins Diesel (325hp)"], transmission:"Automatic" },
+      generations:{
+        "1st Gen (1990-1993)":{
+          years:["1990","1991","1992","1993"],
+          trims:{
+            "Base": { engines:["5.2L V8 (170hp)","5.9L V8 (230hp)","5.9L Cummins 12-Valve Diesel (160-180hp)"], transmissions:["Manual","Automatic"] },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Flame Red (Red)",hex:"#C8102E"},
+            {name:"Black (Black)",hex:"#111111"},
+            {name:"Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "2nd Gen (1994-2002)":{
+          years:["1994","1995","1996","1997","1998","1999","2000","2001","2002"],
+          trims:{
+            "Base": { engines:["3.9L V6 (175hp)","5.2L V8 (220hp)","5.9L V8 (230hp)","8.0L V10 (300hp)","5.9L Cummins Diesel (160-245hp)"], transmissions:["Manual","Automatic"], note:"The 'big-rig' redesign — famous for its 12-valve Cummins through 1998, then 24-valve from 1998.5 on." },
+            "SLT":  { engines:["5.9L V8 (230hp)","8.0L V10 (300hp)","5.9L Cummins Diesel (160-245hp)"], transmissions:["Manual","Automatic"] },
+            "Laramie": { engines:["5.9L V8 (230hp)","8.0L V10 (300hp)","5.9L Cummins Diesel (215-245hp)"], transmission:"Automatic" },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Flame Red (Red)",hex:"#C8102E"},
+            {name:"Black (Black)",hex:"#111111"},
+            {name:"Deep Amethyst Pearl (Purple)",hex:"#4A2E5A"},
+            {name:"Forest Green Pearl (Green)",hex:"#2E5A3A"},
+            {name:"Bright Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "3rd Gen (2003-2009)":{
+          years:["2003","2004","2005","2006","2007","2008","2009"],
+          trims:{
+            "ST":      { engines:["5.7L HEMI V8 (345hp)","5.9L Cummins Diesel (305-325hp)","6.7L Cummins Diesel (350hp)"], transmissions:["Manual","Automatic"], note:"The new 5.7L HEMI replaces the old Magnum V8s this generation. 6.7L Cummins arrives mid-2007 (2007.5), replacing the 5.9L." },
+            "SLT":     { engines:["5.7L HEMI V8 (345hp)","5.9L Cummins Diesel (305-325hp)","6.7L Cummins Diesel (350hp)"], transmissions:["Manual","Automatic"] },
+            "Laramie": { engines:["5.7L HEMI V8 (345hp)","6.7L Cummins Diesel (350hp)"], transmission:"Automatic", note:"Mega Cab introduced this generation — the longest cab Ram ever offered." },
+          },
+          drivetrainOptions:["2WD","4WD (Part-Time)","4WD (Full-Time)"],
+          colors:[
+            {name:"Brilliant Black Crystal Pearl (Black)",hex:"#111111"},
+            {name:"Bright Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Bright White / White Knuckle (White)",hex:"#F5F5F5"},
+            {name:"Flame Red / Poppy Red (Red)",hex:"#C8102E"},
+            {name:"Patriot Blue Pearl (Blue)",hex:"#1E4B8E"},
+            {name:"Mineral Gray Metallic (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "4th Gen (2010-2018)":{
+          years:["2010","2011","2012","2013","2014","2015","2016","2017","2018"],
+          trims:{
+            "Tradesman": { engines:["5.7L HEMI V8 (383hp)","6.7L Cummins Diesel (350-370hp)"], transmission:"Automatic", note:"Ram split from Dodge as its own brand starting this generation — no more 'Dodge Ram' badging." },
+            "SLT":       { engines:["5.7L HEMI V8 (383hp)","6.7L Cummins Diesel (350-370hp)"], transmission:"Automatic" },
+            "Laramie":   { engines:["5.7L HEMI V8 (383hp)","6.4L HEMI V8 (410hp)","6.7L Cummins Diesel (350-370hp)"], transmission:"Automatic" },
+          },
+          drivetrainOptions:["2WD","4WD (Part-Time)","4WD (Full-Time)"],
+          colors:[
+            {name:"Brilliant Black Crystal Pearl (Black)",hex:"#111111"},
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Flame Red (Red)",hex:"#C8102E"},
+            {name:"Granite Crystal Metallic (Gray)",hex:"#6B6B6B"},
+            {name:"True Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "5th Gen (2019-2026)":{
+          years:["2019","2020","2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "Tradesman": { engines:["6.4L HEMI V8 (410hp)","6.7L Cummins Diesel (370-420hp)"], transmission:"Automatic" },
+            "Big Horn":  { engines:["6.4L HEMI V8 (410hp)","6.7L Cummins Diesel (370-420hp)"], transmission:"Automatic" },
+            "Laramie":   { engines:["6.4L HEMI V8 (410hp)","6.7L Cummins Diesel (370-420hp)"], transmission:"Automatic" },
+            "Limited":   { engines:["6.4L HEMI V8 (410hp)","6.7L Cummins Diesel (370-420hp)"], transmission:"Automatic" },
+          },
+          drivetrainOptions:["2WD","4WD (Part-Time)","4WD (Full-Time)"],
+          colors:[
+            {name:"Diamond Black Crystal Pearl (Black)",hex:"#111111"},
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Flame Red (Red)",hex:"#C8102E"},
+            {name:"Billet Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Patriot Blue Pearl (Blue)",hex:"#1E4B8E"},
+            {name:"Hydro Blue Pearl (Blue)",hex:"#4A7B9D"},
+          ],
+        },
       },
-      drivetrainOptions:["2WD","4WD (Part-Time)","4WD (Full-Time)"],
-      colors:[
-        {name:"Brilliant Black Crystal Pearl (Black)",hex:"#111111"},
-        {name:"Bright Silver Metallic (Silver)",hex:"#C0C0C0"},
-        {name:"Bright White / White Knuckle (White)",hex:"#F5F5F5"},
-        {name:"Flame Red / Poppy Red (Red)",hex:"#C8102E"},
-        {name:"Midnight Blue Pearl (Blue)",hex:"#1E3A6B"},
-        {name:"Inferno Red Crystal Pearl (Red)",hex:"#9B1B1B"},
-        {name:"Patriot Blue Pearl (Blue)",hex:"#1E4B8E"},
-        {name:"Mineral Gray Metallic (Gray)",hex:"#6B6E6F"},
-        {name:"Dark Khaki Metallic (Khaki)",hex:"#7A7050"},
-        {name:"Deep Molten Red Pearl (Dark Red)",hex:"#6B1A1A"},
-        {name:"Light Almond Pearl Metallic (Beige)",hex:"#C8B89A"},
-        {name:"Solar Yellow (Yellow)",hex:"#F5C800"},
-        {name:"Electric Blue Pearl Metallic (Blue)",hex:"#1C6BE8"},
-      ],
     },
   },
   "Fiat": {
@@ -542,6 +603,87 @@ const VEHICLES = {
         },
       },
     },
+    "Ranger": {
+      generations:{
+        "1st Gen (1990-1992)":{
+          years:["1990","1991","1992"],
+          trims:{
+            "XL":  { engines:["2.3L 4-cylinder (100hp)","2.9L V6 (140hp)","4.0L V6 (160hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "XLT": { engines:["2.3L 4-cylinder (100hp)","2.9L V6 (140hp)","4.0L V6 (160hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "STX": { engines:["2.9L V6 (140hp)","4.0L V6 (160hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Colonial White (White)",hex:"#F5F5F5"},
+            {name:"Bright Red (Red)",hex:"#C8102E"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Deep Wedgewood Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "2nd Gen (1993-1997)":{
+          years:["1993","1994","1995","1996","1997"],
+          trims:{
+            "XL":     { engine:"2.3L 4-cylinder (112hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "XLT":    { engines:["3.0L V6 (145hp)","4.0L V6 (160hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Splash": { engines:["3.0L V6 (145hp)","4.0L V6 (160hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Lowered sport trim with a Flareside bed and monochromatic exterior." },
+            "STX":    { engine:"4.0L V6 (160hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Oxford White (White)",hex:"#F5F5F5"},
+            {name:"Bright Red (Red)",hex:"#C8102E"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Pacific Green Metallic (Green)",hex:"#2E5A3A"},
+          ],
+        },
+        "3rd Gen (1998-2011)":{
+          years:["1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011"],
+          trims:{
+            "XL":  { engines:["2.3L Duratec 4-cylinder (135hp)","2.5L 4-cylinder (119hp)","3.0L V6 (145hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "XLT": { engines:["3.0L V6 (145hp)","4.0L V6 (207hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "FX4": { engine:"4.0L V6 (207hp)", drivetrain:"4WD", transmission:"Manual", note:"Off-road focused trim with skid plates and locking rear differential." },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Oxford White (White)",hex:"#F5F5F5"},
+            {name:"Torch Red (Red)",hex:"#C8102E"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"True Blue Metallic (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "4th Gen (2019-2022)":{
+          years:["2019","2020","2021","2022"],
+          trims:{
+            "XL":     { engine:"2.3L Turbocharged 4-cylinder (270hp)", drivetrains:["RWD","4WD"], transmission:"Automatic", note:"Returned to the US after an 8-year absence — this time as a midsize truck instead of the old compact." },
+            "XLT":    { engine:"2.3L Turbocharged 4-cylinder (270hp)", drivetrains:["RWD","4WD"], transmission:"Automatic" },
+            "Lariat": { engine:"2.3L Turbocharged 4-cylinder (270hp)", drivetrains:["RWD","4WD"], transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Oxford White (White)",hex:"#F5F5F5"},
+            {name:"Race Red (Red)",hex:"#C8102E"},
+            {name:"Shadow Black (Black)",hex:"#1A1A1A"},
+            {name:"Lightning Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Saber (Orange)",hex:"#E8601C"},
+          ],
+        },
+        "5th Gen (2023-2026)":{
+          years:["2023","2024","2025","2026"],
+          trims:{
+            "XL":     { engine:"2.3L Turbocharged 4-cylinder (270hp)", drivetrains:["RWD","4WD"], transmission:"Automatic" },
+            "XLT":    { engine:"2.3L Turbocharged 4-cylinder (270hp)", drivetrains:["RWD","4WD"], transmission:"Automatic" },
+            "Lariat": { engine:"2.3L Turbocharged 4-cylinder (270hp)", drivetrains:["RWD","4WD"], transmission:"Automatic" },
+            "Raptor": { engine:"3.0L Twin-Turbo EcoBoost V6 (405hp)", drivetrain:"4WD", transmission:"Automatic", note:"First-ever Ranger Raptor sold in the US." },
+          },
+          colors:[
+            {name:"Oxford White (White)",hex:"#F5F5F5"},
+            {name:"Race Red (Red)",hex:"#C8102E"},
+            {name:"Shadow Black (Black)",hex:"#1A1A1A"},
+            {name:"Code Orange (Orange)",hex:"#E8601C"},
+            {name:"Carbonized Gray (Gray)",hex:"#5A5F63"},
+          ],
+        },
+      },
+    },
   },
   "Honda": {
     "Accord": {
@@ -750,14 +892,14 @@ const VEHICLES = {
             {name:"Dyno Blue Pearl (Blue)",hex:"#1E4B8E"},
           ],
         },
-        "10th Gen FC/FK — Si & Type R (2017-2021)":{
-          years:["2017","2018","2019","2020","2021"],
+        "10th Gen FC/FK — Si & Type R (2016-2021)":{
+          years:["2016","2017","2018","2019","2020","2021"],
           trims:{
             "LX":             { engine:"2.0L 4-cylinder (158hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
             "EX":             { engine:"1.5L Turbocharged 4-cylinder (174hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
             "EX-L":           { engine:"1.5L Turbocharged 4-cylinder (174hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
             "Touring":        { engine:"1.5L Turbocharged 4-cylinder (174hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
-            "Si Sedan":       { engine:"1.5L Turbocharged 4-cylinder (205hp)", drivetrain:"FWD", transmission:"Manual" },
+            "Si Sedan":       { engine:"1.5L Turbocharged 4-cylinder (205hp)", drivetrain:"FWD", transmission:"Manual", note:"Si and Type R joined the lineup for 2017 — the regular trims launched a year earlier for 2016." },
             "Si Coupe":       { engine:"1.5L Turbocharged 4-cylinder (205hp)", drivetrain:"FWD", transmission:"Manual" },
             "Type R":         { engine:"2.0L Turbocharged 4-cylinder (306hp)", drivetrain:"FWD", transmission:"Manual", note:"The first Civic Type R ever officially sold in the US — every prior Type R generation was JDM or Euro-only." },
             "Type R Limited": { engine:"2.0L Turbocharged 4-cylinder (306hp)", drivetrain:"FWD", transmission:"Manual" },
@@ -1191,25 +1333,76 @@ const VEHICLES = {
   },
   "Toyota": {
     "4Runner": {
-      years:["1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009"],
-      trims:{
-        "SR5":           { engines:["3.4L V6 (183hp)","2.7L 4-cylinder (150hp)"], transmission:"Automatic" },
-        "Limited":       { engine:"3.4L V6 (183hp)", transmission:"Automatic" },
-        "Sport Edition": { engine:"3.4L V6 (183hp)", transmission:"Automatic" },
+      generations:{
+        "3rd Gen (1996-2002)":{
+          years:["1996","1997","1998","1999","2000","2001","2002"],
+          trims:{
+            "SR5":           { engines:["3.4L V6 (183hp)","2.7L 4-cylinder (150hp)"], transmission:"Automatic" },
+            "Limited":       { engine:"3.4L V6 (183hp)", transmission:"Automatic" },
+            "Sport Edition": { engine:"3.4L V6 (183hp)", transmission:"Automatic" },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Millennium Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Imperial Jade Mica (Green)",hex:"#2E5A3A"},
+            {name:"Horizon Blue Metallic (Blue)",hex:"#4A7B9D"},
+            {name:"Radiant Red (Red)",hex:"#C8102E"},
+            {name:"Black / Black Onyx (Black)",hex:"#111111"},
+            {name:"Natural White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "4th Gen (2003-2009)":{
+          years:["2003","2004","2005","2006","2007","2008","2009"],
+          trims:{
+            "SR5":     { engine:"4.0L V6 (236hp)", transmission:"Automatic" },
+            "Sport":   { engine:"4.0L V6 (236hp)", transmission:"Automatic" },
+            "Limited": { engine:"4.0L V6 (236hp)", transmission:"Automatic", note:"A 4.7L V8 (235hp) was optional on Limited — less power than the V6 but far more low-end torque for towing." },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Titanium Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Salsa Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Shoreline Blue Pearl (Blue)",hex:"#4A7B9D"},
+            {name:"Black (Black)",hex:"#111111"},
+            {name:"Natural White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "5th Gen (2010-2024)":{
+          years:["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],
+          trims:{
+            "SR5":       { engine:"4.0L V6 (270hp)", transmission:"Automatic" },
+            "Trail":     { engine:"4.0L V6 (270hp)", transmission:"Automatic", note:"Off-road focused trim with a locking rear differential and Crawl Control — typically 4WD only." },
+            "Limited":   { engine:"4.0L V6 (270hp)", transmission:"Automatic" },
+            "TRD Pro":   { engine:"4.0L V6 (270hp)", transmission:"Automatic", note:"Added for the 2010 model year — Fox internal-bypass shocks, unique styling, off-road focused, typically 4WD only." },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Classic Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Barcelona Red Metallic (Red)",hex:"#9B1B30"},
+            {name:"Magnetic Gray Metallic (Gray)",hex:"#6B6E6F"},
+            {name:"Nautical Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Black (Black)",hex:"#111111"},
+            {name:"Super White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "6th Gen (2025-2026)":{
+          years:["2025","2026"],
+          trims:{
+            "SR5":         { engine:"2.4L Turbocharged 4-cylinder (278hp)", transmission:"Automatic", note:"All-new generation on Toyota's TNGA-F platform — first major redesign since 2010, and the first ever turbo 4Runner." },
+            "TRD Off-Road":{ engine:"2.4L Turbocharged 4-cylinder (278hp)", transmission:"Automatic" },
+            "Limited":     { engine:"2.4L Turbocharged 4-cylinder (278hp)", transmission:"Automatic" },
+            "TRD Pro":     { engine:"2.4L Hybrid Turbocharged 4-cylinder (326hp)", transmission:"Automatic", note:"i-FORCE MAX hybrid powertrain — most power ever offered in a 4Runner. Typically 4WD only." },
+          },
+          drivetrainOptions:["2WD","4WD"],
+          colors:[
+            {name:"Blueprint (Blue)",hex:"#1E4B8E"},
+            {name:"Terra (Orange-Brown)",hex:"#B87333"},
+            {name:"Solar Octane (Orange)",hex:"#E8601C"},
+            {name:"Midnight Black Metallic (Black)",hex:"#111111"},
+            {name:"Wind Chill Pearl (White)",hex:"#F0F0F0"},
+          ],
+        },
       },
-      drivetrainOptions:["2WD","4WD"],
-      colors:[
-        {name:"Millennium Silver Metallic (Silver)",hex:"#C0C0C0"},
-        {name:"Autumn Blaze Metallic (Orange-Brown)",hex:"#B87333"},
-        {name:"Imperial Jade Mica (Green)",hex:"#2E5A3A"},
-        {name:"Horizon Blue Metallic (Blue)",hex:"#4A7B9D"},
-        {name:"Stellar Blue Pearl (Blue)",hex:"#1E4B8E"},
-        {name:"Desert Dune Metallic (Tan)",hex:"#C8B89A"},
-        {name:"Radiant Red (Red)",hex:"#C8102E"},
-        {name:"Sunfire Red Pearl (Red)",hex:"#9B1B30"},
-        {name:"Black / Black Onyx (Black)",hex:"#111111"},
-        {name:"Natural White (White)",hex:"#F5F5F5"},
-      ],
     },
   },
   "Volkswagen": {
