@@ -1485,7 +1485,7 @@ const TORQUE_SPECS = {
         size:"27mm socket",
         spec:"18",
         unit:"ft-lbs",
-        notes:"This torque value is actually molded right into the cap itself. Hand-tighten only — this one's easy to over-torque and crack. Soket size confirmed 27mm.",
+        notes:"This torque value is actually molded right into the cap itself. Hand-tighten only — this one's easy to over-torque and crack.",
       },
     ],
   },
@@ -1547,6 +1547,25 @@ const BRAND_COLORS = {
   "Ignition Projects":"#1CE8D4","NGK":"#E86B1C","EBC Brakes":"#E8E040",
   "Wilwood":"#1CE84A","Cravenspeed":"#E81CB0","Mishimoto":"#1C9AE8",
 };
+
+// Best-confidence official homepages — flag any that turn out wrong and we'll fix them.
+const BRAND_LINKS = {
+  "EuroCompulsion":"https://shopeurocompulsion.net",
+  "Forge Motorsports":"https://forgemotorsport.com",
+  "Ragazzon":"https://www.ragazzon.com",
+  "Magnaflow":"https://www.magnaflow.com",
+  "Neuspeed":"https://www.neuspeed.com",
+  "Bosch":"https://www.boschautoparts.com",
+  "Ignition Projects":"https://www.ignitionprojects.com",
+  "NGK":"https://www.ngksparkplugs.com",
+  "EBC Brakes":"https://www.ebcbrakes.com",
+  "Wilwood":"https://www.wilwood.com",
+  "Cravenspeed":"https://www.cravenspeed.com",
+  "Mishimoto":"https://www.mishimoto.com",
+};
+
+// Generic mod categories every car can quick-mark, even without a full parts catalog.
+const QUICK_UPGRADE_CATEGORIES=["Air Intake","Exhaust","Downpipe","Intercooler","Turbo/Supercharger","Injectors","Spark Plugs","Ignition Coils","Tune/Tuner","Suspension","Brakes","Wheels","Clutch"];
 
 const OWNER_EMAIL="mattjustice1999@gmail.com";
 const roundToTen=(n)=>Math.round(n/10)*10;
@@ -1862,6 +1881,7 @@ export default function ModGuide(){
   const openCar=(car)=>{setActiveCar(car);setActiveBrand(null);setActiveTab("maintenance");setWizardStep(-1);setExpandedHistory(null);setView("car-detail");};
   const syncCar=async(updated)=>{setGarage(prev=>prev.map(c=>c.id===updated.id?updated:c));setActiveCar(updated);await updateGarageItem(updated);};
   const toggleBuildItem=(item)=>{const exists=activeCar.build&&activeCar.build.find(b=>b.brand===item.brand&&b.part===item.part);syncCar({...activeCar,build:exists?activeCar.build.filter(b=>!(b.brand===item.brand&&b.part===item.part)):[...(activeCar.build||[]),item]});};
+  const toggleUpgradeCategory=(cat)=>{const current=activeCar.upgradedCategories||[];const exists=current.includes(cat);syncCar({...activeCar,upgradedCategories:exists?current.filter(c=>c!==cat):[...current,cat]});};
 
   const startWizard=()=>{setWizardStep(0);setWizardMileage("");setWizardAnswers({});};
 
@@ -2137,7 +2157,13 @@ export default function ModGuide(){
                 ):(
                   <div>
                     <button onClick={()=>setActiveBrand(null)} style={{background:"none",border:"none",color:"#666",cursor:"pointer",fontSize:"13px",marginBottom:"20px",padding:0}}>← All Brands</button>
-                    <div style={{display:"flex",alignItems:"center",gap:"10px",marginBottom:"28px"}}><BrandDot brand={activeBrand} size={10}/><span style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"28px",color:"#E8E4DC",letterSpacing:"2px"}}>{activeBrand}</span></div>
+                    <div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"28px",flexWrap:"wrap"}}>
+                      <BrandDot brand={activeBrand} size={10}/>
+                      <span style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"28px",color:"#E8E4DC",letterSpacing:"2px"}}>{activeBrand}</span>
+                      {BRAND_LINKS[activeBrand]&&(
+                        <a href={BRAND_LINKS[activeBrand]} target="_blank" rel="noopener noreferrer" style={{color:"#FF6B2B",fontSize:"12px",fontFamily:"'Bebas Neue', sans-serif",letterSpacing:"1px",border:"1px solid #FF6B2B",padding:"5px 12px",borderRadius:"4px"}}>VISIT SITE ↗</a>
+                      )}
+                    </div>
                     {Object.entries(getCategoriesForBrand()).map(([cat,items])=>(
                       <div key={cat} style={{marginBottom:"28px"}}>
                         <div style={{color:"#FF6B2B",fontFamily:"'Bebas Neue', sans-serif",fontSize:"11px",letterSpacing:"3px",marginBottom:"10px"}}>{cat}</div>
@@ -2161,9 +2187,21 @@ export default function ModGuide(){
 
             {activeTab==="build"&&(
               <div>
+                <span style={LS}>WHAT'S UPGRADED ON THIS CAR?</span>
+                <p style={{color:"#555",fontSize:"12px",marginBottom:"16px"}}>Tap what applies — works even for cars without a full parts catalog yet.</p>
+                <div style={{display:"flex",flexWrap:"wrap",gap:"8px",marginBottom:"32px"}}>
+                  {QUICK_UPGRADE_CATEGORIES.map(cat=>{
+                    const on=(activeCar.upgradedCategories||[]).includes(cat);
+                    return(
+                      <div key={cat} onClick={()=>toggleUpgradeCategory(cat)} style={{padding:"9px 16px",borderRadius:"4px",border:on?"1px solid #FF6B2B":"1px solid #2A2A2A",background:on?"rgba(255,107,43,0.12)":"#1C1C1C",color:on?"#FF6B2B":"#888",fontSize:"13px",cursor:"pointer",userSelect:"none",display:"flex",alignItems:"center",gap:"6px",transition:"all 0.15s"}}>
+                        {on&&<span style={{fontSize:"10px"}}>✓</span>}{cat}
+                      </div>
+                    );
+                  })}
+                </div>
                 {!activeCar.build||activeCar.build.length===0?(
-                  <div style={{textAlign:"center",padding:"48px 0"}}>
-                    <div style={{color:"#333",fontFamily:"'Bebas Neue', sans-serif",fontSize:"16px",letterSpacing:"3px",marginBottom:"8px"}}>BUILD SHEET IS EMPTY</div>
+                  <div style={{textAlign:"center",padding:"48px 0",borderTop:"1px solid #1C1C1C"}}>
+                    <div style={{color:"#333",fontFamily:"'Bebas Neue', sans-serif",fontSize:"16px",letterSpacing:"3px",marginBottom:"8px"}}>NO SPECIFIC PARTS LOGGED YET</div>
                     <div style={{color:"#444",fontSize:"14px",marginBottom:"20px"}}>Go to Mods and start adding parts</div>
                     <button onClick={()=>setActiveTab("mods")} style={{background:"#FF6B2B",color:"#0D0D0D",border:"none",padding:"12px 28px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"15px",letterSpacing:"3px",cursor:"pointer",borderRadius:"4px"}}>BROWSE MODS</button>
                   </div>
