@@ -1492,7 +1492,7 @@ const TORQUE_SPECS = {
 };
 
 const CATALOG = {
-  "Fiat": {
+  "Abarth": {
     "500 Abarth": [
       {brand:"EuroCompulsion",category:"Intake — V4.1 Full System",part:"V4.1 Full Intake System",note:"Complete intake system replacement. Full system from turbo to airbox."},
       {brand:"EuroCompulsion",category:"Intake — V3 Pipe Upgrade",part:"V3 Turbo-to-Filter Pipe",note:"Replaces the pipe from turbo to stock filter with a larger diameter hose. Keeps your stock air filter."},
@@ -1924,8 +1924,8 @@ export default function ModGuide(){
   const [expandedHistory,setExpandedHistory]=useState(null);
   const updateMileage=()=>{syncCar({...activeCar,mileage:roundToTen(parseInt(tempMileage)||0)});setEditMileage(false);};
 
-  const getCatalog=(car)=>CATALOG[car.make]?.[car.model]||[];
-  const getTorqueSpecs=(car)=>TORQUE_SPECS[car.make]?.[car.model]||[];
+  const getCatalog=(car)=>CATALOG[car.make]?.[car.model]||CATALOG["Abarth"]?.[car.model]||CATALOG["Fiat"]?.[car.model]||[];
+  const getTorqueSpecs=(car)=>TORQUE_SPECS[car.make]?.[car.model]||TORQUE_SPECS["Abarth"]?.[car.model]||TORQUE_SPECS["Fiat"]?.[car.model]||[];
   const getBrands=(car)=>[...new Set(getCatalog(car).map(i=>i.brand))];
   const getCategoriesForBrand=()=>{if(!activeCar||!activeBrand)return{};const cats={};getCatalog(activeCar).filter(i=>i.brand===activeBrand).forEach(i=>{if(!cats[i.category])cats[i.category]=[];cats[i.category].push(i);});return cats;};
 
