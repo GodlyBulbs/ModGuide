@@ -1456,7 +1456,40 @@ const VEHICLES = {
 
 // Torque specs — same pattern as CATALOG, populated car by car once verified.
 // Shape once filled in: { partName: "Oil Drain Plug", spec: "18", unit: "ft-lbs", notes: "..." }
-const TORQUE_SPECS = {};
+const TORQUE_SPECS = {
+  "Abarth": {
+    "500 Abarth": [
+      {
+        partName:"Wheel Lug Nuts",
+        size:"17mm socket, M12 x 1.25 thread",
+        spec:"75",
+        unit:"ft-lbs",
+        notes:"Straight from Fiat's factory owner's manual — this is the spec for the standard aluminum alloy wheels. If you're running the steel spare, that one's lower at 63 ft-lbs.",
+      },
+      {
+        partName:"Spark Plugs",
+        size:"5/8\" (16mm) spark plug socket",
+        spec:"12",
+        unit:"ft-lbs",
+        notes:"Owners consistently cite this as coming straight from the factory manual (16 Nm). A few report using 13-14 ft-lbs without issue — don't force it past snug, over-tightening can crack the head or strip the threads.",
+      },
+      {
+        partName:"Oil Drain Plug",
+        size:"17mm socket",
+        spec:"20",
+        unit:"ft-lbs",
+        notes:"Forum-sourced torque value (27 Nm), not pulled from an official manual page — treat the torque as a solid estimate. Socket size confirmed 17mm.",
+      },
+      {
+        partName:"Oil Filter Cap",
+        size:"27mm socket",
+        spec:"18",
+        unit:"ft-lbs",
+        notes:"This torque value is actually molded right into the cap itself. Hand-tighten only — this one's easy to over-torque and crack.",
+      },
+    ],
+  },
+};
 
 const CATALOG = {
   "Fiat": {
