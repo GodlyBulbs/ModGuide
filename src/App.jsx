@@ -1485,7 +1485,7 @@ const TORQUE_SPECS = {
         size:"27mm socket",
         spec:"18",
         unit:"ft-lbs",
-        notes:"This torque value is actually molded right into the cap itself. Hand-tighten only — this one's easy to over-torque and crack.",
+        notes:"This torque value is actually molded right into the cap itself. Hand-tighten only — this one's easy to over-torque and crack. Soket size confirmed 27mm.",
       },
     ],
   },
