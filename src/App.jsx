@@ -1817,6 +1817,56 @@ const TORQUE_SPECS = {
       },
     ],
   },
+  "Acura": {
+    "TLX": [
+      {
+        partName:"Wheel Lug Nuts",
+        size:"Not confirmed — verify before buying a socket",
+        spec:"Not confirmed",
+        unit:"",
+        notes:"Even TLX owners on their own forums couldn't pin this down definitively — one guess floating around is 80 ft-lbs based on shared parts with the Honda TSX/Accord platform, but that's a guess, not a confirmed factory number. Treat with real caution and check your specific owner's manual.",
+      },
+      {
+        partName:"Oil Drain Plug",
+        size:"18mm socket",
+        spec:"Not confirmed",
+        unit:"",
+        notes:"Socket size is confirmed from the genuine Acura part listing, but we couldn't pin down a solid torque figure specific to the TLX. If you find it, send it over.",
+      },
+      {
+        partName:"Spark Plugs",
+        size:"5/8\" (16mm) spark plug socket",
+        spec:"16",
+        unit:"ft-lbs",
+        notes:"Confirmed for the 2.4L 4-cylinder (K24W7 engine). If your 2018 has the 3.5L V6 instead (common on Tech/A-Spec/Advance trims), this number may not carry over exactly — worth confirming which engine yours has.",
+      },
+    ],
+  },
+  "Scion": {
+    "tC": [
+      {
+        partName:"Wheel Lug Nuts",
+        size:"Not confirmed — verify before buying a socket",
+        spec:"76",
+        unit:"ft-lbs",
+        notes:"Pulled from a genuine factory torque spec table — solid figure, listed as 'Front wheel' in the source.",
+      },
+      {
+        partName:"Oil Drain Plug",
+        size:"Not confirmed — verify before buying a socket",
+        spec:"26",
+        unit:"ft-lbs",
+        notes:"Confirmed for the 2AR-FE 2.5L (2011-2016 gen). New crush washer every oil change.",
+      },
+      {
+        partName:"Spark Plugs",
+        size:"5/8\" (16mm) spark plug socket",
+        spec:"14",
+        unit:"ft-lbs",
+        notes:"Straight from a genuine factory torque spec table — listed as 'Spark plug x Cylinder head.' This is a solid, well-sourced number.",
+      },
+    ],
+  },
   "Toyota": {
     "4Runner": [
       {
@@ -1975,6 +2025,22 @@ const CATALOG = {
       {brand:"ICON Vehicle Dynamics",category:"Suspension",part:"Stage Lift Kit",note:"More aggressive and more expensive than OME/Bilstein — aimed at serious off-road builds, not just a mild lift for looks."},
     ],
   },
+  "Acura": {
+    "TLX": [
+      {brand:"MagnaFlow",category:"Exhaust",part:"Performance Exhaust System",note:"Confirmed direct-fit for the 2018 TLX. Worth knowing before you shop: the TLX enthusiast scene is genuinely thin — some owners report there being no dedicated cat-back option at all and end up building custom exhausts through local shops instead."},
+      {brand:"MagnaFlow",category:"Catalytic Converter",part:"OEM-Grade Catalytic Converter",note:"EPA/CARB compliant — confirm your state of registration before buying to make sure it's legal for your area."},
+    ],
+  },
+  "Scion": {
+    "tC": [
+      {brand:"Injen",category:"Exhaust",part:"SES Axle-Back Exhaust (2011-2016)",note:"Confirmed fitment for your friend's 2013 — dyno-proven gains around 7-8hp, direct bolt-on to factory mounting points, no cutting or welding."},
+      {brand:"Injen",category:"Air Intake",part:"SP Cold Air Intake System (2011-2016)"},
+      {brand:"TRD",category:"Air Intake",part:"TRD Cold Air Intake"},
+      {brand:"TRD",category:"Suspension",part:"TRD Sway Bars"},
+      {brand:"TRD",category:"Suspension",part:"TRD Lowering Springs"},
+      {brand:"TRD",category:"Exhaust",part:"TRD Performance Exhaust"},
+    ],
+  },
   "Honda": {
     "Accord": [
       {brand:"Borla",category:"Exhaust",part:"S-Type Axle-Back Exhaust (2013-2017)",note:"Confirmed fitment for both the 2.4L 4-cylinder and 3.5L V6, sedan and coupe. This is the one that matches your friend's 2016."},
@@ -1994,7 +2060,7 @@ const BRAND_COLORS = {
   "FASS Fuel Systems":"#1CE84A","Carli Suspension":"#E81CB0","South Bend Clutch":"#1C9AE8",
   "CorkSport":"#E8401C",
   "ARB":"#4A8FE8","Old Man Emu":"#B87333","Bilstein":"#E81C1C","TRD":"#E8401C","ICON Vehicle Dynamics":"#1CE8D4",
-  "Borla":"#9B1B30","PRL Motorsports":"#1C6BE8","K&N":"#E8401C",
+  "Borla":"#9B1B30","PRL Motorsports":"#1C6BE8","K&N":"#E8401C","Injen":"#1C6BE8",
 };
 
 const BRAND_LINKS = {
@@ -2031,6 +2097,7 @@ const BRAND_LINKS = {
   "Borla":"https://www.borla.com",
   "PRL Motorsports":"https://prlmotorsports.com",
   "K&N":"https://www.knfilters.com",
+  "Injen":"https://injen.com",
 };
 
 // Generic mod categories every car can quick-mark, even without a full parts catalog.
