@@ -960,60 +960,137 @@ const VEHICLES = {
       ],
     },
     "Mazda3": {
-      years:["2019","2020","2021","2022","2023"],
-      trims:{
-        "2.5 S Sedan":                  { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Select Sedan":                 { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
-        "Preferred Sedan":              { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
-        "Premium Sedan":                { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
-        "2.5 Turbo Sedan":              { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
-        "2.5 Turbo Premium Plus Sedan": { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
-        "2.5 S Hatchback":                  { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
-        "Select Hatchback":                 { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
-        "Preferred Hatchback":              { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
-        "Premium Hatchback":                { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"] },
-        "2.5 Turbo Hatchback":              { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
-        "2.5 Turbo Premium Plus Hatchback": { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+      generations:{
+        "BG Protégé (1990-1994)":{
+          years:["1990","1991","1992","1993","1994"],
+          trims:{
+            "DX":     { engine:"1.6L 4-cylinder (82hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Called the Protégé, not Mazda3 — that nameplate didn't exist yet. This generation replaced the Mazda 323." },
+            "LX":     { engine:"1.8L DOHC 4-cylinder (103hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "4WD Turbo": { engine:"1.6L Turbocharged 4-cylinder (135hp)", drivetrain:"AWD", transmission:"Manual", note:"1990-1991 only — a genuinely rare factory AWD turbo Protégé before it was discontinued." },
+          },
+          colors:[
+            {name:"Classic White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Crimson Red (Red)",hex:"#C8102E"},
+            {name:"Twilight Blue Mica (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "BH Protégé (1995-1998)":{
+          years:["1995","1996","1997","1998"],
+          trims:{
+            "DX": { engine:"1.5L SOHC 4-cylinder (92hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"The 'organic' redesign era — rounder styling than the outgoing BG." },
+            "LX": { engine:"1.8L DOHC 4-cylinder (122hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "ES": { engine:"1.8L DOHC 4-cylinder (122hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Classic White (White)",hex:"#F5F5F5"},
+            {name:"Black Mica (Black)",hex:"#1A1A1A"},
+            {name:"Aroma Red Mica (Red)",hex:"#C8102E"},
+            {name:"Twilight Blue Mica (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "BJ Protégé (1999-2003)":{
+          years:["1999","2000","2001","2002","2003"],
+          trims:{
+            "DX":                { engine:"1.6L SOHC 4-cylinder (100hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Based on the larger 626 platform — bigger and more modern than the BH it replaced." },
+            "LX":                { engine:"1.6L SOHC 4-cylinder (100hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "ES":                { engine:"1.8L DOHC 4-cylinder (122hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Mazdaspeed Protégé":{ engine:"2.0L Turbocharged 4-cylinder (170hp)", drivetrain:"FWD", transmission:"Manual", note:"2003 only — limited-production, developed with Racing Beat and Callaway. Genuinely rare and sought after today." },
+          },
+          colors:[
+            {name:"Black Mica (Black)",hex:"#1A1A1A"},
+            {name:"Twilight Blue Mica (Blue)",hex:"#1E4B8E"},
+            {name:"Aroma Red Mica (Red)",hex:"#C8102E"},
+            {name:"Sunlight Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Grace Green Mica (Green)",hex:"#2E5A3A"},
+          ],
+        },
+        "BK Mazda3 (2004-2009)":{
+          years:["2004","2005","2006","2007","2008","2009"],
+          trims:{
+            "i Sedan":     { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"The Protégé name is retired here — this is the first car actually badged Mazda3." },
+            "s Sedan":     { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "i Hatchback": { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "s Hatchback": { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Black Mica (Black)",hex:"#1A1A1A"},
+            {name:"Rally White (White)",hex:"#F5F5F5"},
+            {name:"Sunlight Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Titanium Gray Metallic (Gray)",hex:"#6B6E6F"},
+            {name:"Strato Blue Mica (Blue)",hex:"#1B3A6B"},
+            {name:"Velocity Red Mica (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "BL Mazda3 (2010-2013)":{
+          years:["2010","2011","2012","2013"],
+          trims:{
+            "i Sport":       { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "i Touring":     { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "s Grand Touring":{ engine:"2.5L 4-cylinder (167hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Mazdaspeed3":   { engine:"2.3L Turbocharged 4-cylinder (263hp)", drivetrain:"FWD", transmission:"Manual", note:"Genuine hot hatch — one of the most beloved Mazda performance cars ever made. This is the last year Mazdaspeed3 existed before it was discontinued." },
+          },
+          colors:[
+            {name:"Crystal White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Jet Black Mica (Black)",hex:"#1A1A1A"},
+            {name:"Zoom-Zoom Blue Mica (Blue)",hex:"#1E4B8E"},
+            {name:"True Red (Red)",hex:"#C8102E"},
+          ],
+        },
+        "BM/BN Mazda3 (2014-2018)":{
+          years:["2014","2015","2016","2017","2018"],
+          trims:{
+            "i Sport":         { engine:"2.0L 4-cylinder (155hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"First generation with Mazda's Kodo 'Soul of Motion' design language — a big styling leap from the outgoing BL." },
+            "i Touring":       { engine:"2.0L 4-cylinder (155hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "s Grand Touring": { engine:"2.5L 4-cylinder (184hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Snowflake White Pearl Mica (White)",hex:"#F0F0F0"},
+            {name:"Jet Black Mica (Black)",hex:"#1A1A1A"},
+            {name:"Soul Red Metallic (Red)",hex:"#9B1B30"},
+            {name:"Deep Crystal Blue Mica (Blue)",hex:"#1B3A6B"},
+            {name:"Titanium Flash Mica (Gray)",hex:"#8A8D8F"},
+          ],
+        },
+        "BP Mazda3 (2019-2025)":{
+          years:["2019","2020","2021","2022","2023","2024","2025"],
+          trims:{
+            "2.5 S Sedan":                  { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Select Sedan":                 { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "Preferred Sedan":              { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "Premium Sedan":                { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "2.5 Turbo Sedan":              { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+            "2.5 Turbo Premium Plus Sedan": { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+            "2.5 S Hatchback":                  { engine:"2.5L 4-cylinder (186hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Select Hatchback":                 { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "Preferred Hatchback":              { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "Premium Hatchback":                { engine:"2.5L 4-cylinder (186hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"] },
+            "2.5 Turbo Hatchback":              { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+            "2.5 Turbo Premium Plus Hatchback": { engine:"2.5L Turbocharged 4-cylinder (227-250hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Black Mica (Black)",hex:"#1A1A1A"},
+            {name:"Rally White (White)",hex:"#F5F5F5"},
+            {name:"Sunlight Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Titanium Gray Metallic (Gray)",hex:"#6B6E6F"},
+            {name:"Strato Blue Mica (Blue)",hex:"#1B3A6B"},
+            {name:"Winning Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Velocity Red Mica (Red)",hex:"#9B1B30"},
+            {name:"Lava Orange Mica (Orange)",hex:"#C85A1E"},
+            {name:"Solar Yellow Mica (Yellow)",hex:"#F5C800"},
+            {name:"Nordic Green Mica (Green)",hex:"#2E5A3A"},
+            {name:"Starlight Green Mica (Light Green)",hex:"#7EC850"},
+            {name:"Shimmering Sand Metallic (Sand)",hex:"#C8B89A"},
+            {name:"Sherbet Green Metallic (Green)",hex:"#5A8A5A"},
+            {name:"Soul Red Crystal Metallic (Red)",hex:"#9B1B30"},
+            {name:"Machine Gray Metallic (Gray)",hex:"#6B6E6F"},
+            {name:"Polymetal Gray Metallic (Dark Gray)",hex:"#4A4E52"},
+            {name:"Snowflake White Pearl Mica (White)",hex:"#F0F0F0"},
+            {name:"Deep Crystal Blue Mica (Blue)",hex:"#1B3A6B"},
+            {name:"Jet Black Mica (Black)",hex:"#1A1A1A"},
+          ],
+        },
       },
-      colors:[
-        {name:"Black Mica (Black)",hex:"#1A1A1A"},
-        {name:"Rally White (White)",hex:"#F5F5F5"},
-        {name:"Sunlight Silver Metallic (Silver)",hex:"#C0C0C0"},
-        {name:"Titanium Gray Metallic (Gray)",hex:"#6B6E6F"},
-        {name:"Strato Blue Mica (Blue)",hex:"#1B3A6B"},
-        {name:"Winning Blue Metallic (Blue)",hex:"#1E4B8E"},
-        {name:"Velocity Red Mica (Red)",hex:"#9B1B30"},
-        {name:"Lava Orange Mica (Orange)",hex:"#C85A1E"},
-        {name:"Solar Yellow Mica (Yellow)",hex:"#F5C800"},
-        {name:"Nordic Green Mica (Green)",hex:"#2E5A3A"},
-        {name:"Starlight Green Mica (Light Green)",hex:"#7EC850"},
-        {name:"Shimmering Sand Metallic (Sand)",hex:"#C8B89A"},
-        {name:"Sherbet Green Metallic (Green)",hex:"#5A8A5A"},
-        {name:"Soul Red Crystal Metallic (Red)",hex:"#9B1B30"},
-        {name:"Machine Gray Metallic (Gray)",hex:"#6B6E6F"},
-        {name:"Polymetal Gray Metallic (Dark Gray)",hex:"#4A4E52"},
-        {name:"Snowflake White Pearl Mica (White)",hex:"#F0F0F0"},
-        {name:"Deep Crystal Blue Mica (Blue)",hex:"#1B3A6B"},
-        {name:"Jet Black Mica (Black)",hex:"#1A1A1A"},
-      ],
-    },
-    "Mazda3 (2004-2009)": {
-      years:["2004","2005","2006","2007","2008","2009"],
-      trims:{
-        "i Sedan":     { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "s Sedan":     { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "i Hatchback": { engine:"2.0L 4-cylinder (148hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-        "s Hatchback": { engine:"2.3L 4-cylinder (160hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-      },
-      colors:[
-        {name:"Black Mica (Black)",hex:"#1A1A1A"},
-        {name:"Rally White (White)",hex:"#F5F5F5"},
-        {name:"Sunlight Silver Metallic (Silver)",hex:"#C0C0C0"},
-        {name:"Titanium Gray Metallic (Gray)",hex:"#6B6E6F"},
-        {name:"Strato Blue Mica (Blue)",hex:"#1B3A6B"},
-        {name:"Winning Blue Metallic (Blue)",hex:"#1E4B8E"},
-        {name:"Velocity Red Mica (Red)",hex:"#9B1B30"},
-      ],
     },
     "MX-5 Miata": {
       generations:{
@@ -1514,6 +1591,31 @@ const TORQUE_SPECS = {
       },
     ],
   },
+  "Mazda": {
+    "Mazda3": [
+      {
+        partName:"Wheel Lug Nuts",
+        size:"Commonly 21mm on Mazdas, but verify against your actual lug nuts before buying a socket",
+        spec:"103",
+        unit:"ft-lbs",
+        notes:"Torque figure is consistent across sources for 2019+ models — use a star/crisscross pattern, not a circle.",
+      },
+      {
+        partName:"Spark Plugs",
+        size:"5/8\" (16mm) spark plug socket",
+        spec:"13",
+        unit:"ft-lbs",
+        notes:"Covers both the 2.0L and 2.5L naturally-aspirated engines. If you've got the 2.5L Turbo, double check before assuming this applies — turbo spark plugs sometimes run a different spec.",
+      },
+      {
+        partName:"Oil Drain Plug",
+        size:"24mm socket",
+        spec:"29",
+        unit:"ft-lbs",
+        notes:"A few owners report using 23-25 ft-lbs without issue, so there's some real-world flexibility here, but 29 is the documented factory figure. Use a new crush washer every time — reusing the old one is the most common cause of a leaking drain plug.",
+      },
+    ],
+  },
 };
 
 const CATALOG = {
@@ -1584,6 +1686,17 @@ const CATALOG = {
       {brand:"South Bend Clutch",category:"Clutch",part:"Performance Clutch Kit",note:"Manual transmission only — needed once power climbs past what the stock clutch can hold."},
     ],
   },
+  "Mazda": {
+    "Mazda3": [
+      {brand:"CorkSport",category:"Air Intake",part:"Performance Air Intake",note:"The dominant Mazda-specific performance brand for this platform — most 2019+ Mazda3 mods lead back to them."},
+      {brand:"CorkSport",category:"Exhaust",part:"Sport Exhaust System"},
+      {brand:"CorkSport",category:"Lowering Springs (Non-Turbo)",part:"Lowering Spring Set — Non-Turbo",note:"Fits FWD and AWD non-turbo hatchback and sedan. Not confirmed to work with the 2.0L engine specifically — check current fitment before buying."},
+      {brand:"CorkSport",category:"Lowering Springs (Turbo)",part:"NotSoLow Lowering Springs — Turbo",note:"These are NOT interchangeable with the non-turbo springs — turbo models sit differently and need their own part number (2021+ Turbo Hatchback and Sedan)."},
+      {brand:"CorkSport",category:"Sway Bars",part:"Performance Sway Bar"},
+      {brand:"CorkSport",category:"Suspension",part:"Camber Plates"},
+      {brand:"CorkSport",category:"Turbo Performance",part:"Intercooler Upgrade",note:"Turbo models only."},
+    ],
+  },
 };
 
 const BRAND_COLORS = {
@@ -1595,6 +1708,7 @@ const BRAND_COLORS = {
   "ATS Diesel":"#9B59B6","Fleece Performance":"#E8B01C","Industrial Injection":"#E81C4A",
   "MBRP":"#1CE8D4","Diamond Eye":"#E86B1C","S&B Filters":"#E8E040",
   "FASS Fuel Systems":"#1CE84A","Carli Suspension":"#E81CB0","South Bend Clutch":"#1C9AE8",
+  "CorkSport":"#E8401C",
 };
 
 const BRAND_LINKS = {
@@ -1622,6 +1736,7 @@ const BRAND_LINKS = {
   "FASS Fuel Systems":"https://www.fassride.com",
   "Carli Suspension":"https://www.carlisuspension.com",
   "South Bend Clutch":"https://www.southbendclutch.com",
+  "CorkSport":"https://corksport.com",
 };
 
 // Generic mod categories every car can quick-mark, even without a full parts catalog.
