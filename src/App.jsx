@@ -1489,6 +1489,31 @@ const TORQUE_SPECS = {
       },
     ],
   },
+  "Dodge": {
+    "Ram 2500": [
+      {
+        partName:"Wheel Lug Nuts",
+        size:"15/16\" socket, 9/16-18 thread",
+        spec:"135",
+        unit:"ft-lbs",
+        notes:"Well corroborated across owner manuals and forums for the single-rear-wheel 2500 — use a star/crisscross pattern, not a circle, and re-torque after the first 100-200 miles if you're on aluminum wheels.",
+      },
+      {
+        partName:"Fuel Injector Line Fittings",
+        size:"Not confirmed — verify before buying a wrench",
+        spec:"Not confirmed",
+        unit:"",
+        notes:"Important note before you touch anything here: a 2004 and a 2004.5 5.9L Cummins have genuinely different injectors, so don't trust a torque spec you find online without confirming it matches your exact build date, not just model year.",
+      },
+      {
+        partName:"Oil Drain Plug",
+        size:"Not confirmed — verify before buying a socket",
+        spec:"Not confirmed",
+        unit:"",
+        notes:"We haven't nailed down a solid source for this one yet — if you or your buddy check the factory manual or measure it directly, send it over and we'll lock it in.",
+      },
+    ],
+  },
 };
 
 const CATALOG = {
@@ -1539,6 +1564,26 @@ const CATALOG = {
       {brand:"Mishimoto",category:"Oil Catch Can",part:"Oil Catch Can Kit"},
     ],
   },
+  "Dodge": {
+    "Ram 2500": [
+      {brand:"Smarty (Mads Electronics)",category:"Tuner / Programmer",part:"Smarty CR Tuner",note:"The go-to tuner in the 5.9L Cummins community — adjustable power levels, works well stacked with other fueling mods."},
+      {brand:"Smarty (Mads Electronics)",category:"Tuner / Programmer",part:"Smarty Jr.",note:"Milder power gains, aimed at fuel economy over max horsepower."},
+      {brand:"Edge Products",category:"Tuner / Programmer",part:"Juice w/ Attitude CS2",note:"2003-2004 has its own specific version — don't grab the 2004.5+ one, the calibration is different."},
+      {brand:"BD Diesel",category:"Turbo Upgrade",part:"Super B Turbo",note:"Quick-spooling upgrade, popular first turbo swap before going to compounds."},
+      {brand:"BD Diesel",category:"Fuel Injectors",part:"BD-Built Performance Injectors (60-120hp)",note:"Bigger injectors need more fuel pressure than the stock lift pump can supply — upgrade the lift pump alongside these, not after."},
+      {brand:"ATS Diesel",category:"Turbo Upgrade",part:"Aurora Compound Turbo Kit",note:"Serious power builds — compound turbo setup, not a first mod."},
+      {brand:"Fleece Performance",category:"Turbo Upgrade",part:"Billet S475 Turbo",note:"High-horsepower single turbo option."},
+      {brand:"Fleece Performance",category:"Fuel Injectors",part:"Fleece Performance Injectors",note:"Reman and upgraded injector options."},
+      {brand:"Industrial Injection",category:"Turbo Upgrade",part:"Turbo Upgrade Kits",note:"Wide range from mild to compound setups."},
+      {brand:"Industrial Injection",category:"Fuel Injectors",part:"Reman & Upgraded Injectors",note:"Also does CP3 fuel pump upgrades if you're pushing bigger injectors."},
+      {brand:"MBRP",category:"Exhaust",part:"4\" Turbo-Back Exhaust",note:"Straight pipe or muffled options."},
+      {brand:"Diamond Eye",category:"Exhaust",part:"4\" Turbo-Back Exhaust",note:"Comparable to MBRP — a lot of it comes down to sound preference between the two."},
+      {brand:"S&B Filters",category:"Cold Air Intake",part:"Cold Air Intake System",note:"Reusable filter, common companion to any tuning mod."},
+      {brand:"FASS Fuel Systems",category:"Lift Pump",part:"FASS Titanium Signature Series",note:"Upgrading the lift pump is the mod nobody wants to do first but almost everyone needs once injectors get bigger."},
+      {brand:"Carli Suspension",category:"Suspension",part:"Leveling / Lift Kit",note:"Well regarded in the towing and off-road Cummins crowd for ride quality, not just lift height."},
+      {brand:"South Bend Clutch",category:"Clutch",part:"Performance Clutch Kit",note:"Manual transmission only — needed once power climbs past what the stock clutch can hold."},
+    ],
+  },
 };
 
 const BRAND_COLORS = {
@@ -1546,9 +1591,12 @@ const BRAND_COLORS = {
   "Magnaflow":"#9B59B6","Neuspeed":"#E8B01C","Bosch":"#E81C4A",
   "Ignition Projects":"#1CE8D4","NGK":"#E86B1C","EBC Brakes":"#E8E040",
   "Wilwood":"#1CE84A","Cravenspeed":"#E81CB0","Mishimoto":"#1C9AE8",
+  "Smarty (Mads Electronics)":"#E8401C","Edge Products":"#4A8FE8","BD Diesel":"#2E8B57",
+  "ATS Diesel":"#9B59B6","Fleece Performance":"#E8B01C","Industrial Injection":"#E81C4A",
+  "MBRP":"#1CE8D4","Diamond Eye":"#E86B1C","S&B Filters":"#E8E040",
+  "FASS Fuel Systems":"#1CE84A","Carli Suspension":"#E81CB0","South Bend Clutch":"#1C9AE8",
 };
 
-// Best-confidence official homepages — flag any that turn out wrong and we'll fix them.
 const BRAND_LINKS = {
   "EuroCompulsion":"https://shopeurocompulsion.net",
   "Forge Motorsports":"https://forgemotorsport.com",
@@ -1562,6 +1610,18 @@ const BRAND_LINKS = {
   "Wilwood":"https://www.wilwood.com",
   "Cravenspeed":"https://www.cravenspeed.com",
   "Mishimoto":"https://www.mishimoto.com",
+  "Smarty (Mads Electronics)":"https://www.madselectronics.com",
+  "Edge Products":"https://www.edgeproducts.com",
+  "BD Diesel":"https://www.bd-power.com",
+  "ATS Diesel":"https://www.atsdiesel.com",
+  "Fleece Performance":"https://www.fleeceperformance.com",
+  "Industrial Injection":"https://www.industrialinjection.com",
+  "MBRP":"https://www.mbrp.com",
+  "Diamond Eye":"https://www.diamondeyeperformance.com",
+  "S&B Filters":"https://www.sbfilters.com",
+  "FASS Fuel Systems":"https://www.fassride.com",
+  "Carli Suspension":"https://www.carlisuspension.com",
+  "South Bend Clutch":"https://www.southbendclutch.com",
 };
 
 // Generic mod categories every car can quick-mark, even without a full parts catalog.
