@@ -1454,6 +1454,10 @@ const VEHICLES = {
 };
 
 
+// Torque specs — same pattern as CATALOG, populated car by car once verified.
+// Shape once filled in: { partName: "Oil Drain Plug", spec: "18", unit: "ft-lbs", notes: "..." }
+const TORQUE_SPECS = {};
+
 const CATALOG = {
   "Fiat": {
     "500 Abarth": [
@@ -1868,6 +1872,7 @@ export default function ModGuide(){
   const updateMileage=()=>{syncCar({...activeCar,mileage:roundToTen(parseInt(tempMileage)||0)});setEditMileage(false);};
 
   const getCatalog=(car)=>CATALOG[car.make]?.[car.model]||[];
+  const getTorqueSpecs=(car)=>TORQUE_SPECS[car.make]?.[car.model]||[];
   const getBrands=(car)=>[...new Set(getCatalog(car).map(i=>i.brand))];
   const getCategoriesForBrand=()=>{if(!activeCar||!activeBrand)return{};const cats={};getCatalog(activeCar).filter(i=>i.brand===activeBrand).forEach(i=>{if(!cats[i.category])cats[i.category]=[];cats[i.category].push(i);});return cats;};
 
@@ -1958,6 +1963,7 @@ export default function ModGuide(){
 
             <div style={{borderBottom:"1px solid #1C1C1C",marginBottom:"32px",display:"flex",overflowX:"auto"}}>
               <Tab id="maintenance" label="MAINTENANCE"/>
+              <Tab id="specs" label="TORQUE SPECS"/>
               <Tab id="mods" label="MODS"/>
               <Tab id="build" label="MY BUILD"/>
             </div>
@@ -2038,6 +2044,39 @@ export default function ModGuide(){
                       );
                     })}
                     <button onClick={()=>{syncCar({...activeCar,maintenance:[]});setWizardStep(-1);}} style={{background:"transparent",border:"1px solid #2A2A2A",color:"#444",padding:"10px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"11px",letterSpacing:"2px",cursor:"pointer",borderRadius:"4px",width:"100%",marginTop:"16px"}}>RESET & REDO SETUP</button>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {activeTab==="specs"&&(
+              <div>
+                {getTorqueSpecs(activeCar).length===0?(
+                  <div style={{textAlign:"center",padding:"48px 24px"}}>
+                    <div style={{fontSize:"40px",marginBottom:"16px"}}>🔩</div>
+                    <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"20px",color:"#E8E4DC",letterSpacing:"3px",marginBottom:"8px"}}>TORQUE SPECS COMING SOON</div>
+                    <div style={{color:"#555",fontSize:"14px",marginBottom:"32px",maxWidth:"360px",margin:"0 auto 32px"}}>We're adding verified torque specs car by car — same as maintenance and mods. Nothing here yet for the {activeCar.year} {activeCar.make} {activeCar.model}, but here's what it'll look like once it's populated:</div>
+                    <div style={{maxWidth:"420px",margin:"0 auto",opacity:0.35}}>
+                      {[["Oil Drain Plug","18 ft-lbs"],["Wheel Lug Nuts","89 ft-lbs"],["Spark Plugs","15 ft-lbs"]].map(([name,val])=>(
+                        <div key={name} style={{background:"#1C1C1C",border:"1px solid #2A2A2A",borderRadius:"6px",padding:"14px 16px",marginBottom:"8px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                          <span style={{color:"#C8C4BC",fontSize:"13px"}}>{name}</span>
+                          <span style={{color:"#888",fontSize:"13px",fontFamily:"'Bebas Neue', sans-serif",letterSpacing:"1px"}}>{val}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ):(
+                  <div>
+                    <span style={LS}>VERIFIED TORQUE SPECS</span>
+                    {getTorqueSpecs(activeCar).map((spec,i)=>(
+                      <div key={i} style={{background:"#1C1C1C",border:"1px solid #2A2A2A",borderRadius:"6px",padding:"14px 16px",marginBottom:"8px"}}>
+                        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                          <span style={{color:"#E8E4DC",fontSize:"14px"}}>{spec.partName}</span>
+                          <span style={{color:"#FF6B2B",fontSize:"14px",fontFamily:"'Bebas Neue', sans-serif",letterSpacing:"1px"}}>{spec.spec} {spec.unit}</span>
+                        </div>
+                        {spec.notes&&<div style={{color:"#666",fontSize:"12px",marginTop:"6px"}}>{spec.notes}</div>}
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
