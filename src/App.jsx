@@ -901,6 +901,248 @@ const VEHICLES = {
         },
       },
     },
+    "Yukon": {
+      generations:{
+        "1st Gen (1992-1999)":{
+          years:["1992","1993","1994","1995","1996","1997","1998","1999"],
+          trims:{
+            "Base": { engine:"5.7L V8 (210hp)", drivetrains:["2WD","4WD"], transmissions:["Manual","Automatic"], note:"Launched 1992 as a 2-door only, replacing the GMC Jimmy. 4-door added 1995, which quickly became the more popular body style — 2-door was gone by 1997." },
+            "SLE":  { engine:"5.7L V8 (210hp)", drivetrains:["2WD","4WD"], transmission:"Automatic" },
+            "SLT":  { engine:"5.7L V8 (210hp)", drivetrains:["2WD","4WD"], transmission:"Automatic" },
+            "Denali":{ engine:"5.7L V8 (255hp)", drivetrain:"4WD", transmission:"Automatic", note:"Denali trim launched for 1999 — the start of GMC's now-signature luxury sub-brand." },
+          },
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Onyx Black (Black)",hex:"#1A1A1A"},
+            {name:"Victory Red (Red)",hex:"#C8102E"},
+            {name:"Dark Blue Metallic (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "2nd Gen (2000-2006)":{
+          years:["2000","2001","2002","2003","2004","2005","2006"],
+          trims:{
+            "SLE":   { engines:["4.8L V8 (255hp)","5.3L V8 (285hp)"], drivetrains:["2WD","4WD"], transmission:"Automatic", note:"All-new GMT800 platform, stronger frame. 2003 mid-cycle refresh added new safety features and updated interior." },
+            "SLT":   { engine:"5.3L V8 (285hp)", drivetrains:["2WD","4WD"], transmission:"Automatic" },
+            "Denali":{ engine:"6.0L V8 (320-325hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Summit White (White)",hex:"#F5F5F5"},
+            {name:"Onyx Black (Black)",hex:"#1A1A1A"},
+            {name:"Victory Red (Red)",hex:"#C8102E"},
+            {name:"Silver Birch Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "3rd Gen (2007-2014)":{
+          years:["2007","2008","2009","2010","2011","2012","2013","2014"],
+          trims:{
+            "SLE":   { engine:"4.8L V8 (290hp)", drivetrains:["2WD","4WD"], transmission:"Automatic", note:"GMT900 platform — more angular styling. A hybrid model was offered 2008-2013, GM's 2-mode hybrid system with a 6.0L V8." },
+            "SLT":   { engine:"5.3L V8 (320hp)", drivetrains:["2WD","4WD"], transmission:"Automatic" },
+            "Denali":{ engine:"6.2L V8 (380hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Summit White (White)",hex:"#F5F5F5"},
+            {name:"Onyx Black (Black)",hex:"#1A1A1A"},
+            {name:"Fire Red (Red)",hex:"#C8102E"},
+            {name:"Quicksilver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "4th Gen (2015-2020)":{
+          years:["2015","2016","2017","2018","2019","2020"],
+          trims:{
+            "SLE":   { engine:"5.3L V8 (355hp)", drivetrains:["2WD","4WD"], transmission:"Automatic", note:"AWD was dropped as an option this generation — RWD or 4WD only. New lightweight aluminum liftgate and hood." },
+            "SLT":   { engine:"5.3L V8 (355hp)", drivetrains:["2WD","4WD"], transmission:"Automatic" },
+            "Denali":{ engine:"6.2L V8 (420hp)", drivetrains:["2WD","4WD"], transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Summit White (White)",hex:"#F5F5F5"},
+            {name:"Onyx Black (Black)",hex:"#1A1A1A"},
+            {name:"Crimson Red Tintcoat (Red)",hex:"#9B1B30"},
+            {name:"Quicksilver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "5th Gen (2021-2026)":{
+          years:["2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "SLE":   { engine:"5.3L V8 (355hp)", drivetrain:"4WD", transmission:"Automatic", note:"All-new larger platform, independent rear suspension for the first time. A 3.0L Duramax diesel inline-6 (277hp) joined the lineup too — first diesel Yukon ever." },
+            "SLT":   { engine:"5.3L V8 (355hp)", drivetrain:"4WD", transmission:"Automatic" },
+            "AT4":   { engine:"6.2L V8 (420hp)", drivetrain:"4WD", transmission:"Automatic", note:"Off-road trim introduced this generation." },
+            "Denali":{ engine:"6.2L V8 (420hp)", drivetrain:"4WD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Summit White (White)",hex:"#F5F5F5"},
+            {name:"Onyx Black (Black)",hex:"#1A1A1A"},
+            {name:"Cayenne Red Tintcoat (Red)",hex:"#9B1B30"},
+            {name:"Satin Steel Metallic (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+      },
+    },
+  },
+  "Mercedes-Benz": {
+    "E-Class": {
+      generations:{
+        "W124 (1990-1993)":{
+          years:["1990","1991","1992","1993"],
+          trims:{
+            "300E":  { engine:"3.0L Inline-6 (188hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Not officially called 'E-Class' until the 1993 facelift — before that it was just the 300-series W124. This generation is where the E-Class name was born." },
+            "400E":  { engine:"4.2L V8 (268hp)", drivetrain:"RWD", transmission:"Automatic" },
+            "500E":  { engine:"5.0L V8 (315hp)", drivetrain:"RWD", transmission:"Automatic", note:"Co-developed with Porsche, hand-assembled, genuinely legendary sleeper sedan today." },
+          },
+          colors:[
+            {name:"Astral Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Alabaster White (White)",hex:"#F5F5F5"},
+            {name:"Blue Black (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "W210 (1996-2002)":{
+          years:["1996","1997","1998","1999","2000","2001","2002"],
+          trims:{
+            "E320": { engine:"3.2L Inline-6 (217hp)", drivetrain:"RWD", transmission:"Automatic", note:"First generation to wear the E-Class name from day one. Distinctive quad-headlight 'goggle-eye' styling was controversial at launch." },
+            "E430": { engine:"4.3L V8 (275hp)", drivetrain:"RWD", transmission:"Automatic" },
+            "E55 AMG":{ engine:"5.5L V8 (349hp)", drivetrain:"RWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Brilliant Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Alabaster White (White)",hex:"#F5F5F5"},
+            {name:"Sepang Brown (Brown)",hex:"#4A3728"},
+          ],
+        },
+        "W211 (2003-2009)":{
+          years:["2003","2004","2005","2006","2007","2008","2009"],
+          trims:{
+            "E350":  { engine:"3.5L V6 (268hp)", drivetrain:"RWD", transmission:"Automatic" },
+            "E500":  { engine:"5.0L V8 (302hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+            "E63 AMG":{ engine:"6.2L V8 (507hp)", drivetrain:"RWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Iridium Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Obsidian Black (Black)",hex:"#1A1A1A"},
+            {name:"Alabaster White (White)",hex:"#F5F5F5"},
+            {name:"Capri Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "W212 (2010-2016)":{
+          years:["2010","2011","2012","2013","2014","2015","2016"],
+          trims:{
+            "E350":  { engine:"3.5L V6 (302hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"2013 facelift dropped the quad-headlight look for good — the E started looking like the rest of the Mercedes lineup again." },
+            "E550":  { engine:"4.6L Twin-Turbo V8 (402hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+            "E63 AMG":{ engine:"5.5L Twin-Turbo V8 (518hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Iridium Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Obsidian Black (Black)",hex:"#1A1A1A"},
+            {name:"Polar White (White)",hex:"#F5F5F5"},
+            {name:"Lunar Blue (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "W213 (2017-2023)":{
+          years:["2017","2018","2019","2020","2021","2022","2023"],
+          trims:{
+            "E300":  { engine:"2.0L Turbocharged 4-cylinder (241hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Simplified engine lineup — the old naturally-aspirated V6 was dropped in favor of turbo fours and sixes." },
+            "E450":  { engine:"3.0L Turbocharged Inline-6 (362hp)", drivetrain:"AWD", transmission:"Automatic" },
+            "E63 S AMG":{ engine:"4.0L Twin-Turbo V8 (603hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Iridium Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Obsidian Black (Black)",hex:"#1A1A1A"},
+            {name:"Polar White (White)",hex:"#F5F5F5"},
+            {name:"Cavansite Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "W214 (2024-2026)":{
+          years:["2024","2025","2026"],
+          trims:{
+            "E350":  { engine:"2.0L Turbocharged 4-cylinder (255hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"All-new generation." },
+            "E450":  { engine:"3.0L Turbocharged Mild-Hybrid Inline-6 (375hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"High-Tech Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Obsidian Black (Black)",hex:"#1A1A1A"},
+            {name:"Polar White (White)",hex:"#F5F5F5"},
+            {name:"Spectral Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
+  },
+  "Audi": {
+    "A4": {
+      generations:{
+        "B5 (1996-2001)":{
+          years:["1996","1997","1998","1999","2000","2001"],
+          trims:{
+            "1.8T":  { engine:"1.8L Turbocharged 4-cylinder (148-170hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"], note:"First A4 in the US, replacing the Audi 80. 1999 facelift bumped the turbo four's output and added a 30-valve V6." },
+            "2.8":   { engine:"2.8L V6 (172hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"], note:"Quattro AWD standard on every V6 model." },
+            "S4":    { engine:"2.7L Twin-Turbo V6 (250hp)", drivetrain:"AWD", transmission:"Manual", note:"1999 debut, RS4 wagon (Euro-only, 380hp) also launched this generation but wasn't sold in the US." },
+          },
+          colors:[
+            {name:"Brilliant Black (Black)",hex:"#1A1A1A"},
+            {name:"Cactus Green (Green)",hex:"#2E5A3A"},
+            {name:"Ming Blue Pearl (Blue)",hex:"#1E3A6B"},
+            {name:"Light Silver (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "B6 (2002-2005)":{
+          years:["2002","2003","2004","2005"],
+          trims:{
+            "1.8T":  { engine:"1.8L Turbocharged 4-cylinder (170hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"] },
+            "3.0":   { engine:"3.0L V6 (220hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+            "S4":    { engine:"4.2L V8 (340-344hp)", drivetrain:"AWD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Brilliant Black (Black)",hex:"#1A1A1A"},
+            {name:"Dolphin Gray (Gray)",hex:"#8A8D8F"},
+            {name:"Denim Blue Pearl (Blue)",hex:"#1E4B8E"},
+            {name:"Light Silver (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "B7 (2006-2008)":{
+          years:["2006","2007","2008"],
+          trims:{
+            "2.0T": { engine:"2.0L Turbocharged 4-cylinder (200hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"], note:"Replaced the old 1.8T — standard 5-speed manual." },
+            "3.2":  { engine:"3.2L V6 (255hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+            "S4":   { engine:"4.2L V8 (340hp)", drivetrain:"AWD", transmission:"Manual" },
+            "RS4":  { engine:"4.2L V8 (420hp)", drivetrain:"AWD", transmission:"Manual", note:"2006 debut for this generation — RS4 wagon and cabriolet also existed in Europe, sedan only officially in the US." },
+          },
+          colors:[
+            {name:"Brilliant Black (Black)",hex:"#1A1A1A"},
+            {name:"Meteor Gray Pearl (Gray)",hex:"#5A5F63"},
+            {name:"Deep Sea Blue Pearl (Blue)",hex:"#1E3A6B"},
+            {name:"Ibis White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "B8 (2009-2016)":{
+          years:["2009","2010","2011","2012","2013","2014","2015","2016"],
+          trims:{
+            "2.0T":  { engine:"2.0L Turbocharged 4-cylinder (211-220hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"], note:"All-new MLB platform — longer wheelbase, more interior room, better weight distribution." },
+            "3.2":   { engine:"3.2L V6 (265hp)", drivetrain:"AWD", transmission:"Automatic", note:"V6 was dropped partway through this generation, leaving the 2.0T as the only engine in the regular A4 lineup for later years." },
+            "S4":    { engine:"3.0L Supercharged V6 (333hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Phantom Black Pearl (Black)",hex:"#1A1A1A"},
+            {name:"Monsoon Gray Metallic (Gray)",hex:"#6B6E6F"},
+            {name:"Scuba Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Ibis White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "B9 (2017-2024)":{
+          years:["2017","2018","2019","2020","2021","2022","2023","2024"],
+          trims:{
+            "40 TFSI":{ engine:"2.0L Turbocharged 4-cylinder (190hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "45 TFSI":{ engine:"2.0L Turbocharged 4-cylinder (248-252hp)", drivetrain:"AWD", transmission:"Automatic", note:"2020 facelift year — only engine offered in the regular A4 from here on was this 2.0T, in two output levels." },
+            "S4":     { engine:"3.0L Turbocharged V6 (349-354hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Mythos Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Florett Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Glacier White Metallic (White)",hex:"#F0F0F0"},
+            {name:"Ultra Blue Metallic (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
   },
   "Honda": {
     "Accord": {
