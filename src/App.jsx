@@ -1430,6 +1430,38 @@ const VEHICLES = {
       },
     },
   },
+  "Infiniti": {
+    "G35 / G37": {
+      generations:{
+        "G35 (2003-2008)":{
+          years:["2003","2004","2005","2006","2007","2008"],
+          trims:{
+            "Sedan":       { engines:["3.5L VQ35DE V6 (260hp)","3.5L VQ35HR V6 (306hp)"], drivetrains:["RWD","AWD"], transmissions:["Manual","Automatic"], note:"Shares its FM platform with the Nissan 350Z — genuinely the same bones under a more luxurious skin. VQ35HR (306hp) arrived with the 2007 facelift." },
+            "Coupe":       { engine:"3.5L VQ35DE V6 (280hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Coupe launched 2003, slightly higher output than the sedan from the start." },
+          },
+          colors:[
+            {name:"Ivory Pearl (White)",hex:"#F0F0F0"},
+            {name:"Black Obsidian (Black)",hex:"#1A1A1A"},
+            {name:"Laser Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Diamond Graphite (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "G37 (2009-2013)":{
+          years:["2009","2010","2011","2012","2013"],
+          trims:{
+            "Sedan": { engine:"3.7L VQ37VHR V6 (328-330hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Sedan followed the coupe by about a year — coupe launched as an early 2008 model, sedan came for 2009." },
+            "Coupe": { engine:"3.7L VQ37VHR V6 (330-348hp)", drivetrains:["RWD","AWD"], transmissions:["Manual","Automatic"], note:"IPL (Infiniti Performance Line) trim pushed to 348hp — the sportiest version. Final generation before Infiniti replaced the G-badge with the Q50 in 2014." },
+          },
+          colors:[
+            {name:"Moonlight White (White)",hex:"#F5F5F5"},
+            {name:"Black Obsidian (Black)",hex:"#1A1A1A"},
+            {name:"Malbec Black (Dark Red)",hex:"#4A1A1A"},
+            {name:"Graphite Shadow (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+      },
+    },
+  },
   "Jeep": {
     "Wrangler": {
       generations:{
@@ -2111,8 +2143,144 @@ const VEHICLES = {
         },
       },
     },
+    "Lancer": {
+      generations:{
+        "9th Gen (2002-2007)":{
+          years:["2002","2003","2004","2005","2006","2007"],
+          trims:{
+            "ES": { engine:"2.0L 4-cylinder (120hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Regular Lancer returned to the US in 2002 after a gap — this is the everyday economy compact, not the Evolution. Ralliart trim (2004+) offered a mild sport package, not related to the Evo." },
+            "O-Z Rally":{ engine:"2.0L 4-cylinder (120hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Dover White (White)",hex:"#F5F5F5"},
+            {name:"Kalapana Black (Black)",hex:"#1A1A1A"},
+            {name:"Apex Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Solar Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
+        "10th Gen (2008-2017)":{
+          years:["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017"],
+          trims:{
+            "ES":  { engine:"2.0L 4-cylinder (152hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GTS": { engine:"2.4L 4-cylinder (168hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Ralliart":{ engine:"2.0L Turbocharged 4-cylinder (237hp)", drivetrain:"AWD", transmission:"Automatic (Dual-Clutch)", note:"Genuinely turbo AWD, but not the same car as the Evolution — softer tune, different engine, twin-clutch only. A real 'Evo-lite' for people who couldn't afford the real thing." },
+          },
+          colors:[
+            {name:"Wicked White (White)",hex:"#F5F5F5"},
+            {name:"Tarmac Black (Black)",hex:"#1A1A1A"},
+            {name:"Rally Red (Red)",hex:"#C8102E"},
+            {name:"Octane Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
+    "Lancer Evolution": {
+      generations:{
+        "Evo VIII (2003-2005)":{
+          years:["2003","2004","2005"],
+          trims:{
+            "Base":{ engine:"2.0L Turbocharged 4G63T 4-cylinder (271-276hp)", drivetrain:"AWD", transmission:"Manual", note:"First Evo ever officially sold in the US — Mitsubishi brought it here specifically to answer Subaru's WRX STI. US-spec lacked some JDM goodies like active yaw control on base trims." },
+            "RS":  { engine:"2.0L Turbocharged 4G63T 4-cylinder (271-276hp)", drivetrain:"AWD", transmission:"Manual", note:"Stripped-down, lighter version aimed at racers — no A/C or sound system standard." },
+            "MR":  { engine:"2.0L Turbocharged 4G63T 4-cylinder (271-276hp)", drivetrain:"AWD", transmission:"Manual", note:"Added a 6-speed manual option, BBS wheels, and Bilstein shocks over the base 5-speed cars." },
+          },
+          colors:[
+            {name:"Apex Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Tarmac Black (Black)",hex:"#1A1A1A"},
+            {name:"Rally Red (Red)",hex:"#C8102E"},
+            {name:"Blue Steel Metallic (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "Evo IX (2006-2007)":{
+          years:["2006","2007"],
+          trims:{
+            "Base":{ engine:"2.0L Turbocharged 4G63T MIVEC 4-cylinder (286hp)", drivetrain:"AWD", transmission:"Manual", note:"The final Evo ever built with the legendary 4G63 — MIVEC variable valve timing added here for the first time, bumping official output to 286hp (real-world figures ran noticeably higher)." },
+            "MR":  { engine:"2.0L Turbocharged 4G63T MIVEC 4-cylinder (286hp)", drivetrain:"AWD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Apex Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Tarmac Black (Black)",hex:"#1A1A1A"},
+            {name:"Rally Red (Red)",hex:"#C8102E"},
+            {name:"Wicked White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "Evo X (2008-2015)":{
+          years:["2008","2009","2010","2011","2012","2013","2014","2015"],
+          trims:{
+            "GSR": { engine:"2.0L Turbocharged 4B11T 4-cylinder (291hp)", drivetrain:"AWD", transmission:"Manual", note:"All-new aluminum 4B11T engine replaces the iron-block 4G63 entirely — a genuinely different engine family, not an evolution of the old one." },
+            "MR":  { engine:"2.0L Turbocharged 4B11T 4-cylinder (291hp)", drivetrain:"AWD", transmission:"Automatic (Dual-Clutch)", note:"First Evo sold with S-AWC active yaw control in the US, and the first with a proper dual-clutch automatic (SST) option instead of manual only." },
+            "Final Edition":{ engine:"2.0L Turbocharged 4B11T 4-cylinder (303hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (Dual-Clutch)"], note:"2015 send-off — only around 1,600 built for the US. No successor to the Evo nameplate has ever been announced." },
+          },
+          colors:[
+            {name:"Wicked White (White)",hex:"#F5F5F5"},
+            {name:"Tarmac Black (Black)",hex:"#1A1A1A"},
+            {name:"Rally Red (Red)",hex:"#C8102E"},
+            {name:"Octane Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Mars Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+      },
+    },
   },
   "Nissan": {
+    "Z": {
+      generations:{
+        "Z32 300ZX (1990-1996)":{
+          years:["1990","1991","1992","1993","1994","1995","1996"],
+          trims:{
+            "Base":       { engine:"3.0L VG30DE V6 (222hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"1990 Motor Trend Import Car of the Year, and made Car and Driver's Ten Best list every single year it was sold in the US." },
+            "Twin Turbo": { engine:"3.0L VG30DETT Twin-Turbo V6 (300hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Pulled from the US market after 1996 as prices crept toward $50k and sales collapsed — the Z name then disappeared from America entirely for 7 years." },
+          },
+          colors:[
+            {name:"Pearl White (White)",hex:"#F5F5F5"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Cherry Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Sapphire Blue Pearl (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "Z33 350Z (2003-2008)":{
+          years:["2003","2004","2005","2006","2007","2008"],
+          trims:{
+            "Base":     { engine:"3.5L VQ35DE V6 (287hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"The Z's US comeback after a 7-year absence — sold over 36,000 units in its first year alone. Shares its FM platform with the Infiniti G35." },
+            "Touring":  { engines:["3.5L VQ35DE V6 (287hp)","3.5L VQ35HR V6 (306hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"VQ35HR (306hp) arrived for the 2007 model year, replacing the original VQ35DE." },
+            "Nismo":    { engine:"3.5L VQ35HR V6 (306hp)", drivetrain:"RWD", transmission:"Manual", note:"2007-2008 only — tuned suspension, hand-welded structural seams, unique bodywork. The most valuable 350Z trim today." },
+          },
+          colors:[
+            {name:"Silverstone Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Le Mans Sunset Metallic (Orange)",hex:"#E8601C"},
+            {name:"Chicane Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
+        "Z34 370Z (2009-2020)":{
+          years:["2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],
+          trims:{
+            "Base":  { engine:"3.7L VQ37VHR V6 (332hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Sport": { engine:"3.7L VQ37VHR V6 (332hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Nismo": { engine:"3.7L VQ37VHR V6 (350hp)", drivetrain:"RWD", transmission:"Manual", note:"Own tuned suspension, aero, and exhaust — genuinely the enthusiast's pick of this generation." },
+          },
+          colors:[
+            {name:"Pearl White (White)",hex:"#F5F5F5"},
+            {name:"Magnetic Black (Black)",hex:"#1A1A1A"},
+            {name:"Solid Red (Red)",hex:"#C8102E"},
+            {name:"Chicane Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
+        "Z RZ34 (2023-2026)":{
+          years:["2023","2024","2025","2026"],
+          trims:{
+            "Sport":  { engine:"3.0L VR30DDTT Twin-Turbo V6 (400hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"All-new turbocharged Z, first Z ever with a factory twin-turbo V6 since the 300ZX. Simply badged 'Z' — no number in the name for the first time." },
+            "Performance":{ engine:"3.0L VR30DDTT Twin-Turbo V6 (400hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Nismo": { engine:"3.0L VR30DDTT Twin-Turbo V6 (420hp)", drivetrain:"RWD", transmission:"Automatic", note:"2024 debut." },
+          },
+          colors:[
+            {name:"Everest White Pearl (White)",hex:"#F0F0F0"},
+            {name:"Boulder Gray (Gray)",hex:"#6B6E6F"},
+            {name:"Ikazuchi Yellow (Yellow)",hex:"#F5C800"},
+            {name:"Seiran Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
     "Altima": {
       generations:{
         "1st Gen (1993-1997)":{
