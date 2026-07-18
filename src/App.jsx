@@ -1135,6 +1135,51 @@ const VEHICLES = {
     },
   },
   "Honda": {
+    "S2000": {
+      generations:{
+        "AP1 (1999-2003)":{
+          years:["1999","2000","2001","2002","2003"],
+          trims:{
+            "Base": { engine:"2.0L VTEC 4-cylinder (240hp)", drivetrain:"RWD", transmission:"Manual", note:"F20C engine — all-aluminum, revs to a screaming 9,000rpm, one of the highest specific-output naturally-aspirated engines ever put in a production car. Manual only, no automatic ever offered." },
+          },
+          colors:[
+            {name:"Grand Prix White (White)",hex:"#F5F5F5"},
+            {name:"Berlina Black (Black)",hex:"#1A1A1A"},
+            {name:"Formula Red (Red)",hex:"#C8102E"},
+            {name:"Silverstone Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Sebring Silver Metallic (Silver)",hex:"#C8C8C8"},
+          ],
+        },
+        "AP2 (2004-2009)":{
+          years:["2004","2005","2006","2007","2008","2009"],
+          trims:{
+            "Base": { engine:"2.2L VTEC 4-cylinder (237hp)", drivetrain:"RWD", transmission:"Manual", note:"F22C engine — larger displacement than the AP1's F20C but a lower 8,000-8,200rpm redline, traded a little peak power for a broader, more usable torque curve. Traction control added starting 2006." },
+          },
+          colors:[
+            {name:"Grand Prix White (White)",hex:"#F5F5F5"},
+            {name:"Berlina Black (Black)",hex:"#1A1A1A"},
+            {name:"New Formula Red (Red)",hex:"#C8102E"},
+            {name:"Rio Yellow (Yellow)",hex:"#F5C800"},
+            {name:"Apex Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
+    "Del Sol": {
+      years:["1993","1994","1995","1996","1997"],
+      trims:{
+        "S":    { engine:"1.5L SOHC 4-cylinder (102hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Marketed as the Civic del Sol — targa-top successor to the CR-X. One single generation for its whole run, 1993-1997." },
+        "Si":   { engine:"1.6L SOHC VTEC 4-cylinder (125hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+        "VTEC": { engine:"1.6L DOHC VTEC 4-cylinder (160hp)", drivetrain:"FWD", transmission:"Manual", note:"1994-1995 only — the B16A engine, the one enthusiasts actually chase today. Stiffer suspension, bigger brakes, 14-inch wheels." },
+      },
+      colors:[
+        {name:"Frost White (White)",hex:"#F5F5F5"},
+        {name:"Milano Red (Red)",hex:"#C8102E"},
+        {name:"Black (Black)",hex:"#1A1A1A"},
+        {name:"Cyber Green Pearl (Green)",hex:"#3B8A5A"},
+        {name:"Vogue Silver Metallic (Silver)",hex:"#C0C0C0"},
+      ],
+    },
     "Accord": {
       generations:{
         "4th Generation (1990-1993)":{
@@ -2004,6 +2049,159 @@ const VEHICLES = {
       },
     },
   },
+  "Mitsubishi": {
+    "Eclipse": {
+      generations:{
+        "1st Gen (1990-1994)":{
+          years:["1990","1991","1992","1993","1994"],
+          trims:{
+            "Base":   { engine:"1.8L 4-cylinder (92hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GS":     { engine:"2.0L 4-cylinder (135hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GS Turbo":{ engine:"2.0L Turbocharged 4G63T 4-cylinder (195hp)", drivetrain:"FWD", transmission:"Manual", note:"This is the legendary 4G63 — same core engine family that would later power the Lancer Evolution." },
+            "GSX":    { engine:"2.0L Turbocharged 4G63T 4-cylinder (195hp)", drivetrain:"AWD", transmission:"Manual", note:"AWD version of the GS Turbo — the only turbo AWD coupe on the US market at the time, and a genuine sleeper today. Shared its platform and drivetrain with the Eagle Talon TSi and Plymouth Laser." },
+          },
+          colors:[
+            {name:"Diamond White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Wineberry Red Pearl (Red)",hex:"#6B1A1A"},
+            {name:"Radiant Fire Red (Red)",hex:"#C8102E"},
+          ],
+        },
+        "2nd Gen (1995-1999)":{
+          years:["1995","1996","1997","1998","1999"],
+          trims:{
+            "RS":     { engine:"2.0L 4-cylinder (140hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Base engine this generation was actually Chrysler-sourced (420A), not Mitsubishi's own. Spyder convertible body style added for 1996." },
+            "GS":     { engine:"2.4L 4G64 4-cylinder (141hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GS-T":   { engine:"2.0L Turbocharged 4G63T 4-cylinder (210hp)", drivetrain:"FWD", transmission:"Manual", note:"The 4G63 carries over into this generation, bumped to 210hp." },
+            "GSX":    { engine:"2.0L Turbocharged 4G63T 4-cylinder (210hp)", drivetrain:"AWD", transmission:"Manual", note:"AWD turbo — this is the last generation the Eclipse ever offered the 4G63 or AWD. After 1999, both are gone for good." },
+          },
+          colors:[
+            {name:"Dover White (White)",hex:"#F5F5F5"},
+            {name:"Kalapana Black (Black)",hex:"#1A1A1A"},
+            {name:"Scarlet Red (Red)",hex:"#C8102E"},
+            {name:"Deep Amethyst Pearl (Purple)",hex:"#4A2E5A"},
+          ],
+        },
+        "3rd Gen (2000-2005)":{
+          years:["2000","2001","2002","2003","2004","2005"],
+          trims:{
+            "RS": { engine:"2.4L 4-cylinder (155hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"No turbo, no AWD offered this generation at all — the 4G63/GSX era was over. Redesigned with softer, more comfort-oriented styling." },
+            "GS": { engine:"2.4L 4-cylinder (155hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GT": { engine:"3.0L V6 (200-205hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Dover White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Black Diamond Pearl (Black)",hex:"#1A1A1A"},
+            {name:"Coral Red (Red)",hex:"#C8102E"},
+            {name:"Sunset Pearlescent (Orange)",hex:"#E8601C"},
+          ],
+        },
+        "4th Gen (2006-2012)":{
+          years:["2006","2007","2008","2009","2010","2011","2012"],
+          trims:{
+            "GS": { engine:"2.4L 4-cylinder (162hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "GT": { engine:"3.8L V6 (265hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Final generation — production ended early in August 2011 as the model year wound down. No successor was ever made." },
+          },
+          colors:[
+            {name:"Kona Sunset Pearl (Orange)",hex:"#E8601C"},
+            {name:"Northstar Blue Pearl (Blue)",hex:"#1E4B8E"},
+            {name:"Rally Red (Red)",hex:"#C8102E"},
+            {name:"Graphite Gray (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+      },
+    },
+  },
+  "Nissan": {
+    "Altima": {
+      generations:{
+        "1st Gen (1993-1997)":{
+          years:["1993","1994","1995","1996","1997"],
+          trims:{
+            "XE": { engine:"2.4L DOHC 4-cylinder (150hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Replaced the Stanza — the very first Altima rolled off the line in Smyrna, Tennessee in June 1992. All Altimas have always been US-built." },
+            "GXE":{ engine:"2.4L DOHC 4-cylinder (150hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "SE": { engine:"2.4L DOHC 4-cylinder (150hp)", drivetrain:"FWD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Cloud White (White)",hex:"#F5F5F5"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Aspen White (White)",hex:"#F0F0F0"},
+            {name:"Sedona Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "2nd Gen (1998-2001)":{
+          years:["1998","1999","2000","2001"],
+          trims:{
+            "GXE":{ engine:"2.4L DOHC 4-cylinder (150hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"1997 added a 'Limited Edition' package with alloy wheels and keyless entry — carried into this generation's early years." },
+            "SE": { engine:"2.4L DOHC 4-cylinder (150hp)", drivetrain:"FWD", transmission:"Manual" },
+            "GLE":{ engine:"2.4L DOHC 4-cylinder (150hp)", drivetrain:"FWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Cloud White (White)",hex:"#F5F5F5"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Sedona Red (Red)",hex:"#9B1B30"},
+            {name:"Storm Gray (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "3rd Gen (2002-2006)":{
+          years:["2002","2003","2004","2005","2006"],
+          trims:{
+            "S":   { engine:"2.5L 4-cylinder (175hp)", drivetrain:"FWD", transmission:"Automatic", note:"First Altima ever offered with a V6, and the first built on Nissan's new FF-L platform — a huge jump in size and interior space." },
+            "SL":  { engine:"3.5L V6 (245-250hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "SE-R":{ engine:"3.5L V6 (260hp)", drivetrain:"FWD", transmission:"Manual", note:"Performance trim with a genuinely quick V6 for the segment at the time." },
+          },
+          colors:[
+            {name:"Cloud White (White)",hex:"#F5F5F5"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Sedona Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Java Metallic (Brown)",hex:"#4A3728"},
+          ],
+        },
+        "4th Gen (2007-2012)":{
+          years:["2007","2008","2009","2010","2011","2012"],
+          trims:{
+            "2.5S":  { engine:"2.5L 4-cylinder (175hp)", drivetrain:"FWD", transmission:"Automatic (CVT)", note:"First generation to offer a Coupe body style (added 2008) alongside the sedan, plus a Hybrid model starting 2007." },
+            "3.5SR": { engine:"3.5L V6 (270hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (CVT)"] },
+            "Hybrid":{ engine:"2.5L Hybrid 4-cylinder (198hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Winter Frost Pearl (White)",hex:"#F0F0F0"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Code Red Metallic (Red)",hex:"#9B1B30"},
+            {name:"Ocean Gray (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "5th Gen (2013-2018)":{
+          years:["2013","2014","2015","2016","2017","2018"],
+          trims:{
+            "2.5S":  { engine:"2.5L 4-cylinder (182hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "3.5SL": { engine:"3.5L V6 (270hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Pearl White (White)",hex:"#F5F5F5"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Cayenne Red (Red)",hex:"#9B1B30"},
+            {name:"Storm Blue (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "6th Gen (2019-2026)":{
+          years:["2019","2020","2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "S":   { engine:"2.5L 4-cylinder (188hp)", drivetrains:["FWD","AWD"], transmission:"Automatic (CVT)", note:"AWD became available for the first time in Altima history. The VC-Turbo engine on SR trims is genuinely unique tech — the world's first production variable compression ratio engine." },
+            "SV":  { engine:"2.5L 4-cylinder (188hp)", drivetrains:["FWD","AWD"], transmission:"Automatic (CVT)" },
+            "SR":  { engine:"2.0L VC-Turbo 4-cylinder (236hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "Platinum":{ engine:"2.5L 4-cylinder (188hp)", drivetrains:["FWD","AWD"], transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Glacier White (White)",hex:"#F5F5F5"},
+            {name:"Super Black (Black)",hex:"#1A1A1A"},
+            {name:"Scarlet Ember (Red)",hex:"#9B1B30"},
+            {name:"Gun Metallic (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+      },
+    },
+  },
   "Scion": {
     "tC": {
       generations:{
@@ -2066,6 +2264,92 @@ const VEHICLES = {
     },
   },
   "Subaru": {
+    "Impreza": {
+      generations:{
+        "1st Gen (1993-2001)":{
+          years:["1993","1994","1995","1996","1997","1998","1999","2000","2001"],
+          trims:{
+            "L":  { engine:"1.8L Flat-4 (110hp)", drivetrains:["FWD","AWD"], transmissions:["Manual","Automatic"], note:"WRX/STI not offered in the US on this generation — those are covered separately in our WRX entry starting with Bugeye 2002." },
+            "Outback Sport":{ engine:"2.2L Flat-4 (137hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"], note:"Off-road appearance package, sold only in North America — the direct predecessor to today's Crosstrek." },
+          },
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Sedona Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Sage Green (Green)",hex:"#5A7A5A"},
+          ],
+        },
+        "2nd Gen (2002-2007)":{
+          years:["2002","2003","2004","2005","2006","2007"],
+          trims:{
+            "2.5 RS":{ engine:"2.5L Flat-4 (165-173hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+            "Outback Sport":{ engine:"2.5L Flat-4 (165-173hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Crystal White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Aspen White (White)",hex:"#F0F0F0"},
+            {name:"Woodland Green (Green)",hex:"#2E5A3A"},
+          ],
+        },
+        "3rd Gen (2008-2011)":{
+          years:["2008","2009","2010","2011"],
+          trims:{
+            "2.5i":{ engine:"2.5L Flat-4 (170hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"], note:"Sedan and hatchback body styles." },
+            "Outback Sport":{ engine:"2.5L Flat-4 (170hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Satin White Pearl (White)",hex:"#F0F0F0"},
+            {name:"Obsidian Black Pearl (Black)",hex:"#1A1A1A"},
+            {name:"Ruby Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Newport Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "4th Gen (2012-2016)":{
+          years:["2012","2013","2014","2015","2016"],
+          trims:{
+            "2.0i":        { engine:"2.0L Flat-4 (148hp)", drivetrain:"AWD", transmission:"Automatic (CVT)", note:"WRX and STI split off as their own standalone models this generation, no longer badged as part of the Impreza lineup." },
+            "2.0i Premium":{ engine:"2.0L Flat-4 (148hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+            "2.0i Limited":{ engine:"2.0L Flat-4 (148hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Satin White Pearl (White)",hex:"#F0F0F0"},
+            {name:"Crystal Black Silica (Black)",hex:"#1A1A1A"},
+            {name:"Venetian Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Marine Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "5th Gen (2017-2023)":{
+          years:["2017","2018","2019","2020","2021","2022","2023"],
+          trims:{
+            "Base":   { engine:"2.0L Flat-4 (152hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+            "Premium":{ engine:"2.0L Flat-4 (152hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+            "Sport":  { engine:"2.0L Flat-4 (152hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+            "Limited":{ engine:"2.0L Flat-4 (152hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Crystal White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Crystal Black Silica (Black)",hex:"#1A1A1A"},
+            {name:"Pure Red (Red)",hex:"#C8102E"},
+            {name:"Dark Blue Pearl (Blue)",hex:"#1B2A4A"},
+          ],
+        },
+        "6th Gen (2024-2026)":{
+          years:["2024","2025","2026"],
+          trims:{
+            "Base":   { engine:"2.0L Flat-4 (152hp)", drivetrain:"AWD", transmission:"Automatic (CVT)", note:"Hatchback only starting this generation — no more sedan body style, though the related WRX still offers one." },
+            "Sport":  { engine:"2.5L Flat-4 (182hp)", drivetrain:"AWD", transmission:"Automatic (CVT)", note:"2.5L option added this generation for the first time on a non-WRX Impreza." },
+            "RS":     { engine:"2.5L Flat-4 (182hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Crystal White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Crystal Black Silica (Black)",hex:"#1A1A1A"},
+            {name:"Solar Orange (Orange)",hex:"#E8601C"},
+            {name:"Horizon Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
     "Ascent": {
       years:["2019","2020","2021","2022","2023","2024","2025"],
       trims:{
@@ -2211,6 +2495,82 @@ const VEHICLES = {
     },
   },
   "Toyota": {
+    "Avalon": {
+      generations:{
+        "1st Gen (1995-1999)":{
+          years:["1995","1996","1997","1998","1999"],
+          trims:{
+            "XL":  { engine:"3.0L V6 (192hp)", drivetrain:"FWD", transmission:"Automatic", note:"Built in Georgetown, Kentucky from day one — replaced the rear-wheel-drive Cressida. DOHC engine through 1996, switched to SOHC for 1997+ (same displacement, similar output)." },
+            "XLS": { engine:"3.0L V6 (192hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Gold Edition": { engine:"3.0L V6 (192hp)", drivetrain:"FWD", transmission:"Automatic", note:"Special luxury package — gold badging, upgraded leather and wood trim, distinct from the standard XLS." },
+          },
+          colors:[
+            {name:"Super White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Cashmere Beige Metallic (Beige)",hex:"#C8B89A"},
+            {name:"Dark Green Pearl (Green)",hex:"#2E5A3A"},
+            {name:"Sunfire Red Pearl (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "2nd Gen (2000-2004)":{
+          years:["2000","2001","2002","2003","2004"],
+          trims:{
+            "XL":  { engine:"3.0L V6 (210hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "XLS": { engine:"3.0L V6 (210hp)", drivetrain:"FWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Super White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Antique Sage Metallic (Green)",hex:"#7A8A6A"},
+            {name:"Salsa Red Pearl (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "3rd Gen (2005-2012)":{
+          years:["2005","2006","2007","2008","2009","2010","2011","2012"],
+          trims:{
+            "XL":      { engine:"3.5L V6 (268hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "XLS":     { engine:"3.5L V6 (268hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Limited": { engine:"3.5L V6 (268hp)", drivetrain:"FWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Super White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Classic Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Cassis Red Mica (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "4th Gen (2013-2018)":{
+          years:["2013","2014","2015","2016","2017","2018"],
+          trims:{
+            "XLE":     { engine:"3.5L V6 (268hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "XLE Premium":{ engine:"3.5L V6 (268hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Limited": { engine:"3.5L V6 (268hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Hybrid":  { engine:"2.5L Hybrid 4-cylinder (200hp)", drivetrain:"FWD", transmission:"Automatic (e-CVT)", note:"Hybrid powertrain added this generation." },
+          },
+          colors:[
+            {name:"Super White (White)",hex:"#F5F5F5"},
+            {name:"Attitude Black (Black)",hex:"#1A1A1A"},
+            {name:"Cypress Metallic (Green)",hex:"#5A7A5A"},
+            {name:"Salsa Red Pearl (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "5th Gen (2019-2022)":{
+          years:["2019","2020","2021","2022"],
+          trims:{
+            "XLE":     { engine:"3.5L V6 (301hp)", drivetrain:"FWD", transmission:"Automatic", note:"Final generation — discontinued after 2022 as Toyota shifted its US flagship sedan role to the new Crown." },
+            "Limited": { engine:"3.5L V6 (301hp)", drivetrains:["FWD","AWD"], transmission:"Automatic", note:"AWD became available for the first time in Avalon history, starting 2020." },
+            "TRD":     { engine:"3.5L V6 (301hp)", drivetrain:"FWD", transmission:"Automatic", note:"A genuinely odd but real product — a sport-tuned, lowered, performance-exhaust Avalon." },
+            "Hybrid":  { engine:"2.5L Hybrid 4-cylinder (215hp)", drivetrain:"FWD", transmission:"Automatic (e-CVT)" },
+          },
+          colors:[
+            {name:"Wind Chill Pearl (White)",hex:"#F0F0F0"},
+            {name:"Midnight Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Ruby Flare Pearl (Red)",hex:"#9B1B30"},
+            {name:"Celestial Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+      },
+    },
     "4Runner": {
       generations:{
         "2nd Gen (1990-1995)":{
