@@ -2081,6 +2081,66 @@ const VEHICLES = {
       },
     },
   },
+  "Mini": {
+    "Cooper S": {
+      generations:{
+        "R53 (2002-2006)":{
+          years:["2002","2003","2004","2005","2006"],
+          trims:{
+            "Base": { engine:"1.6L Supercharged 4-cylinder (163hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"The only factory-supercharged Cooper S ever built — every generation after this one uses a turbo instead. Eaton M45 Roots-type supercharger, immediate boost with no lag." },
+            "Facelift":{ engine:"1.6L Supercharged 4-cylinder (170hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"September 2004 facelift bumped output via a revised supercharger pulley and improved intercooler — new front bumper and headlights too." },
+            "JCW GP":{ engine:"1.6L Supercharged 4-cylinder (218hp)", drivetrain:"FWD", transmission:"Manual", note:"2006 limited edition, only 2,000 built worldwide — rear seats deleted, aggressive bodykit, track suspension. Genuinely rare and sought after today." },
+          },
+          colors:[
+            {name:"Chili Red (Red)",hex:"#C8102E"},
+            {name:"Pure Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Astro Black (Black)",hex:"#1A1A1A"},
+            {name:"Liquid Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
+        "R56 (2007-2013)":{
+          years:["2007","2008","2009","2010","2011","2012","2013"],
+          trims:{
+            "Base": { engine:"1.6L Turbocharged 4-cylinder N14 (172hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"The supercharger is gone for good here — replaced with a turbo, a real fork-in-the-road moment for Cooper S character. N14 engine used 2006-2009." },
+            "N18":  { engine:"1.6L Turbocharged 4-cylinder N18 (181hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"N18 engine (2010-2013) — revised timing chain design over the earlier N14, generally considered more reliable." },
+            "JCW":  { engine:"1.6L Turbocharged 4-cylinder (208-211hp)", drivetrain:"FWD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Chili Red (Red)",hex:"#C8102E"},
+            {name:"Lightning Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Midnight Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Pepper White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "F56 (2014-2021)":{
+          years:["2014","2015","2016","2017","2018","2019","2020","2021"],
+          trims:{
+            "Base": { engine:"2.0L Turbocharged 4-cylinder B48 (189-192hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"All-new platform, bigger 2.0L engine shared with several BMW products (the B48 also shows up in the Toyota GR Supra). More usable torque than the old 1.6T, though some say less character." },
+            "JCW":  { engine:"2.0L Turbocharged 4-cylinder (228-231hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Chili Red (Red)",hex:"#C8102E"},
+            {name:"Island Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Midnight Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Moonwalk Grey (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "F56 Facelift (2022-2026)":{
+          years:["2022","2023","2024","2025","2026"],
+          trims:{
+            "Base": { engine:"2.0L Turbocharged 4-cylinder (201hp)", drivetrain:"FWD", transmission:"Automatic (Dual-Clutch)", note:"Manual availability has narrowed significantly in recent years — check current-year specifics before assuming one's offered." },
+            "JCW":  { engine:"2.0L Turbocharged 4-cylinder (228-231hp)", drivetrain:"FWD", transmission:"Automatic (Dual-Clutch)" },
+          },
+          colors:[
+            {name:"Chili Red (Red)",hex:"#C8102E"},
+            {name:"British Racing Green (Green)",hex:"#2E5A3A"},
+            {name:"Midnight Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"White Silver (White)",hex:"#F0F0F0"},
+          ],
+        },
+      },
+    },
+  },
   "Mitsubishi": {
     "Eclipse": {
       generations:{
@@ -2365,6 +2425,70 @@ const VEHICLES = {
             {name:"Boulder Gray (Gray)",hex:"#6B6E6F"},
             {name:"Ikazuchi Yellow (Yellow)",hex:"#F5C800"},
             {name:"Seiran Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
+  },
+  "Porsche": {
+    "Boxster": {
+      generations:{
+        "986 (1997-2004)":{
+          years:["1997","1998","1999","2000","2001","2002","2003","2004"],
+          trims:{
+            "Base": { engines:["2.5L Flat-6 (201hp)","2.7L Flat-6 (217hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"The original — Porsche's first purpose-built roadster since the 914, and the first water-cooled flat-six ever put in a Porsche. 2.5L ran 1997-1999, replaced by the 2.7L for 2000+." },
+            "S":    { engine:"3.2L Flat-6 (252hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Boxster S arrived a bit after the base car — bigger 3.2L flat-six, still shares its running gear closely with the contemporary 911 (996)." },
+          },
+          colors:[
+            {name:"Guards Red (Red)",hex:"#C8102E"},
+            {name:"Speed Yellow (Yellow)",hex:"#F5C800"},
+            {name:"Basalt Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Arctic Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "987 (2005-2012)":{
+          years:["2005","2006","2007","2008","2009","2010","2011","2012"],
+          trims:{
+            "Base": { engines:["2.7L Flat-6 (240hp)","2.9L Flat-6 (255hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"987.1 (2005-2008) used the M96/M97 engine family, which has a real known issue — IMS (intermediate shaft) bearing failure. That was resolved with the direct-injection 9A1 engines starting the 987.2 facelift (2009+, 2.9L)." },
+            "S":    { engines:["3.2L Flat-6 (280hp)","3.4L Flat-6 (310hp)"], drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Spyder":{ engine:"3.4L Flat-6 (320hp)", drivetrain:"RWD", transmission:"Manual", note:"2010 debut — lightweight, minimalist, manual-only soft top. First of a recurring 'Spyder' special edition that shows up in later generations too." },
+          },
+          colors:[
+            {name:"Guards Red (Red)",hex:"#C8102E"},
+            {name:"Racing Yellow (Yellow)",hex:"#F5C800"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"GT Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "981 (2013-2016)":{
+          years:["2013","2014","2015","2016"],
+          trims:{
+            "Base": { engine:"2.7L Flat-6 (265hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"A big step up from the 987 — wider track, longer wheelbase, aluminum construction for real weight savings, styling borrowed from the Carrera GT and 991-generation 911. Many consider this the 'sweet spot' Boxster: still naturally aspirated, more modern than the 987." },
+            "S":    { engine:"3.4L Flat-6 (315hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "GTS":  { engine:"3.4L Flat-6 (330hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Spyder":{ engine:"3.8L Flat-6 (375hp)", drivetrain:"RWD", transmission:"Manual", note:"2015 revival of the Spyder concept — this engine is shared with the 911 Carrera S, one of the most celebrated Boxster engines ever made." },
+          },
+          colors:[
+            {name:"Guards Red (Red)",hex:"#C8102E"},
+            {name:"Racing Yellow (Yellow)",hex:"#F5C800"},
+            {name:"Jet Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"GT Silver Metallic (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "982 / 718 (2017-2025)":{
+          years:["2017","2018","2019","2020","2021","2022","2023","2024","2025"],
+          trims:{
+            "Base": { engine:"2.0L Turbocharged Flat-4 (300hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"A genuinely controversial shift — Porsche dropped the flat-six for a turbocharged flat-4 across the base and S trims, badged '718' as a nod to Porsche's historic four-cylinder race cars. The naturally-aspirated six came back on GTS and Spyder trims though." },
+            "S":    { engine:"2.5L Turbocharged Flat-4 (350hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "GTS 4.0":{ engine:"4.0L Flat-6 (394hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Naturally-aspirated flat-six returns here — no turbo, genuine enthusiast favorite of this generation." },
+            "Spyder":{ engine:"4.0L Flat-6 (414hp)", drivetrain:"RWD", transmission:"Manual", note:"2019 debut. Porsche ceased all Boxster and Cayman (718) production in October 2025 — this is the final generation, at least for now." },
+          },
+          colors:[
+            {name:"Guards Red (Red)",hex:"#C8102E"},
+            {name:"Racing Yellow (Yellow)",hex:"#F5C800"},
+            {name:"Jet Black Metallic (Black)",hex:"#1A1A1A"},
+            {name:"GT Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Miami Blue (Blue)",hex:"#1C9AE8"},
           ],
         },
       },
