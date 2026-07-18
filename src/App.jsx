@@ -314,6 +314,50 @@ const VEHICLES = {
       },
     },
   },
+  "Cadillac": {
+    "CTS-V": {
+      generations:{
+        "1st Gen (2004-2007)":{
+          years:["2004","2005","2006","2007"],
+          trims:{
+            "Base": { engine:"5.7L LS6 V8 (400hp)", drivetrain:"RWD", transmission:"Manual", note:"Sedan only, manual-only — the LS6 was carried over from the Chevrolet Corvette C5 Z06." },
+          },
+          colors:[
+            {name:"Black Raven (Black)",hex:"#1A1A1A"},
+            {name:"Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Sable Black (Black)",hex:"#111111"},
+            {name:"Light Platinum (Silver)",hex:"#C8C8C8"},
+          ],
+        },
+        "2nd Gen (2009-2015)":{
+          years:["2009","2010","2011","2012","2013","2014","2015"],
+          trims:{
+            "Sedan":{ engine:"6.2L Supercharged LSA V8 (556hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Complete re-engineering, first supercharged CTS-V. Coupe and Sport Wagon body styles added for 2011." },
+            "Coupe":{ engine:"6.2L Supercharged LSA V8 (556hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "Sport Wagon":{ engine:"6.2L Supercharged LSA V8 (556hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Genuinely rare — a factory 556hp super-wagon, cult following among enthusiasts." },
+          },
+          colors:[
+            {name:"Black Raven (Black)",hex:"#1A1A1A"},
+            {name:"Radiant Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Crystal Red Tintcoat (Red)",hex:"#9B1B30"},
+            {name:"Stealth Blue (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "3rd Gen (2016-2019)":{
+          years:["2016","2017","2018","2019"],
+          trims:{
+            "Base":{ engine:"6.2L Supercharged LT4 V8 (640hp)", drivetrain:"RWD", transmission:"Automatic", note:"Sedan only, automatic only — nicknamed the 'four-door Corvette' since it shares the LT4 with the Corvette Z06. Final generation before the CTS-V was discontinued and replaced by the CT5-V." },
+          },
+          colors:[
+            {name:"Black Raven (Black)",hex:"#1A1A1A"},
+            {name:"Crystal White Tricoat (White)",hex:"#F0F0F0"},
+            {name:"Velocity Red (Red)",hex:"#C8102E"},
+            {name:"Phantom Gray Metallic (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+      },
+    },
+  },
   "Chevrolet": {
     "Camaro": {
       generations:{
@@ -448,6 +492,41 @@ const VEHICLES = {
             {name:"Black (Black)",hex:"#1A1A1A"},
             {name:"Cherry Red Tintcoat (Red)",hex:"#9B1B30"},
             {name:"Satin Steel Metallic (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+      },
+    },
+  },
+  "Chrysler": {
+    "300": {
+      generations:{
+        "1st Gen (2005-2010)":{
+          years:["2005","2006","2007","2008","2009","2010"],
+          trims:{
+            "Base":  { engine:"2.7L V6 (190hp)", drivetrain:"RWD", transmission:"Automatic", note:"Reintroduced the 300 nameplate and the HEMI V8 to Chrysler for the first time in 50 years. Built on the LX platform, sharing components with the Mercedes E-Class and S-Class." },
+            "Touring": { engine:"3.5L V6 (250hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+            "300C":  { engine:"5.7L HEMI V8 (340-359hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"359hp starting 2009 when variable valve timing was added." },
+            "300C SRT8": { engine:"6.1L HEMI V8 (425hp)", drivetrain:"RWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Brilliant Black Crystal Pearl (Black)",hex:"#1A1A1A"},
+            {name:"Bright Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Inferno Red Crystal Pearl (Red)",hex:"#9B1B1B"},
+            {name:"Marine Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "2nd Gen (2011-2023)":{
+          years:["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"],
+          trims:{
+            "Base":  { engine:"3.6L Pentastar V6 (292-300hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Long-running generation — final year was 2023, capped off with a limited-run 300C special edition as a send-off before the nameplate was discontinued." },
+            "300C":  { engine:"5.7L HEMI V8 (363hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+            "300 SRT8/SRT":{ engine:"6.4L HEMI V8 (465-470hp)", drivetrain:"RWD", transmission:"Automatic", note:"Returned for 2012, using the same 392 HEMI shared with other Chrysler Group SRT vehicles." },
+          },
+          colors:[
+            {name:"Gloss Black (Black)",hex:"#1A1A1A"},
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Velvet Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Frostbite (Silver)",hex:"#C0C0C0"},
           ],
         },
       },
@@ -1306,6 +1385,116 @@ const VEHICLES = {
       },
     },
   },
+  "Jeep": {
+    "Wrangler": {
+      generations:{
+        "YJ Tail (1990-1995)":{
+          years:["1990","1991","1992","1993","1994","1995"],
+          trims:{
+            "Base":{ engine:"2.5L 4-cylinder (117hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"], note:"Controversial square headlights instead of the traditional round Jeep look. Best known for the 4.0L inline-six, added for 1991 — the engine that gave the YJ its reputation for durability." },
+            "S":   { engine:"4.0L Inline-6 (177-190hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+            "Sahara":{ engine:"4.0L Inline-6 (177-190hp)", drivetrain:"4WD", transmission:"Manual" },
+            "Renegade":{ engine:"4.0L Inline-6 (177-190hp)", drivetrain:"4WD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Flame Red (Red)",hex:"#C8102E"},
+            {name:"Forest Green (Green)",hex:"#2E5A3A"},
+          ],
+        },
+        "TJ (1997-2006)":{
+          years:["1997","1998","1999","2000","2001","2002","2003","2004","2005","2006"],
+          trims:{
+            "SE":     { engine:"2.5L 4-cylinder (120hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"], note:"Round headlights returned — a genuine crowd-pleaser for Jeep purists. New coil-spring suspension (borrowed from the Grand Cherokee) massively improved ride quality." },
+            "Sport":  { engine:"4.0L Inline-6 (181hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+            "Sahara": { engine:"4.0L Inline-6 (181hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+            "Rubicon":{ engine:"4.0L Inline-6 (181hp)", drivetrain:"4WD", transmission:"Manual", note:"Introduced 2003 — factory locking differentials and heavy-duty axles, instant off-road legend status." },
+          },
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Flame Red (Red)",hex:"#C8102E"},
+            {name:"Electric Blue (Blue)",hex:"#1C6BE8"},
+          ],
+        },
+        "JK (2007-2018)":{
+          years:["2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018"],
+          trims:{
+            "Sport":  { engines:["3.8L V6 (202hp)","3.6L Pentastar V6 (285hp)"], drivetrain:"4WD", transmissions:["Manual","Automatic"], note:"First clean-sheet redesign ever, and the first four-door Wrangler Unlimited. The 3.8L (2007-2011) is known for being underpowered and oil-hungry — the 3.6L Pentastar starting 2012 fixed both problems." },
+            "Sahara": { engine:"3.6L Pentastar V6 (285hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+            "Rubicon":{ engine:"3.6L Pentastar V6 (285hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Firecracker Red (Red)",hex:"#C8102E"},
+            {name:"Rock Lobster (Orange)",hex:"#E8601C"},
+          ],
+        },
+        "JL (2018-2026)":{
+          years:["2018","2019","2020","2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "Sport":  { engines:["3.6L Pentastar V6 (285hp)","2.0L Turbocharged 4-cylinder (270hp)"], drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+            "Sahara": { engines:["3.6L Pentastar V6 (285hp)","3.0L EcoDiesel V6 (260hp)"], drivetrain:"4WD", transmissions:["Manual","Automatic"], note:"EcoDiesel added for 2020. 4xe plug-in hybrid variant arrived 2021." },
+            "Rubicon":{ engine:"3.6L Pentastar V6 (285hp)", drivetrain:"4WD", transmissions:["Manual","Automatic"] },
+            "Rubicon 392":{ engine:"6.4L HEMI V8 (470hp)", drivetrain:"4WD", transmission:"Automatic", note:"2021 debut — the first V8 Wrangler ever offered from the factory. A genuinely wild, limited-run product." },
+          },
+          colors:[
+            {name:"Bright White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Firecracker Red (Red)",hex:"#C8102E"},
+            {name:"Sarge Green (Green)",hex:"#3B5A3A"},
+            {name:"Hydro Blue Pearl (Blue)",hex:"#4A7B9D"},
+          ],
+        },
+      },
+    },
+  },
+  "Lincoln": {
+    "Continental": {
+      generations:{
+        "8th Gen Tail (1990-1994)":{
+          years:["1990","1991","1992","1993","1994"],
+          trims:{
+            "Base": { engine:"3.8L V6 (140hp)", drivetrain:"FWD", transmission:"Automatic", note:"No V8 offered this generation — FWD only, first US-made car with dual front airbags standard." },
+          },
+          colors:[
+            {name:"White Pearlescent (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Titanium Frost (Silver)",hex:"#C0C0C0"},
+            {name:"Wine Red (Red)",hex:"#6B1A1A"},
+          ],
+        },
+        "9th Gen (1995-2002)":{
+          years:["1995","1996","1997","1998","1999","2000","2001","2002"],
+          trims:{
+            "Base":{ engine:"4.6L Northstar V8 (260-275hp)", drivetrain:"FWD", transmission:"Automatic", note:"V8 power returned for the first time since 1987. 1999 bumped output to 275hp. 1998 facelift gave it a Town Car-like front end. Discontinued after 2002 — a 15-year gap followed before the nameplate returned." },
+          },
+          colors:[
+            {name:"White Pearlescent (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Autumn Red (Red)",hex:"#6B1A1A"},
+            {name:"Medium Graphite Metallic (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "10th Gen (2017-2020)":{
+          years:["2017","2018","2019","2020"],
+          trims:{
+            "Premiere":{ engine:"3.7L V6 (305hp)", drivetrains:["FWD","AWD"], transmission:"Automatic", note:"Revived after a 15-year absence, replacing the slow-selling MKS. First Continental ever offered with AWD. Discontinued again after 2020 — Lincoln went SUV/crossover-only in the US after this." },
+            "Select":  { engine:"2.7L Twin-Turbo V6 (335hp)", drivetrains:["FWD","AWD"], transmission:"Automatic" },
+            "Black Label":{ engine:"3.0L Twin-Turbo V6 (400hp)", drivetrain:"AWD", transmission:"Automatic", note:"Top trim, most powerful Continental ever built." },
+          },
+          colors:[
+            {name:"Infinite Black (Black)",hex:"#1A1A1A"},
+            {name:"Ceramic Pearl (White)",hex:"#F0F0F0"},
+            {name:"Rhapsody Blue (Blue)",hex:"#1B2A4A"},
+            {name:"Iced Mocha Metallic (Brown)",hex:"#4A3728"},
+          ],
+        },
+      },
+    },
+  },
   "Mazda": {
     "CX-5": {
       generations:{
@@ -1859,6 +2048,21 @@ const VEHICLES = {
           ],
         },
       },
+    },
+  },
+  "Shelby": {
+    "Series 1": {
+      years:["1999"],
+      trims:{
+        "Base":         { engine:"4.0L Aurora V8 (320hp)", drivetrain:"RWD", transmission:"Manual", note:"The only car Carroll Shelby ever designed completely from a clean sheet — every other Shelby is a reworked version of someone else's car (usually Ford's). All-aluminum chassis, carbon fiber body panels. Only 249 were ever built, all titled as 1999 models despite production running into 2005." },
+        "Supercharged": { engine:"4.0L Supercharged Aurora V8 (450hp)", drivetrain:"RWD", transmission:"Manual", note:"A rare factory-supercharged variant built after GM discontinued the Aurora engine — genuinely hard to find today." },
+      },
+      colors:[
+        {name:"Shelby Blue (Blue)",hex:"#1E3A6B"},
+        {name:"Silver (Silver)",hex:"#C0C0C0"},
+        {name:"Red (Red)",hex:"#C8102E"},
+        {name:"Black (Black)",hex:"#1A1A1A"},
+      ],
     },
   },
   "Subaru": {
