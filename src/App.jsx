@@ -980,6 +980,39 @@ const VEHICLES = {
       },
     },
   },
+  "Genesis": {
+    "G80": {
+      generations:{
+        "1st Gen (2017-2019)":{
+          years:["2017","2018","2019"],
+          trims:{
+            "3.8":  { engine:"3.8L V6 (311hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Genesis split off from Hyundai as its own standalone luxury brand for the 2017 model year — this car was previously just called the 'Hyundai Genesis' sedan before that." },
+            "3.3T": { engine:"3.3L Twin-Turbo V6 (365hp)", drivetrain:"AWD", transmission:"Automatic", note:"Added for 2018 — the sportiest engine option this generation." },
+            "5.0":  { engine:"5.0L V8 (420hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Uyuni White (White)",hex:"#F5F5F5"},
+            {name:"Savile Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Marlin Blue (Blue)",hex:"#1E3A6B"},
+            {name:"Santiago Black (Black)",hex:"#1A1A1A"},
+          ],
+        },
+        "2nd Gen (2021-2026)":{
+          years:["2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "2.5T": { engine:"2.5L Turbocharged 4-cylinder (300hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"All-new platform, first Genesis-designed-from-scratch G80 rather than a carryover Hyundai. Dropped the naturally-aspirated big engines entirely — turbo only now." },
+            "3.5T": { engine:"3.5L Twin-Turbo V6 (375hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Uyuni White (White)",hex:"#F5F5F5"},
+            {name:"Vik Black (Black)",hex:"#1A1A1A"},
+            {name:"Makalu Copper (Copper)",hex:"#B87333"},
+            {name:"Adriatic Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
+  },
   "GMC": {
     "Sierra": {
       generations:{
@@ -1430,6 +1463,107 @@ const VEHICLES = {
       },
     },
   },
+  "Hyundai": {
+    "Elantra": {
+      generations:{
+        "J1 (1991-1995)":{
+          years:["1991","1992","1993","1994","1995"],
+          trims:{
+            "Base": { engine:"1.6L SOHC 4-cylinder (113hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"First Elantra ever sold in the US." },
+            "GLS":  { engine:"1.8L DOHC 4-cylinder (124hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Crystal White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Regatta Blue (Blue)",hex:"#1E3A6B"},
+            {name:"Cardinal Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "J2 (1996-2000)":{
+          years:["1996","1997","1998","1999","2000"],
+          trims:{
+            "Base": { engine:"1.8L 4-cylinder (130hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GLS":  { engine:"2.0L 4-cylinder (140hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Crystal White (White)",hex:"#F5F5F5"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Vega Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Ruby Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "XD (2001-2006)":{
+          years:["2001","2002","2003","2004","2005","2006"],
+          trims:{
+            "GLS": { engine:"2.0L 4-cylinder (138-140hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"2004 mid-cycle facelift refreshed styling and interior. Hatchback body style also offered this generation." },
+            "GT":  { engine:"2.0L 4-cylinder (138-140hp)", drivetrain:"FWD", transmission:"Manual" },
+          },
+          colors:[
+            {name:"Noble White (White)",hex:"#F5F5F5"},
+            {name:"Black Obsidian (Black)",hex:"#1A1A1A"},
+            {name:"Sonic Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Pomegranate Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "HD (2007-2010)":{
+          years:["2007","2008","2009","2010"],
+          trims:{
+            "GLS":    { engine:"2.0L 4-cylinder (138hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "Limited":{ engine:"2.0L 4-cylinder (138hp)", drivetrain:"FWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Noble White (White)",hex:"#F5F5F5"},
+            {name:"Ebony Black (Black)",hex:"#1A1A1A"},
+            {name:"Blue Onyx (Blue)",hex:"#1E4B8E"},
+            {name:"Wine Red (Red)",hex:"#6B1A1A"},
+          ],
+        },
+        "MD/UD (2011-2016)":{
+          years:["2011","2012","2013","2014","2015","2016"],
+          trims:{
+            "GLS":   { engines:["1.8L 4-cylinder (148hp)","1.8L 4-cylinder (145hp)"], drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"2014 facelift rerated the base engine slightly and added a genuine Sport trim for the first time." },
+            "Limited":{ engine:"1.8L 4-cylinder (145-148hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Sport": { engine:"2.0L 4-cylinder (173hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Added with the 2014 facelift — the most powerful Elantra offered up to this point." },
+          },
+          colors:[
+            {name:"Ironman Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Phantom Black (Black)",hex:"#1A1A1A"},
+            {name:"Blue Sky Metallic (Blue)",hex:"#4A7B9D"},
+            {name:"Venetian Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "AD (2017-2020)":{
+          years:["2017","2018","2019","2020"],
+          trims:{
+            "SE":   { engine:"2.0L 4-cylinder (147hp)", drivetrain:"FWD", transmission:"Automatic" },
+            "Eco":  { engine:"1.4L Turbocharged 4-cylinder (128hp)", drivetrain:"FWD", transmission:"Automatic (Dual-Clutch)", note:"Fuel-economy focused trim, its own turbocharged engine tuned for efficiency over power." },
+            "Sport":{ engine:"1.6L Turbocharged 4-cylinder (201hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (Dual-Clutch)"], note:"Genuinely quick for an economy compact — this is the trim that eventually paved the way for the Elantra N." },
+          },
+          colors:[
+            {name:"Ceramic White (White)",hex:"#F5F5F5"},
+            {name:"Phantom Black (Black)",hex:"#1A1A1A"},
+            {name:"Electric Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Scarlet Red (Red)",hex:"#C8102E"},
+          ],
+        },
+        "CN7 (2021-2026)":{
+          years:["2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "SE":     { engine:"2.0L 4-cylinder (147hp)", drivetrain:"FWD", transmission:"Automatic (CVT)" },
+            "Hybrid": { engine:"1.6L Hybrid 4-cylinder (139hp combined)", drivetrain:"FWD", transmission:"Automatic (Dual-Clutch)" },
+            "N Line": { engine:"1.6L Turbocharged 4-cylinder (201hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (Dual-Clutch)"] },
+            "N":      { engine:"2.0L Turbocharged 4-cylinder (276hp)", drivetrain:"FWD", transmission:"Manual", note:"The genuine performance flagship of the whole Elantra lineage — mechanical limited-slip differential, adaptive suspension, launch control." },
+          },
+          colors:[
+            {name:"Atlas White (White)",hex:"#F5F5F5"},
+            {name:"Abyss Black (Black)",hex:"#1A1A1A"},
+            {name:"Intense Blue (Blue)",hex:"#1E4B8E"},
+            {name:"Performance Blue (Blue)",hex:"#1C6BE8"},
+          ],
+        },
+      },
+    },
+  },
   "Infiniti": {
     "G35 / G37": {
       generations:{
@@ -1523,6 +1657,38 @@ const VEHICLES = {
             {name:"Firecracker Red (Red)",hex:"#C8102E"},
             {name:"Sarge Green (Green)",hex:"#3B5A3A"},
             {name:"Hydro Blue Pearl (Blue)",hex:"#4A7B9D"},
+          ],
+        },
+      },
+    },
+  },
+  "Kia": {
+    "Stinger": {
+      generations:{
+        "Gen 1 Pre-Facelift (2018-2021)":{
+          years:["2018","2019","2020","2021"],
+          trims:{
+            "Base":  { engine:"2.0L Turbocharged 4-cylinder (255hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"A genuine shock when it launched — Kia's first real performance sedan, aimed directly at the BMW 4 Series Gran Coupe and Audi A5 Sportback. Built on a platform shared with the Genesis G70. No manual transmission was ever offered." },
+            "GT":    { engine:"3.3L Twin-Turbo V6 (365hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"0-60 in around 4.7 seconds — genuinely quick, and the engine most enthusiasts actually want." },
+          },
+          colors:[
+            {name:"Snow White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Aurora Black Pearl (Black)",hex:"#1A1A1A"},
+            {name:"HiChroma Red (Red)",hex:"#C8102E"},
+            {name:"Micro Blue (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "Gen 1 Facelift (2022-2023)":{
+          years:["2022","2023"],
+          trims:{
+            "GT-Line":{ engine:"2.5L Turbocharged 4-cylinder (300hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Base engine grew from 2.0L to 2.5L this refresh, gaining a real 45hp. New 10.25-inch infotainment screen too. GT1 trim was dropped, leaving just GT-Line and GT2." },
+            "GT2":   { engine:"3.3L Twin-Turbo V6 (368hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Final years of the Stinger — discontinued after 2023 as Kia shifted focus to SUVs and EVs. A 2023 Tribute Edition and GT2 Grand Tourer sent it off." },
+          },
+          colors:[
+            {name:"Snow White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Aurora Black Pearl (Black)",hex:"#1A1A1A"},
+            {name:"HiChroma Red (Red)",hex:"#C8102E"},
+            {name:"Ceramic Silver (Silver)",hex:"#C0C0C0"},
           ],
         },
       },
