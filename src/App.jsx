@@ -4646,6 +4646,11 @@ export default function ModGuide(){
                 <button onClick={()=>setView("add-car")} style={{background:"transparent",color:"#FF6B2B",border:"1px solid #FF6B2B",padding:"14px 32px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"16px",letterSpacing:"3px",cursor:"pointer",borderRadius:"4px",width:"100%"}}>+ ADD ANOTHER CAR</button>
               </div>
             )}
+            <div style={{textAlign:"center",marginTop:"48px",paddingBottom:"24px"}}>
+              <a href="/terms.html" target="_blank" rel="noopener noreferrer" style={{color:"#333",fontSize:"11px",textDecoration:"none"}}>Terms</a>
+              <span style={{color:"#2A2A2A",margin:"0 8px",fontSize:"11px"}}>·</span>
+              <a href="/privacy.html" target="_blank" rel="noopener noreferrer" style={{color:"#333",fontSize:"11px",textDecoration:"none"}}>Privacy</a>
+            </div>
           </div>
         )}
 
