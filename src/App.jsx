@@ -4262,10 +4262,20 @@ function AuthScreen(){
   const [password,setPassword]=useState("");
   const [error,setError]=useState("");
   const [loading,setLoading]=useState(false);
+  const [resetSent,setResetSent]=useState(false);
   const handle=async()=>{
     setLoading(true);setError("");
     try{const{error}=mode==="login"?await supabase.auth.signInWithPassword({email,password}):await supabase.auth.signUp({email,password});if(error)setError(error.message);}
     catch{setError("Something went wrong.");}finally{setLoading(false);}
+  };
+  const handleForgot=async()=>{
+    setLoading(true);setError("");
+    try{
+      const{error}=await supabase.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin});
+      if(error)setError(error.message);
+      else setResetSent(true);
+    }catch{setError("Something went wrong.");}
+    finally{setLoading(false);}
   };
   return(
     <div style={{minHeight:"100vh",background:"#0D0D0D",fontFamily:"Inter, sans-serif",display:"flex",flexDirection:"column"}}>
@@ -4275,17 +4285,89 @@ function AuthScreen(){
       </div>
       <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px"}}>
         <div style={{width:"100%",maxWidth:"400px"}}>
-          <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>{mode==="login"?"WELCOME BACK":"JOIN MODGUIDE"}</div>
-          <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>{mode==="login"?"Log in to access your garage.":"Create an account to save your garage."}</p>
-          <div style={{marginBottom:"16px"}}><span style={LS}>EMAIL</span><input style={IS} type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@email.com"/></div>
-          <div style={{marginBottom:"24px"}}><span style={LS}>PASSWORD</span><input style={IS} type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="••••••••" onKeyDown={e=>e.key==="Enter"&&handle()}/></div>
-          {error&&<div style={{color:"#FF6B2B",fontSize:"13px",marginBottom:"16px"}}>{error}</div>}
-          <button onClick={handle} disabled={!email||!password||loading} style={BP(email&&password&&!loading)}>{loading?"...":mode==="login"?"LOG IN":"SIGN UP"}</button>
-          <div style={{textAlign:"center",marginTop:"20px"}}>
-            <span style={{color:"#444",fontSize:"13px"}}>{mode==="login"?"Don't have an account? ":"Already have an account? "}
-              <span onClick={()=>{setMode(mode==="login"?"signup":"login");setError("");}} style={{color:"#FF6B2B",cursor:"pointer"}}>{mode==="login"?"Sign up":"Log in"}</span>
-            </span>
-          </div>
+          {mode==="forgot"?(
+            resetSent?(
+              <>
+                <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>CHECK YOUR EMAIL</div>
+                <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>We sent a password reset link to {email}. Follow it to set a new password.</p>
+                <span onClick={()=>{setMode("login");setResetSent(false);setError("");}} style={{color:"#FF6B2B",cursor:"pointer",fontSize:"13px"}}>← Back to log in</span>
+              </>
+            ):(
+              <>
+                <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>RESET PASSWORD</div>
+                <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>Enter your email and we'll send you a reset link.</p>
+                <div style={{marginBottom:"24px"}}><span style={LS}>EMAIL</span><input style={IS} type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@email.com" onKeyDown={e=>e.key==="Enter"&&handleForgot()}/></div>
+                {error&&<div style={{color:"#FF6B2B",fontSize:"13px",marginBottom:"16px"}}>{error}</div>}
+                <button onClick={handleForgot} disabled={!email||loading} style={BP(email&&!loading)}>{loading?"...":"SEND RESET LINK"}</button>
+                <div style={{textAlign:"center",marginTop:"20px"}}>
+                  <span onClick={()=>{setMode("login");setError("");}} style={{color:"#FF6B2B",cursor:"pointer",fontSize:"13px"}}>← Back to log in</span>
+                </div>
+              </>
+            )
+          ):(
+            <>
+              <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>{mode==="login"?"WELCOME BACK":"JOIN MODGUIDE"}</div>
+              <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>{mode==="login"?"Log in to access your garage.":"Create an account to save your garage."}</p>
+              <div style={{marginBottom:"16px"}}><span style={LS}>EMAIL</span><input style={IS} type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@email.com"/></div>
+              <div style={{marginBottom:mode==="login"?"8px":"24px"}}><span style={LS}>PASSWORD</span><input style={IS} type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="••••••••" onKeyDown={e=>e.key==="Enter"&&handle()}/></div>
+              {mode==="login"&&<div style={{textAlign:"right",marginBottom:"24px"}}><span onClick={()=>{setMode("forgot");setError("");}} style={{color:"#666",cursor:"pointer",fontSize:"12px"}}>Forgot password?</span></div>}
+              {error&&<div style={{color:"#FF6B2B",fontSize:"13px",marginBottom:"16px"}}>{error}</div>}
+              <button onClick={handle} disabled={!email||!password||loading} style={BP(email&&password&&!loading)}>{loading?"...":mode==="login"?"LOG IN":"SIGN UP"}</button>
+              <div style={{textAlign:"center",marginTop:"20px"}}>
+                <span style={{color:"#444",fontSize:"13px"}}>{mode==="login"?"Don't have an account? ":"Already have an account? "}
+                  <span onClick={()=>{setMode(mode==="login"?"signup":"login");setError("");}} style={{color:"#FF6B2B",cursor:"pointer"}}>{mode==="login"?"Sign up":"Log in"}</span>
+                </span>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ResetPasswordScreen({onDone}){
+  const [password,setPassword]=useState("");
+  const [confirm,setConfirm]=useState("");
+  const [error,setError]=useState("");
+  const [loading,setLoading]=useState(false);
+  const [done,setDone]=useState(false);
+  const handle=async()=>{
+    setError("");
+    if(password.length<6){setError("Password must be at least 6 characters.");return;}
+    if(password!==confirm){setError("Passwords don't match.");return;}
+    setLoading(true);
+    try{
+      const{error}=await supabase.auth.updateUser({password});
+      if(error)setError(error.message);
+      else setDone(true);
+    }catch{setError("Something went wrong.");}
+    finally{setLoading(false);}
+  };
+  return(
+    <div style={{minHeight:"100vh",background:"#0D0D0D",fontFamily:"Inter, sans-serif",display:"flex",flexDirection:"column"}}>
+      <div style={{borderBottom:"1px solid #1C1C1C",padding:"18px 24px",display:"flex",alignItems:"center",gap:"10px"}}>
+        <div style={{width:"8px",height:"8px",background:"#FF6B2B",borderRadius:"50%"}}/>
+        <span style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"20px",color:"#E8E4DC",letterSpacing:"4px"}}>MODGUIDE</span>
+      </div>
+      <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px"}}>
+        <div style={{width:"100%",maxWidth:"400px"}}>
+          {done?(
+            <>
+              <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>PASSWORD UPDATED</div>
+              <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>You're all set — head back into your garage.</p>
+              <button onClick={onDone} style={BP(true)}>CONTINUE</button>
+            </>
+          ):(
+            <>
+              <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>SET NEW PASSWORD</div>
+              <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>Choose a new password for your account.</p>
+              <div style={{marginBottom:"16px"}}><span style={LS}>NEW PASSWORD</span><input style={IS} type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="••••••••"/></div>
+              <div style={{marginBottom:"24px"}}><span style={LS}>CONFIRM PASSWORD</span><input style={IS} type="password" value={confirm} onChange={e=>setConfirm(e.target.value)} placeholder="••••••••" onKeyDown={e=>e.key==="Enter"&&handle()}/></div>
+              {error&&<div style={{color:"#FF6B2B",fontSize:"13px",marginBottom:"16px"}}>{error}</div>}
+              <button onClick={handle} disabled={!password||!confirm||loading} style={BP(password&&confirm&&!loading)}>{loading?"...":"UPDATE PASSWORD"}</button>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -4425,9 +4507,14 @@ export default function ModGuide(){
   const [wizardMileage,setWizardMileage]=useState("");
   const [wizardAnswers,setWizardAnswers]=useState({});
 
+  const [isRecovery,setIsRecovery]=useState(false);
+
   useEffect(()=>{
     supabase.auth.getSession().then(({data:{session}})=>{setSession(session);setAuthLoading(false);});
-    const{data:{subscription}}=supabase.auth.onAuthStateChange((_,session)=>{setSession(session);setAuthLoading(false);});
+    const{data:{subscription}}=supabase.auth.onAuthStateChange((event,session)=>{
+      if(event==="PASSWORD_RECOVERY")setIsRecovery(true);
+      setSession(session);setAuthLoading(false);
+    });
     return()=>subscription.unsubscribe();
   },[]);
 
@@ -4498,6 +4585,7 @@ export default function ModGuide(){
   const Tab=({id,label})=>(<button onClick={()=>setActiveTab(id)} style={{background:"none",border:"none",borderBottom:activeTab===id?"2px solid #FF6B2B":"2px solid transparent",color:activeTab===id?"#FF6B2B":"#555",fontFamily:"'Bebas Neue', sans-serif",fontSize:"13px",letterSpacing:"2px",padding:"10px 14px",cursor:"pointer",transition:"all 0.15s",whiteSpace:"nowrap"}}>{label}</button>);
 
   if(authLoading)return<div style={{minHeight:"100vh",background:"#0D0D0D",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:"#FF6B2B",fontFamily:"'Bebas Neue', sans-serif",fontSize:"18px",letterSpacing:"4px"}}>LOADING...</div></div>;
+  if(isRecovery)return<ResetPasswordScreen onDone={()=>setIsRecovery(false)}/>;
   if(!session)return<AuthScreen/>;
   const carColor=activeCar?.colorHex||"#1C1C1C";
 
