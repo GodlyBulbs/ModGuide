@@ -3030,18 +3030,77 @@ const VEHICLES = {
         },
       },
     },
-    "Forester XT": {
-      years:["2014","2015","2016","2017","2018"],
-      trims:{
-        "Premium": { engine:"2.0L Turbocharged 4-cylinder (250hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
-        "Touring": { engine:"2.0L Turbocharged 4-cylinder (250hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+    "Forester": {
+      generations:{
+        "SF (1998-2002)":{
+          years:["1998","1999","2000","2001","2002"],
+          trims:{
+            "L":  { engine:"2.5L Flat-4 (165hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"], note:"First-ever Forester, and AWD was standard from day one. The turbocharged S/tb and STi versions of this generation were JDM-only and never came to the US." },
+            "S":  { engine:"2.5L Flat-4 (165hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Sedona Red (Red)",hex:"#9B1B30"},
+            {name:"Black (Black)",hex:"#1A1A1A"},
+            {name:"Sky Blue Metallic (Blue)",hex:"#4A7B9D"},
+            {name:"Champagne Gold (Gold)",hex:"#B8A050"},
+          ],
+        },
+        "SG (2003-2008)":{
+          years:["2003","2004","2005","2006","2007","2008"],
+          trims:{
+            "X":  { engine:"2.5L Flat-4 (165-173hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+            "XS": { engine:"2.5L Flat-4 (165-173hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+            "XT": { engine:"2.5L Turbocharged Flat-4 (210hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"], note:"First-ever US-market turbo Forester. The genuinely rare JDM-only 2004 Forester STi (EJ255, 6-speed manual, DCCD) was never sold here — this XT is as close as the US market got." },
+          },
+          colors:[
+            {name:"Aspen White (White)",hex:"#F5F5F5"},
+            {name:"Obsidian Black Pearl (Black)",hex:"#1A1A1A"},
+            {name:"Garnet Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Atlantic Blue Pearl (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "SH (2009-2013)":{
+          years:["2009","2010","2011","2012","2013"],
+          trims:{
+            "2.5X":  { engine:"2.5L Flat-4 (170hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"], note:"Grew significantly in size this generation — moving from wagon-like proportions toward a more traditional SUV shape." },
+            "2.5XT": { engine:"2.5L Turbocharged Flat-4 (224-230hp)", drivetrain:"AWD", transmissions:["Manual","Automatic"] },
+          },
+          colors:[
+            {name:"Satin White Pearl (White)",hex:"#F0F0F0"},
+            {name:"Obsidian Black Pearl (Black)",hex:"#1A1A1A"},
+            {name:"Paprika Red Pearl (Red)",hex:"#9B1B30"},
+            {name:"Newport Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+        "SJ (2014-2018)":{
+          years:["2014","2015","2016","2017","2018"],
+          trims:{
+            "2.5i":     { engine:"2.5L Flat-4 (170hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (CVT)"] },
+            "XT Premium":{ engine:"2.0L Turbocharged Flat-4 (250hp)", drivetrain:"AWD", transmission:"Automatic (CVT)", note:"Turbo engine downsized from 2.5L to 2.0L this generation but actually gained power — CVT only, no manual was offered on the XT. This was the last Forester to offer a turbo engine at all — discontinued after 2018 with no replacement since." },
+            "XT Touring":{ engine:"2.0L Turbocharged Flat-4 (250hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+          },
+          colors:[
+            {name:"Crystal Black Silica (Black)",hex:"#1A1A1A"},
+            {name:"Ice Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Crystal White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Wilderness Green Metallic (Green)",hex:"#3B5A3A"},
+          ],
+        },
+        "SK (2019-2024)":{
+          years:["2019","2020","2021","2022","2023","2024"],
+          trims:{
+            "Base":     { engine:"2.5L Flat-4 (182hp)", drivetrain:"AWD", transmission:"Automatic (CVT)", note:"No turbo engine offered at all this generation, and none has come back since — if you want a turbo Forester, you're shopping the SG, SH, or SJ specifically." },
+            "Premium":  { engine:"2.5L Flat-4 (182hp)", drivetrain:"AWD", transmission:"Automatic (CVT)" },
+            "Wilderness":{ engine:"2.5L Flat-4 (182hp)", drivetrain:"AWD", transmission:"Automatic (CVT)", note:"Off-road focused trim added partway through this generation — more ground clearance, all-terrain tires." },
+          },
+          colors:[
+            {name:"Crystal White Pearl (White)",hex:"#F5F5F5"},
+            {name:"Crystal Black Silica (Black)",hex:"#1A1A1A"},
+            {name:"Cascade Green Silica (Green)",hex:"#3B8A5A"},
+            {name:"Horizon Blue Pearl (Blue)",hex:"#1E4B8E"},
+          ],
+        },
       },
-      colors:[
-        {name:"Crystal Black Silica (Black)",hex:"#1A1A1A"},
-        {name:"Ice Silver Metallic (Silver)",hex:"#C0C0C0"},
-        {name:"Crystal White Pearl (White)",hex:"#F5F5F5"},
-        {name:"Wilderness Green Metallic (Green)",hex:"#3B5A3A"},
-      ],
     },
     "Impreza": {
       generations:{
@@ -3392,13 +3451,13 @@ const VEHICLES = {
     },
   },
   "Volkswagen": {
-    "Golf GTI": {
+    "Golf": {
       generations:{
         "Mk2 Tail (1990-1992)":{
           years:["1990","1991","1992"],
           trims:{
-            "Base": { engine:"1.8L 4-cylinder (100hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"US-market GTIs of this era were badged simply 'GTI' — the 'Golf' name wasn't used in the US until later generations." },
-            "16V":  { engine:"1.8L 16-Valve 4-cylinder (134hp)", drivetrain:"FWD", transmission:"Manual", note:"US got the 16-valve version starting around 1987 — genuinely popular in the enthusiast scene, still is." },
+            "GTI": { engine:"1.8L 4-cylinder (100hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"US-market GTIs of this era were badged simply 'GTI' — the 'Golf' name wasn't used in the US until later generations. No R-badged Golf existed yet this generation." },
+            "GTI 16V":  { engine:"1.8L 16-Valve 4-cylinder (134hp)", drivetrain:"FWD", transmission:"Manual", note:"US got the 16-valve version starting around 1987 — genuinely popular in the enthusiast scene, still is." },
           },
           colors:[
             {name:"Alpine White (White)",hex:"#F5F5F5"},
@@ -3410,9 +3469,9 @@ const VEHICLES = {
         "Mk3 (1993-1998)":{
           years:["1993","1994","1995","1996","1997","1998"],
           trims:{
-            "8V":  { engine:"2.0L 4-cylinder (115hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Widely considered a step backward from the beloved Mk2 — softer, heavier, less sharp to drive." },
-            "16V": { engine:"2.0L 16-Valve 4-cylinder (134hp)", drivetrain:"FWD", transmission:"Manual" },
-            "VR6": { engine:"2.8L VR6 (172hp)", drivetrain:"FWD", transmission:"Manual", note:"Added 1995 — VW's unique narrow-angle V6, first time a proper six-cylinder made it into a GTI-badged car." },
+            "GTI 8V":  { engine:"2.0L 4-cylinder (115hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Widely considered a step backward from the beloved Mk2 — softer, heavier, less sharp to drive. No R-badged Golf existed yet this generation." },
+            "GTI 16V": { engine:"2.0L 16-Valve 4-cylinder (134hp)", drivetrain:"FWD", transmission:"Manual" },
+            "GTI VR6": { engine:"2.8L VR6 (172hp)", drivetrain:"FWD", transmission:"Manual", note:"Added 1995 — VW's unique narrow-angle V6, first time a proper six-cylinder made it into a GTI-badged car." },
           },
           colors:[
             {name:"Alpine White (White)",hex:"#F5F5F5"},
@@ -3424,21 +3483,23 @@ const VEHICLES = {
         "Mk4 (1999-2004)":{
           years:["1999","2000","2001","2002","2003","2004"],
           trims:{
-            "GLS":  { engine:"2.0L 4-cylinder (115hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Generally regarded as less sporty than earlier generations — focus shifted toward comfort and refinement over outright fun." },
-            "1.8T": { engine:"1.8L Turbocharged 4-cylinder (150hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
-            "GLX":  { engine:"2.8L VR6 24V (174hp)", drivetrain:"FWD", transmission:"Manual" },
+            "GTI GLS":  { engine:"2.0L 4-cylinder (115hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"], note:"Generally regarded as less sporty than earlier generations — focus shifted toward comfort and refinement over outright fun." },
+            "GTI 1.8T": { engine:"1.8L Turbocharged 4-cylinder (150hp)", drivetrain:"FWD", transmissions:["Manual","Automatic"] },
+            "GTI GLX":  { engine:"2.8L VR6 24V (174hp)", drivetrain:"FWD", transmission:"Manual" },
+            "R32":      { engine:"3.2L VR6 (240hp)", drivetrain:"AWD", transmission:"Manual", note:"First-ever R-badged Golf, 2004 only. Limited to just 5,000 units for the US, manual only — no DSG was offered here even though Europe got one. Genuinely rare and increasingly valuable today." },
           },
           colors:[
             {name:"Reflex Silver (Silver)",hex:"#C0C0C0"},
             {name:"Black (Black)",hex:"#1A1A1A"},
             {name:"Tornado Red (Red)",hex:"#C8102E"},
-            {name:"Indigo Blue Pearl (Blue)",hex:"#1E3A6B"},
+            {name:"Deep Blue Pearl (Blue)",hex:"#1E3A6B"},
           ],
         },
         "Mk5 (2006-2009)":{
           years:["2006","2007","2008","2009"],
           trims:{
-            "Base": { engine:"2.0L Turbocharged 4-cylinder (200hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"The base Golf was badged 'Rabbit' in the US this generation — only the GTI kept a distinct sporty identity. Widely considered the generation that restored the GTI's fun-to-drive reputation after the disappointing Mk4." },
+            "GTI": { engine:"2.0L Turbocharged 4-cylinder (200hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"The base Golf was badged 'Rabbit' in the US this generation — only the GTI kept a distinct sporty identity. Widely considered the generation that restored the GTI's fun-to-drive reputation after the disappointing Mk4." },
+            "R32": { engine:"3.2L VR6 (250hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"], note:"2008 only, after a gap (not sold 2005-2007). Again limited to 5,000 US units. This is the last Golf R with the narrow-angle VR6 — every generation since has used a turbo four instead." },
           },
           colors:[
             {name:"Candy White (White)",hex:"#F5F5F5"},
@@ -3450,8 +3511,9 @@ const VEHICLES = {
         "Mk6 (2010-2014)":{
           years:["2010","2011","2012","2013","2014"],
           trims:{
-            "Base":  { engine:"2.0L Turbocharged 4-cylinder (200-208hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"Mostly a heavily-facelifted Mk5 underneath — new front fenders, lights, and rocker sills rather than a true ground-up redesign. A GTI Cabriolet was offered for the first time this generation." },
-            "Autobahn":{ engine:"2.0L Turbocharged 4-cylinder (200-208hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
+            "GTI":          { engine:"2.0L Turbocharged 4-cylinder (200-208hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"Mostly a heavily-facelifted Mk5 underneath — new front fenders, lights, and rocker sills rather than a true ground-up redesign. A GTI Cabriolet was offered for the first time this generation." },
+            "GTI Autobahn": { engine:"2.0L Turbocharged 4-cylinder (200-208hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
+            "R":            { engine:"2.0L Turbocharged 4-cylinder (256hp)", drivetrain:"AWD", transmission:"Manual", note:"2012 only for this generation. The VR6 is gone for good — VW switched to a turbo four to keep pace with rivals while cutting weight and cost. Also the first year 'R32' became simply 'R.'" },
           },
           colors:[
             {name:"Candy White (White)",hex:"#F5F5F5"},
@@ -3463,10 +3525,12 @@ const VEHICLES = {
         "Mk7 (2015-2021)":{
           years:["2015","2016","2017","2018","2019","2020","2021"],
           trims:{
-            "S":        { engine:"2.0L Turbocharged 4-cylinder (220hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
-            "SE":       { engine:"2.0L Turbocharged 4-cylinder (220hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
-            "Autobahn": { engine:"2.0L Turbocharged 4-cylinder (220hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
-            "Rabbit":   { engine:"2.0L Turbocharged 4-cylinder (228hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"Often cited as the best-driving generation — didn't mess with the winning formula from Mk5/Mk6." },
+            "GTI S":        { engine:"2.0L Turbocharged 4-cylinder (220hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
+            "GTI SE":       { engine:"2.0L Turbocharged 4-cylinder (220hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
+            "GTI Autobahn": { engine:"2.0L Turbocharged 4-cylinder (220hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"] },
+            "GTI Rabbit":   { engine:"2.0L Turbocharged 4-cylinder (228hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"Often cited as the best-driving GTI generation — didn't mess with the winning formula from Mk5/Mk6." },
+            "R":            { engine:"2.0L Turbocharged 4-cylinder (292hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"] },
+            "R DCC & Nav":  { engine:"2.0L Turbocharged 4-cylinder (292hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"] },
           },
           colors:[
             {name:"Deep Black Pearl (Black)",hex:"#1A1A1A"},
@@ -3479,76 +3543,13 @@ const VEHICLES = {
         "Mk8 (2022-2026)":{
           years:["2022","2023","2024","2025","2026"],
           trims:{
-            "Base": { engine:"2.0L Turbocharged 4-cylinder (241hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"Five-door only now — the three-door body style was dropped. 2025+ model years dropped the manual transmission entirely in the US, so double check what you're looking at if a stick shift matters to you." },
+            "GTI": { engine:"2.0L Turbocharged 4-cylinder (241hp)", drivetrain:"FWD", transmissions:["Manual","Automatic (DSG)"], note:"Five-door only now — the three-door body style was dropped. 2025+ model years dropped the manual transmission entirely in the US on both GTI and R, so double check what you're looking at if a stick shift matters to you." },
+            "R":   { engine:"2.0L Turbocharged 4-cylinder (315hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"], note:"2022-2024 only for manual availability — 2024 was the final model year a manual was offered in the US on the Golf R." },
           },
           colors:[
             {name:"Deep Black Pearl (Black)",hex:"#1A1A1A"},
             {name:"Pure White (White)",hex:"#F5F5F5"},
             {name:"Tornado Red (Red)",hex:"#C8102E"},
-            {name:"Kings Red Metallic (Red)",hex:"#9B1B30"},
-          ],
-        },
-      },
-    },
-    "Golf R": {
-      generations:{
-        "R32 Mk4 (2004)":{
-          years:["2004"],
-          trims:{
-            "Base": { engine:"3.2L VR6 (240hp)", drivetrain:"AWD", transmission:"Manual", note:"First-ever R-badged Golf. Limited to just 5,000 units for the US, manual only — no DSG was offered here even though Europe got one. Genuinely rare and increasingly valuable today." },
-          },
-          colors:[
-            {name:"Deep Blue Pearl (Blue)",hex:"#1E3A6B"},
-            {name:"Reflex Silver (Silver)",hex:"#C0C0C0"},
-            {name:"Black Magic Pearl (Black)",hex:"#1A1A1A"},
-          ],
-        },
-        "R32 Mk5 (2008)":{
-          years:["2008"],
-          trims:{
-            "Base": { engine:"3.2L VR6 (250hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"], note:"Returned after a gap (not sold 2005-2007). Again limited to 5,000 US units. This is the last Golf R with the narrow-angle VR6 — every generation since has used a turbo four instead." },
-          },
-          colors:[
-            {name:"Deep Blue Pearl (Blue)",hex:"#1E3A6B"},
-            {name:"Reflex Silver (Silver)",hex:"#C0C0C0"},
-            {name:"Black Magic Pearl (Black)",hex:"#1A1A1A"},
-          ],
-        },
-        "Mk6 (2012)":{
-          years:["2012"],
-          trims:{
-            "Base": { engine:"2.0L Turbocharged 4-cylinder (256hp)", drivetrain:"AWD", transmission:"Manual", note:"The VR6 is gone for good — VW switched to a turbo four to keep pace with rivals while cutting weight and cost. One US model year only for this generation." },
-          },
-          colors:[
-            {name:"Candy White (White)",hex:"#F5F5F5"},
-            {name:"Black (Black)",hex:"#1A1A1A"},
-            {name:"Tornado Red (Red)",hex:"#C8102E"},
-            {name:"Rising Blue Metallic (Blue)",hex:"#1E4B8E"},
-          ],
-        },
-        "Mk7 (2015-2019)":{
-          years:["2015","2016","2017","2018","2019"],
-          trims:{
-            "Base":      { engine:"2.0L Turbocharged 4-cylinder (292hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"] },
-            "DCC & Nav": { engine:"2.0L Turbocharged 4-cylinder (292hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"] },
-          },
-          colors:[
-            {name:"Deep Black Pearl (Black)",hex:"#1A1A1A"},
-            {name:"Pure White (White)",hex:"#F5F5F5"},
-            {name:"Lapiz Blue Metallic (Blue)",hex:"#1E4B8E"},
-            {name:"Reflex Silver Metallic (Silver)",hex:"#C0C0C0"},
-            {name:"Ravenna Green Metallic (Green)",hex:"#2E5A3A"},
-          ],
-        },
-        "Mk8 (2022-2024)":{
-          years:["2022","2023","2024"],
-          trims:{
-            "Base":{ engine:"2.0L Turbocharged 4-cylinder (315hp)", drivetrain:"AWD", transmissions:["Manual","Automatic (DSG)"], note:"2024 is the final model year a manual was offered in the US on the Golf R — VW dropped the stick shift starting 2025 on both the R and GTI." },
-          },
-          colors:[
-            {name:"Deep Black Pearl (Black)",hex:"#1A1A1A"},
-            {name:"Pure White (White)",hex:"#F5F5F5"},
-            {name:"Lapiz Blue Metallic (Blue)",hex:"#1E4B8E"},
             {name:"Kings Red Metallic (Red)",hex:"#9B1B30"},
           ],
         },
