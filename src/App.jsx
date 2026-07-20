@@ -1914,6 +1914,66 @@ const VEHICLES = {
       },
     },
   },
+  "Lexus": {
+    "IS300": {
+      generations:{
+        "XE10 (2001-2005)":{
+          years:["2001","2002","2003","2004","2005"],
+          trims:{
+            "Sedan":     { engine:"3.0L Inline-6 2JZ-GE (215hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"This is the original IS300 — a naturally-aspirated version of the legendary 2JZ engine family that also powered the Mk IV Toyota Supra Turbo. Only a 5-speed automatic was offered for 2001; a 5-speed manual was added for 2002." },
+            "SportCross":{ engine:"3.0L Inline-6 2JZ-GE (215hp)", drivetrain:"RWD", transmission:"Automatic", note:"Wagon body style, added 2001. Genuinely rare today — low sales at the time." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Black Onyx (Black)",hex:"#1A1A1A"},
+            {name:"Classic Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Solar Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
+        "XE20 (2006-2013)":{
+          years:["2006","2007","2008","2009","2010","2011","2012","2013"],
+          trims:{
+            "IS250": { engine:"2.5L V6 (204hp)", drivetrains:["RWD","AWD"], transmissions:["Manual","Automatic"], note:"The IS300 name was retired entirely for this generation — replaced by the IS250 and IS350 badges instead, reflecting the switch from inline-six to V6 power. It wouldn't return until 2016." },
+            "IS350": { engine:"3.5L V6 (306hp)", drivetrain:"RWD", transmission:"Automatic" },
+            "IS F":  { engine:"5.0L V8 (416hp)", drivetrain:"RWD", transmission:"Automatic", note:"Added 2008 — Lexus's answer to the BMW M3, genuinely quick and a cult favorite today." },
+          },
+          colors:[
+            {name:"Starfire Pearl (White)",hex:"#F5F5F5"},
+            {name:"Obsidian (Black)",hex:"#1A1A1A"},
+            {name:"Matador Red Mica (Red)",hex:"#9B1B30"},
+            {name:"Nebula Gray Pearl (Gray)",hex:"#6B6E6F"},
+          ],
+        },
+        "XE30 (2014-2020)":{
+          years:["2014","2015","2016","2017","2018","2019","2020"],
+          trims:{
+            "IS300": { engine:"2.0L Turbocharged 4-cylinder (241hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"The IS300 badge came back for 2016, but on a completely different engine than the original — a turbocharged inline-four, not the old naturally-aspirated 2JZ six. Initially badged 'IS200t' before Lexus renamed it IS300 for 2018." },
+            "IS350": { engine:"3.5L V6 (306-311hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Ultra White (White)",hex:"#F5F5F5"},
+            {name:"Obsidian (Black)",hex:"#1A1A1A"},
+            {name:"Infrared (Red)",hex:"#C8102E"},
+            {name:"Caviar (Dark Gray)",hex:"#3A3D3F"},
+          ],
+        },
+        "XE30 Facelift (2021-2026)":{
+          years:["2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "IS300": { engine:"2.0L Turbocharged 4-cylinder (241hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Major facelift — larger bodywork, restyled headlamps, full-width taillamps." },
+            "IS350": { engine:"3.5L V6 (311hp)", drivetrains:["RWD","AWD"], transmission:"Automatic" },
+            "IS500": { engine:"5.0L V8 (472hp)", drivetrain:"RWD", transmission:"Automatic", note:"Added 2022 — genuinely wild for this segment, a naturally-aspirated V8 in an era when almost everyone else has gone turbo. Shares the 2UR-GSE engine family with the RC F and IS F before it." },
+          },
+          colors:[
+            {name:"Ultra White (White)",hex:"#F5F5F5"},
+            {name:"Obsidian (Black)",hex:"#1A1A1A"},
+            {name:"Incendiary Red (Red)",hex:"#C8102E"},
+            {name:"Grecian Water (Blue)",hex:"#1E4B8E"},
+          ],
+        },
+      },
+    },
+  },
   "Lincoln": {
     "Continental": {
       generations:{
