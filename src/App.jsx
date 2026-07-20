@@ -1694,6 +1694,80 @@ const VEHICLES = {
       },
     },
   },
+  "Land Rover": {
+    "Range Rover": {
+      generations:{
+        "Classic (1990-1995)":{
+          years:["1990","1991","1992","1993","1994","1995"],
+          trims:{
+            "Base":{ engine:"3.9L Rover V8 (178hp)", drivetrain:"4WD", transmission:"Automatic", note:"Officially sold in the US starting 1987, 17 years after its European launch — driven partly by the popularity of gray-market imports before that. This original body style is retroactively called the 'Classic' now that later generations exist." },
+            "County": { engine:"3.9L Rover V8 (178hp)", drivetrain:"4WD", transmission:"Automatic" },
+            "County LWB":{ engine:"4.2L Rover V8 (200hp)", drivetrain:"4WD", transmission:"Automatic", note:"Long-wheelbase model, 1993-1995 only." },
+          },
+          colors:[
+            {name:"Ardennes Green (Green)",hex:"#2E5A3A"},
+            {name:"Beluga Black (Black)",hex:"#1A1A1A"},
+            {name:"Oxford Blue (Blue)",hex:"#1E3A6B"},
+            {name:"White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "P38A (1996-2002)":{
+          years:["1996","1997","1998","1999","2000","2001","2002"],
+          trims:{
+            "SE":  { engine:"4.0L Rover V8 (190hp)", drivetrain:"4WD", transmission:"Automatic", note:"Introduced electronic air suspension for the first time — a big jump in sophistication over the Classic. Diesel engine options existed in other markets but weren't offered in the US." },
+            "HSE": { engine:"4.6L Rover V8 (222hp)", drivetrain:"4WD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Epsom Green (Green)",hex:"#2E5A3A"},
+            {name:"Java Black (Black)",hex:"#1A1A1A"},
+            {name:"Chawton White (White)",hex:"#F5F5F5"},
+            {name:"Blenheim Silver (Silver)",hex:"#C0C0C0"},
+          ],
+        },
+        "L322 (2003-2012)":{
+          years:["2003","2004","2005","2006","2007","2008","2009","2010","2011","2012"],
+          trims:{
+            "HSE":       { engine:"4.4L BMW V8 (282-306hp)", drivetrain:"4WD", transmission:"Automatic", note:"Heavy BMW engineering influence early on (2002-2005 used a genuine BMW-sourced V8), before switching to Jaguar-sourced engines from 2006 on." },
+            "Supercharged":{ engines:["4.2L Supercharged V8 (390-400hp)","5.0L Supercharged V8 (510hp)"], drivetrain:"4WD", transmission:"Automatic", note:"4.2L supercharged through 2009, then the bigger 5.0L supercharged V8 arrived for 2010+." },
+          },
+          colors:[
+            {name:"Java Black (Black)",hex:"#1A1A1A"},
+            {name:"Zermatt Silver (Silver)",hex:"#C0C0C0"},
+            {name:"Rimini Red (Red)",hex:"#9B1B30"},
+            {name:"Chawton White (White)",hex:"#F5F5F5"},
+          ],
+        },
+        "L405 (2013-2021)":{
+          years:["2013","2014","2015","2016","2017","2018","2019","2020","2021"],
+          trims:{
+            "HSE":         { engines:["3.0L Supercharged V6 (340hp)","3.0L Turbocharged Inline-6 (355-395hp)"], drivetrains:["4WD"], transmission:"Automatic", note:"First Range Rover with a full aluminum monocoque body — shed roughly 420kg versus the outgoing L322. 2018 facelift eventually swapped the supercharged V6 for a mild-hybrid turbo inline-6." },
+            "Supercharged":{ engine:"5.0L Supercharged V8 (510-557hp)", drivetrain:"4WD", transmission:"Automatic" },
+            "SVAutobiography":{ engine:"5.0L Supercharged V8 (557hp)", drivetrain:"4WD", transmission:"Automatic", note:"Top trim, genuinely bespoke-level luxury interior." },
+          },
+          colors:[
+            {name:"Santorini Black (Black)",hex:"#1A1A1A"},
+            {name:"Fuji White (White)",hex:"#F5F5F5"},
+            {name:"Corris Grey (Gray)",hex:"#6B6E6F"},
+            {name:"Firenze Red (Red)",hex:"#9B1B30"},
+          ],
+        },
+        "L460 (2022-2026)":{
+          years:["2022","2023","2024","2025","2026"],
+          trims:{
+            "SE":  { engine:"3.0L Turbocharged Inline-6 (395hp)", drivetrain:"4WD", transmission:"Automatic", note:"All-new MLA-Flex platform. Ford stopped supplying the old supercharged V8, so this generation's top engine is now a BMW-sourced twin-turbo V8 instead." },
+            "Autobiography":{ engine:"3.0L Turbocharged PHEV Inline-6 (434hp)", drivetrain:"4WD", transmission:"Automatic" },
+            "SV":  { engine:"4.4L Twin-Turbo BMW V8 (523hp)", drivetrain:"4WD", transmission:"Automatic", note:"Range-topping performance trim, replacing the old Jaguar-sourced supercharged V8 that powered previous SVAutobiography models." },
+          },
+          colors:[
+            {name:"Santorini Black (Black)",hex:"#1A1A1A"},
+            {name:"Fuji White (White)",hex:"#F5F5F5"},
+            {name:"Batumi Gold (Gold)",hex:"#B8A050"},
+            {name:"Varesine Blue (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+      },
+    },
+  },
   "Lincoln": {
     "Continental": {
       generations:{
