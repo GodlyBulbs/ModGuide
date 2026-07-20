@@ -213,20 +213,79 @@ const VEHICLES = {
   },
   "BMW": {
     "328i / 330i": {
-      years:["2012","2013","2014","2015","2016","2017","2018","2019"],
-      trims:{
-        "Sedan":        { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"RWD", transmission:"Automatic" },
-        "xDrive":       { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"AWD", transmission:"Automatic" },
-        "Gran Turismo": { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"RWD", transmission:"Automatic" },
-        "Touring":      { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"RWD", transmission:"Automatic" },
+      generations:{
+        "E36 (1992-1998)":{
+          years:["1992","1993","1994","1995","1996","1997","1998"],
+          trims:{
+            "318i": { engine:"1.8L/1.9L 4-cylinder (138hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "325i": { engine:"2.5L Inline-6 (189hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"1992-1995 only — badge and engine both changed for 1996." },
+            "328i": { engine:"2.8L Inline-6 (190hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Replaced the 325i for 1996-1998 — bigger displacement, similar power but noticeably more torque." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Jet Black (Black)",hex:"#1A1A1A"},
+            {name:"Boston Green Metallic (Green)",hex:"#2E5A3A"},
+            {name:"Dakar Yellow (Yellow)",hex:"#F5C800"},
+          ],
+        },
+        "E46 (1999-2005)":{
+          years:["1999","2000","2001","2002","2003","2004","2005"],
+          trims:{
+            "323i": { engine:"2.5L Inline-6 (170hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"1999-2000 only, before being replaced by the 325i." },
+            "325i": { engine:"2.5L Inline-6 (184hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"] },
+            "330i": { engine:"3.0L Inline-6 (225hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"Widely considered one of the best-driving 3 Series generations ever made — a 70% stiffer structure than the outgoing E36." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Jet Black (Black)",hex:"#1A1A1A"},
+            {name:"Titanium Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Topaz Blue Metallic (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "E90/E92/E93 (2006-2011)":{
+          years:["2006","2007","2008","2009","2010","2011"],
+          trims:{
+            "325i": { engine:"3.0L Inline-6 (215hp)", drivetrain:"RWD", transmissions:["Manual","Automatic"], note:"2006-2008 only, before the naming shifted to 328i for the same basic engine." },
+            "328i": { engine:"3.0L Inline-6 (230hp)", drivetrains:["RWD","AWD"], transmissions:["Manual","Automatic"], note:"AWD (xDrive) became available on the 3 Series for the first time this generation." },
+            "335i": { engine:"3.0L Twin-Turbo Inline-6 (300-306hp)", drivetrains:["RWD","AWD"], transmissions:["Manual","Automatic"], note:"Genuinely potent for the era, but the early N54 engine (2007-2010) has a known history of high-pressure fuel pump failures — the later N55 (2011+) is generally considered more reliable." },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Space Gray Metallic (Gray)",hex:"#5A5F63"},
+            {name:"Montego Blue Metallic (Blue)",hex:"#1E3A6B"},
+          ],
+        },
+        "F30 (2012-2019)":{
+          years:["2012","2013","2014","2015","2016","2017","2018","2019"],
+          trims:{
+            "Sedan":        { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"RWD", transmission:"Automatic", note:"Grew significantly in size over the E90 and switched to a turbocharged four-cylinder as the volume engine — a real shift from the naturally-aspirated inline-six 3 Series had been known for." },
+            "xDrive":       { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"AWD", transmission:"Automatic" },
+            "Gran Turismo": { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"RWD", transmission:"Automatic" },
+            "Touring":      { engine:"2.0L Turbocharged 4-cylinder (248hp)", drivetrain:"RWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
+            {name:"Mineral Silver Metallic (Silver)",hex:"#C0C0C0"},
+            {name:"Estoril Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Melbourne Red Metallic (Red)",hex:"#C8102E"},
+          ],
+        },
+        "G20 (2019-2026)":{
+          years:["2019","2020","2021","2022","2023","2024","2025","2026"],
+          trims:{
+            "330i":  { engine:"2.0L Turbocharged 4-cylinder (255hp)", drivetrains:["RWD","AWD"], transmission:"Automatic", note:"Launched for 2019 as a 330i-only lineup — diesel options were dropped entirely for the US market this generation." },
+            "M340i": { engine:"3.0L Turbocharged Inline-6 (382hp)", drivetrain:"AWD", transmission:"Automatic" },
+          },
+          colors:[
+            {name:"Alpine White (White)",hex:"#F5F5F5"},
+            {name:"Jet Black (Black)",hex:"#1A1A1A"},
+            {name:"Portimao Blue Metallic (Blue)",hex:"#1E4B8E"},
+            {name:"Sunset Orange Metallic (Orange)",hex:"#E8601C"},
+          ],
+        },
       },
-      colors:[
-        {name:"Alpine White (White)",hex:"#F5F5F5"},
-        {name:"Black Sapphire Metallic (Black)",hex:"#1A1A1A"},
-        {name:"Mineral Silver Metallic (Silver)",hex:"#C0C0C0"},
-        {name:"Estoril Blue Metallic (Blue)",hex:"#1E4B8E"},
-        {name:"Melbourne Red Metallic (Red)",hex:"#C8102E"},
-      ],
     },
     "M235i / M240i": {
       years:["2014","2015","2016","2017","2018","2019","2021","2022"],
