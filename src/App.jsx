@@ -4256,6 +4256,15 @@ function CarCard({car,onSelect,onDelete,hasAlerts}){
   );
 }
 
+function Wordmark({size=20}){
+  return(
+    <>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@900&display=swap');`}</style>
+      <span style={{fontFamily:"'Big Shoulders Stencil', sans-serif",fontWeight:900,fontSize:size,letterSpacing:"1px",color:"#E8E4DC"}}>WRENCH<span style={{color:"#FF6B2B"}}>ED</span></span>
+    </>
+  );
+}
+
 function AuthScreen(){
   const [mode,setMode]=useState("login");
   const [email,setEmail]=useState("");
@@ -4281,7 +4290,7 @@ function AuthScreen(){
     <div style={{minHeight:"100vh",background:"#0D0D0D",fontFamily:"Inter, sans-serif",display:"flex",flexDirection:"column"}}>
       <div style={{borderBottom:"1px solid #1C1C1C",padding:"18px 24px",display:"flex",alignItems:"center",gap:"10px"}}>
         <div style={{width:"8px",height:"8px",background:"#FF6B2B",borderRadius:"50%"}}/>
-        <span style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"20px",color:"#E8E4DC",letterSpacing:"4px"}}>WRENCHED</span>
+        <Wordmark/>
       </div>
       <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px"}}>
         <div style={{width:"100%",maxWidth:"400px"}}>
@@ -4354,7 +4363,7 @@ function ResetPasswordScreen({onDone}){
     <div style={{minHeight:"100vh",background:"#0D0D0D",fontFamily:"Inter, sans-serif",display:"flex",flexDirection:"column"}}>
       <div style={{borderBottom:"1px solid #1C1C1C",padding:"18px 24px",display:"flex",alignItems:"center",gap:"10px"}}>
         <div style={{width:"8px",height:"8px",background:"#FF6B2B",borderRadius:"50%"}}/>
-        <span style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"20px",color:"#E8E4DC",letterSpacing:"4px"}}>WRENCHED</span>
+        <Wordmark/>
       </div>
       <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px"}}>
         <div style={{width:"100%",maxWidth:"400px"}}>
@@ -4602,7 +4611,7 @@ export default function Wrenched(){
       <div style={{borderBottom:"1px solid #1C1C1C",padding:"16px 24px",display:"flex",alignItems:"center",justifyContent:"space-between",position:"sticky",top:0,background:"#0D0D0D",zIndex:100}}>
         <div style={{display:"flex",alignItems:"center",gap:"10px",cursor:"pointer"}} onClick={()=>setView("garage")}>
           <div style={{width:"8px",height:"8px",background:"#FF6B2B",borderRadius:"50%"}}/>
-          <span style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"20px",color:"#E8E4DC",letterSpacing:"4px"}}>WRENCHED</span>
+          <Wordmark/>
         </div>
         <div style={{display:"flex",gap:"12px",alignItems:"center"}}>
           <div style={{position:"relative",cursor:"pointer"}} onClick={()=>setShowBell(!showBell)}>
