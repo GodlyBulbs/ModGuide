@@ -4721,6 +4721,11 @@ function AppShell(){
                 <button onClick={()=>setView("add-car")} style={{background:"transparent",color:"#FF6B2B",border:"1px solid #FF6B2B",padding:"14px 32px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"16px",letterSpacing:"3px",cursor:"pointer",borderRadius:"4px",width:"100%"}}>+ ADD ANOTHER CAR</button>
               </div>
             )}
+            <div style={{background:"#151210",border:"1px solid #2A2620",borderRadius:"8px",padding:"32px 28px",textAlign:"center",marginTop:"32px"}}>
+              <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(22px,4vw,30px)",color:"#E8E4DC",marginBottom:"8px"}}>DON'T WANT TO WRENCH<span style={{color:"#FF6B2B"}}> IT YOURSELF?</span></div>
+              <p style={{color:"#999",fontSize:"14px",maxWidth:"420px",margin:"0 auto 20px"}}>Book Wrenched On-Site and have a real mechanic come to you — priced honestly by distance, no mystery quotes.</p>
+              <a href="/wrench-day.html" style={{display:"inline-block",background:"#FF6B2B",color:"#0D0D0D",border:"none",padding:"14px 32px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"15px",letterSpacing:"2px",cursor:"pointer",borderRadius:"4px",textDecoration:"none"}}>ON-SITE</a>
+            </div>
             <div style={{textAlign:"center",marginTop:"48px",paddingBottom:"24px"}}>
               <a href="/terms.html" target="_blank" rel="noopener noreferrer" style={{color:"#333",fontSize:"11px",textDecoration:"none"}}>Terms</a>
               <span style={{color:"#2A2A2A",margin:"0 8px",fontSize:"11px"}}>·</span>
