@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { supabase } from "./supabase";
 
 const VEHICLES = {
@@ -4262,8 +4263,69 @@ function Wordmark({size=20}){
   );
 }
 
-function AuthScreen(){
-  const [mode,setMode]=useState("login");
+function LandingPage(){
+  const navigate=useNavigate();
+  return(
+    <div style={{minHeight:"100vh",background:"#0D0D0D",fontFamily:"Inter, sans-serif",color:"#E8E4DC"}}>
+      <div style={{borderBottom:"1px solid #1C1C1C",padding:"18px 24px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+        <div style={{display:"flex",alignItems:"center",gap:"10px"}}>
+          <div style={{width:"8px",height:"8px",background:"#FF6B2B",borderRadius:"50%"}}/>
+          <Wordmark/>
+        </div>
+        <button onClick={()=>navigate("/login")} style={{background:"transparent",color:"#E8E4DC",border:"1px solid #333",fontFamily:"'Bebas Neue', sans-serif",fontSize:"14px",letterSpacing:"2px",padding:"10px 22px",borderRadius:"4px",cursor:"pointer"}}>LOG IN</button>
+      </div>
+
+      {/* HERO */}
+      <div style={{maxWidth:"680px",margin:"0 auto",padding:"90px 24px 20px",textAlign:"center"}}>
+        <div style={{marginBottom:"20px"}}><Wordmark size={48}/></div>
+        <div style={{color:"#999",fontSize:"clamp(17px,2.5vw,20px)",lineHeight:"1.4",maxWidth:"460px",margin:"0 auto 32px"}}>One place for your car's real specs, real mods, and real maintenance history — organized by your exact year, make, and generation.</div>
+        <button onClick={()=>navigate("/signup")} style={{background:"#FF6B2B",color:"#0D0D0D",border:"none",fontFamily:"'Bebas Neue', sans-serif",fontSize:"17px",letterSpacing:"2px",padding:"16px 36px",borderRadius:"4px",cursor:"pointer"}}>GET STARTED — FREE</button>
+      </div>
+
+      {/* PROBLEM — supporting context, smaller */}
+      <div style={{maxWidth:"480px",margin:"0 auto",padding:"40px 24px 70px",textAlign:"center"}}>
+        <div style={{color:"#555",fontSize:"11px",letterSpacing:"2px",marginBottom:"10px"}}>SOUND FAMILIAR?</div>
+        <div style={{color:"#777",fontSize:"14px",lineHeight:"1.6"}}>You searched "<span style={{color:"#999"}}>torque spec</span>" for your car and got five different answers from five different forum threads.</div>
+      </div>
+
+      {/* FEATURES */}
+      <div style={{maxWidth:"760px",margin:"0 auto",padding:"20px 24px 60px",display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(220px,1fr))",gap:"18px",borderTop:"1px solid #1C1C1C"}}>
+        <div style={{textAlign:"center",paddingTop:"40px"}}>
+          <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"19px",letterSpacing:"1px",marginBottom:"6px"}}>YOUR GARAGE</div>
+          <div style={{fontSize:"13px",color:"#888",lineHeight:"1.5"}}>Every car you own, tracked in one place — mileage, service history, mods.</div>
+        </div>
+        <div style={{textAlign:"center",paddingTop:"40px"}}>
+          <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"19px",letterSpacing:"1px",marginBottom:"6px"}}>HONEST DATA</div>
+          <div style={{fontSize:"13px",color:"#888",lineHeight:"1.5"}}>When a spec isn't confirmed, we say so — instead of guessing and hoping.</div>
+        </div>
+        <div style={{textAlign:"center",paddingTop:"40px"}}>
+          <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"19px",letterSpacing:"1px",marginBottom:"6px"}}>BUILT FOR YOUR CAR</div>
+          <div style={{fontSize:"13px",color:"#888",lineHeight:"1.5"}}>Not generic advice — parts and specs matched to your specific generation.</div>
+        </div>
+      </div>
+
+      {/* PLAIN TEXT, NO BUTTON */}
+      <div style={{textAlign:"center",padding:"20px 24px",fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(20px,3.5vw,26px)",letterSpacing:"1px",color:"#555"}}>READY WHEN YOU ARE.</div>
+
+      {/* ON-SITE — final closer */}
+      <div style={{background:"#151210",borderTop:"1px solid #2A2620",padding:"60px 24px 70px",textAlign:"center"}}>
+        <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(28px,5vw,40px)",marginBottom:"12px"}}>DON'T WANT TO WRENCH<span style={{color:"#FF6B2B"}}> IT YOURSELF?</span></div>
+        <div style={{color:"#999",fontSize:"14px",maxWidth:"480px",margin:"0 auto 26px"}}>Book Wrenched On-Site and have a real mechanic come to you — priced honestly by distance, no mystery quotes.</div>
+        <a href="/wrench-day.html" style={{display:"inline-block",background:"transparent",color:"#E8E4DC",border:"1px solid #333",fontFamily:"'Bebas Neue', sans-serif",fontSize:"17px",letterSpacing:"2px",padding:"16px 36px",borderRadius:"4px",cursor:"pointer",textDecoration:"none"}}>LEARN ABOUT ON-SITE</a>
+      </div>
+
+      <div style={{borderTop:"1px solid #1C1C1C",padding:"28px 24px",textAlign:"center"}}>
+        <a href="/terms.html" style={{color:"#333",fontSize:"11px",textDecoration:"none"}}>Terms</a>
+        <span style={{color:"#2A2A2A",margin:"0 8px",fontSize:"11px"}}>·</span>
+        <a href="/privacy.html" style={{color:"#333",fontSize:"11px",textDecoration:"none"}}>Privacy</a>
+      </div>
+    </div>
+  );
+}
+
+function AuthScreen({initialMode="login"}){
+  const navigate=useNavigate();
+  const [mode,setMode]=useState(initialMode);
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const [error,setError]=useState("");
@@ -4296,7 +4358,7 @@ function AuthScreen(){
               <>
                 <div style={{fontFamily:"'Bebas Neue', sans-serif",fontSize:"clamp(36px,7vw,56px)",lineHeight:"1",color:"#E8E4DC",marginBottom:"8px"}}>CHECK YOUR EMAIL</div>
                 <p style={{color:"#555",fontSize:"14px",marginBottom:"36px"}}>We sent a password reset link to {email}. Follow it to set a new password.</p>
-                <span onClick={()=>{setMode("login");setResetSent(false);setError("");}} style={{color:"#FF6B2B",cursor:"pointer",fontSize:"13px"}}>← Back to log in</span>
+                <span onClick={()=>{setMode("login");setResetSent(false);setError("");navigate("/login");}} style={{color:"#FF6B2B",cursor:"pointer",fontSize:"13px"}}>← Back to log in</span>
               </>
             ):(
               <>
@@ -4306,7 +4368,7 @@ function AuthScreen(){
                 {error&&<div style={{color:"#FF6B2B",fontSize:"13px",marginBottom:"16px"}}>{error}</div>}
                 <button onClick={handleForgot} disabled={!email||loading} style={BP(email&&!loading)}>{loading?"...":"SEND RESET LINK"}</button>
                 <div style={{textAlign:"center",marginTop:"20px"}}>
-                  <span onClick={()=>{setMode("login");setError("");}} style={{color:"#FF6B2B",cursor:"pointer",fontSize:"13px"}}>← Back to log in</span>
+                  <span onClick={()=>{setMode("login");setError("");navigate("/login");}} style={{color:"#FF6B2B",cursor:"pointer",fontSize:"13px"}}>← Back to log in</span>
                 </div>
               </>
             )
@@ -4322,7 +4384,7 @@ function AuthScreen(){
               {mode==="signup"&&<p style={{color:"#444",fontSize:"11px",textAlign:"center",marginTop:"14px",lineHeight:"1.5"}}>By signing up, you agree to our <a href="/terms.html" target="_blank" rel="noopener noreferrer" style={{color:"#666"}}>Terms of Service</a> and <a href="/privacy.html" target="_blank" rel="noopener noreferrer" style={{color:"#666"}}>Privacy Policy</a>.</p>}
               <div style={{textAlign:"center",marginTop:"20px"}}>
                 <span style={{color:"#444",fontSize:"13px"}}>{mode==="login"?"Don't have an account? ":"Already have an account? "}
-                  <span onClick={()=>{setMode(mode==="login"?"signup":"login");setError("");}} style={{color:"#FF6B2B",cursor:"pointer"}}>{mode==="login"?"Sign up":"Log in"}</span>
+                  <span onClick={()=>{const next=mode==="login"?"signup":"login";setMode(next);setError("");navigate("/"+next);}} style={{color:"#FF6B2B",cursor:"pointer"}}>{mode==="login"?"Sign up":"Log in"}</span>
                 </span>
               </div>
               <div style={{textAlign:"center",marginTop:"28px"}}>
@@ -4502,7 +4564,7 @@ function AddCarForm({onSave,onCancel}){
   );
 }
 
-export default function Wrenched(){
+function AppShell(){
   const [session,setSession]=useState(null);
   const [authLoading,setAuthLoading]=useState(true);
   const [view,setView]=useState("garage");
@@ -4598,7 +4660,14 @@ export default function Wrenched(){
 
   if(authLoading)return<div style={{minHeight:"100vh",background:"#0D0D0D",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{color:"#FF6B2B",fontFamily:"'Bebas Neue', sans-serif",fontSize:"18px",letterSpacing:"4px"}}>LOADING...</div></div>;
   if(isRecovery)return<ResetPasswordScreen onDone={()=>setIsRecovery(false)}/>;
-  if(!session)return<AuthScreen/>;
+  if(!session)return(
+    <Routes>
+      <Route path="/" element={<LandingPage/>} />
+      <Route path="/login" element={<AuthScreen initialMode="login"/>} />
+      <Route path="/signup" element={<AuthScreen initialMode="signup"/>} />
+      <Route path="*" element={<Navigate to="/" replace/>} />
+    </Routes>
+  );
   const carColor=activeCar?.colorHex||"#1C1C1C";
 
   return(
@@ -4914,5 +4983,13 @@ export default function Wrenched(){
         </div>
       )}
     </div>
+  );
+}
+
+export default function Wrenched(){
+  return(
+    <BrowserRouter>
+      <AppShell/>
+    </BrowserRouter>
   );
 }
